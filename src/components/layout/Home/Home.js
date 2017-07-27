@@ -1,8 +1,12 @@
 import React from 'react';
 import HelloJobs from '../../presentational/HelloJobs';
+import { Hero } from '../../presentational/Hero/Hero.js';
 
 const Home = () => (
-  <HelloJobs />
+  <div>
+    <HelloJobs />
+    <Hero />
+  </div>
 );
 
 export default Home;

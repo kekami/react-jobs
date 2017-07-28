@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { globalStyles } from '../globalStyles.js';
-import rick from "./assets/rick.jpg"
-import curlyBraces from "./assets/curlyBraces.svg"
+import { globalStyles } from '../globalStyles';
+import rick from './assets/rick.jpg';
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -15,7 +14,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
   background-color: ${globalStyles.bgColor};
   position: relative;
-`
+`;
 
 export const SVGLeft = styled.svg`
   z-index: 0;
@@ -30,7 +29,7 @@ export const SVGLeft = styled.svg`
     position: absolute;
     transform: scale(1.5) translate(-250px, 15px);
   }
-`
+`;
 
 export const SVGRight = styled.svg`
   display: none;
@@ -40,7 +39,7 @@ export const SVGRight = styled.svg`
     position: absolute;
     transform: rotate(180deg) scale(1.5) translate(-250px, -15px);
   }
-`
+`;
 
 export const Article = styled.article`
   display: flex;
@@ -50,7 +49,7 @@ export const Article = styled.article`
   margin-top: auto;
   margin-bottom: auto;
   z-index: 5;
-`
+`;
 
 export const H1 = styled.h1`
   padding: 0;
@@ -66,7 +65,7 @@ export const H1 = styled.h1`
   @media (min-width: 500px) {
       font-size: 3rem;
   }
-`
+`;
 
 export const H2 = styled.h2`
   margin: 0;
@@ -78,14 +77,14 @@ export const H2 = styled.h2`
       font-size: 2rem;
   }
 
-`
+`;
 
 export const P = styled.p`
   color: white;
   text-align: center;
-`
+`;
 
 export const Footer = styled.div`
   font-size: 1.5rem;
 
-`
+`;

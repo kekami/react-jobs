@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { globalStyles } from '../globalStyles.js';
+import { globalStyles } from '../globalStyles';
 
 export const FlexRow = styled.div`
   height: auto;
@@ -10,7 +10,7 @@ export const FlexRow = styled.div`
   @media (min-width: 500px) {
     flex-direction: row;
   }
-`
+`;
 
 export const Button = styled.button`
   margin: 30px 20px 0px 20px;
@@ -27,7 +27,7 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const hoverPop = keyframes`
   50% {
@@ -50,4 +50,4 @@ export const I = styled.i`
     animation-timing-function: linear;
     animation-iteration-count: 1;
   }
-`
+`;

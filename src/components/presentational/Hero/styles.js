@@ -30,10 +30,6 @@ export const SVGLeft = styled.svg`
     position: absolute;
     transform: scale(1.5) translate(-250px, 15px);
   }
-
-  @media (min-width: 1500px) {
-    left: 10vw;
-  }
 `
 
 export const SVGRight = styled.svg`
@@ -43,10 +39,6 @@ export const SVGRight = styled.svg`
     display: inline;
     position: absolute;
     transform: rotate(180deg) scale(1.5) translate(-250px, -15px);
-  }
-
-  @media (min-width: 1500px) {
-    left: 10vw;
   }
 `
 

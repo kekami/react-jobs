@@ -15,19 +15,6 @@ function bracesSVG(StyledSVG) {
     }
   }
 }
-/*
-function styledBraces(styledComponet) {
-  return class wrappedBraces extends React.Component {
-    render() {
-      return (
-        <styledComponent>
-          <bracesSVG />
-        </styledComponent>
-      )
-    }
-  }
-}
-console.log(wrappedBraces(bracesSVG, SVGLeft));
-*/
+
 export const BracesLeft = bracesSVG(SVGLeft);
 export const BracesRight = bracesSVG(SVGRight);

@@ -6,6 +6,7 @@ const Home = () => (
   <div>
     <HelloJobs />
     <Hero />
+    <Hero />
   </div>
 );
 

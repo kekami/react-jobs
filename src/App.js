@@ -4,6 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from './components/layout/Home';
+import './components/assets/fontAwesome/css/font-awesome.min.css';
 
 const App = () => (
   <Router>

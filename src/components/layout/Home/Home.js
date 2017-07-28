@@ -1,11 +1,11 @@
 import React from 'react';
-import HelloJobs from '../../presentational/HelloJobs';
 import Navbar from '../../presentational/Navbar';
+import { Hero } from '../../presentational/Hero/Hero.js';
 
 const Home = () => (
   <div>
     <Navbar />
-    <HelloJobs />
+    <Hero />
   </div>
 );
 

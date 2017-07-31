@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'SkypeAssets';
+    src: url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Regular.eot'); /* IE9 Compat Modes */
+    src: url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Regular.woff') format('woff'), /* Modern Browsers */
+         url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'SkypeAssetsLight';
+    src: url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Light.eot'); /* IE9 Compat Modes */
+    src: url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Light.woff') format('woff'), /* Modern Browsers */
+         url('https://sxt.cdn.skype.com/assets/fonts/SkypeAssets-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+.sxt-font-icon {
+    font-family: SkypeAssets;
+}
+
+.sxt-font-icon-light {
+    font-family: SkypeAssetsLight;
+}
+
+.sxt-font-icon,
+.sxt-font-icon-light {
+    text-decoration: none;
+    color: inherit;
+}

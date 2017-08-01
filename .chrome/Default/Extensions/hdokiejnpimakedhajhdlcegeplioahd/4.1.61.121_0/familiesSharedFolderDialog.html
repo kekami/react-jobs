@@ -1,0 +1,21 @@
+<div class="familiesSharedFolder">
+  <label for="groupName" class="shared-folder-name">Shared folder name</label>
+  <input id="loadedGroupName" dialogField="loadedGroupName" type="hidden" class="dialogInput" />
+  <input id="groupName" dialogField="groupName" type="text" class="dialogInput" />
+  <div class="emailFamilyMembers">
+    <input type="checkbox" id="notifyFamilyMembers"> Email invited family members</input>
+  </div>
+  <table style="width: 100%;" border="1">
+    <thead>
+    <tr>
+      <th>Family member</th>
+      <th>Permissions
+        <i class="fa fa-info-circle tooltipFamily"></i>
+        <span class="tooltiptext">Family members who are administrators will be able to add and remove sites in this shared folder, as well as invite other family members. Read only access allows the ability to launch shared items (but make no changes), and those with no access can't see the shared folder at all.</span>
+      </th>
+    </tr>
+    </thead>
+    <tbody id="familyBody">
+    </tbody>
+  </table>
+</div>

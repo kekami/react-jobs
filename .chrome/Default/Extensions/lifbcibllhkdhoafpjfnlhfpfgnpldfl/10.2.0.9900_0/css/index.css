@@ -1,0 +1,506 @@
+body, html{
+    font-family: SegoeUI;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #171717;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#upperContent {
+    transition: all 0.3s ease-in;
+}
+
+.link {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.content {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: baseline;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    display: inline-block;
+    color: #2A5993;
+    text-decoration: none;
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+header .logoCounterWeight {
+    width: 90px;
+}
+
+header .logo .icon {
+    display: inline-block;
+    line-height: 0;
+    overflow: hidden;
+    height: 40px;
+    width: 120px;
+    margin-bottom: -10px;
+    background: url("https://sxt.cdn.skype.com/assets/onboarding/Skype-logo-white.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.new {
+    display: flex;
+    align-items: flex-end;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.new span {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+#newLine2 span {
+    margin-top: 48px;
+    margin-left: 0;
+}
+
+.hi_emoticon {
+    width: 40px;
+    height: 40px;
+    background: url('https://sxt.cdn.skype.com/assets/onboarding/hi_160_anim.png');
+    background-size: cover;
+    animation: hiAnimation 9.5s steps(114) infinite;
+    flex: 0 0 auto;
+}
+
+#title {
+    font-size: 40px;
+    font-weight: 100;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    margin-left: 60px;
+}
+
+#fullWidthStripe {
+    width: 100%;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    flex: 0 0 auto;
+}
+
+#fullWidthStripe2 {
+    padding-bottom: 54px;
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    flex: 0 0 auto;
+}
+.cardsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: all .5s ease;
+}
+
+.card {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px 10px 0;
+    font-size: 24px;
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,.3);
+    color: black;
+    transform: scale(1);
+    margin: 0 5px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 20px 35px rgba(0,0,0,.3);
+}
+
+.hero {
+    background: linear-gradient(45deg, #1686d9 0%,#e362a6 100%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.card .newBadge {
+    background: #008770;
+    color: white;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.card .image {
+    width: 370px;
+    height: 120px;
+    box-shadow: 0 0 30px -6px rgba(9, 9, 9, 0.4);
+    margin-top: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#snapPageCard .image {
+    background-image: url('https://sxt.cdn.skype.com/assets/onboarding/thumbnails/1.png');
+}
+
+#shareCard .image {
+    background-image: url('https://sxt.cdn.skype.com/assets/onboarding/thumbnails/2.png');
+}
+
+#manageCards .image {
+    background-image: url('https://sxt.cdn.skype.com/assets/onboarding/thumbnails/3.png');
+}
+
+#meetingsCard .image {
+    background-image: url('https://sxt.cdn.skype.com/assets/onboarding/thumbnails/4.png');
+}
+
+#webCard .image {
+    background-image: url('https://sxt.cdn.skype.com/assets/onboarding/thumbnails/5.png');
+}
+
+footer {
+    margin: 50px 0;
+    flex: 1 0 auto;
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+#getStarted {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    background-color: rgb(84, 89, 167);
+    transition: all 0.3s ease-out;
+
+    padding: 10px 20px;
+}
+
+
+#learn {
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    background-color: white;
+    opacity: 1;
+    transition: all 0.3s ease-out;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.time {
+    font-size: 20px;
+    margin-bottom: 80px;
+    transition: all .5s ease;
+}
+
+.hidden-icon {
+    text-decoration: underline;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 16px;
+    color: blue;
+}
+
+.hidden-icon + img {
+    opacity: 0;
+}
+
+.hidden-icon:hover + img {
+    opacity: 1;
+}
+
+.instructionVideo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bpk-icon-cta {
+    
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+#getStarted:hover {
+    background-color: #ddd;
+}
+
+#overlay {
+    background: rgba(150, 150, 150, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+#modal {
+    box-shadow: 0 0 30px -2px rgba(9, 9, 9, 0.4);
+    width: 800px;
+    min-height: 550px;
+    background: white;
+    position: relative;
+    transform: scale(0.9);
+    transition: all 0.3s ease-out;
+}
+
+#modal .close {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#modal .close:hover {
+    color: white;
+}
+
+#modal .media {
+    background: rgb(84, 89, 167);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+#modal .control {
+    font-size: 20px;
+    width: 190px;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#modal .control:hover {
+    color: white;
+}
+
+#modal .control .arrow {
+    font-size: 40px;
+    margin: 0 10px;
+    transition: all 0.3s;
+}
+
+#previous {
+    margin-left: -30px;
+}
+
+#next {
+    justify-content: flex-end;
+    margin-right: -30px;
+}
+
+#previous:hover .arrow {
+    font-size: 44px;
+    margin: 0 16px 0 0;
+}
+
+#next:hover .arrow {
+    font-size: 44px;
+    margin: 0 0 0 16px;
+}
+
+#modal .description {
+    width: 70%;
+    margin: 0 auto 20px;
+}
+
+#footer {
+    color: rgb(84, 89, 167);
+    font-weight: bold;
+    text-align: right;
+    margin: 20px;
+    transition: opacity 0.3s ease-out;
+}
+
+#previousControl {
+    transition: opacity 0.3s ease-out;
+}
+#nextControl {
+    transition: opacity 0.3s ease-out;
+}
+#mediaContainer {
+    transition: opacity 0.3s ease-out;
+}
+#cardDescription {
+    min-height: 50px;
+    transition: all 0.3s ease-out;
+}
+
+#nextStep {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    display: none;
+    opacity: 0;
+    padding: 40px;
+    transition: all 0.3s ease-out;
+    transform: translateY(20px);
+}
+
+#nextStep video {
+    border: 2px solid black;
+}
+
+#nextStep .arrow {
+    transform: rotateZ(-90deg);
+    font-size: 100px;
+    padding-left: 20px;
+}
+
+#nextStep img {
+    padding-top: 20px;
+}
+
+#nextStep video {
+    width: 650px;
+    transition: all .5s ease;
+}
+
+@keyframes hiAnimation {
+    50% { background-position-y: -4560px }
+    100% { background-position-y: -4560px }
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('https://sxt.cdn.skype.com/assets/fonts/SegoeUI-Light.eot'); /* IE9 Compat Modes */
+    src: url('https://sxt.cdn.skype.com/assets/fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('https://sxt.cdn.skype.com/assets/fonts/SegoeUI-Light.woff') format('woff'), /* Modern Browsers */
+         url('https://sxt.cdn.skype.com/assets/fonts/SegoeUI-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@media screen and (max-width: 1220px) {
+    .content {
+        width: 95%;
+    }
+
+    .card {
+        font-size: 18px;
+    }
+
+    .card .link {
+        font-size: 14px;
+    }
+
+    .card .image {
+        width: 290px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .card {
+        font-size: 16px;
+    }
+
+    .card .link {
+        font-size: 12px;
+    }
+
+    .card .image {
+        width: 210px;
+        height: 70px;
+    }
+
+    #nextStep video {
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .time {
+        margin-bottom: 32px;
+    }
+
+    #nextStep video {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cardsContainer {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        margin: 10px;
+    }
+
+    .instructionVideo {
+        position: static;
+    }
+}
+
+
+@media screen and (max-height: 800px) {
+    .hero {
+        max-height: 650px;
+    }
+
+    .time {
+        margin-bottom: 40px;
+    }
+
+    #title {
+        margin-top: 20px;
+    }
+}

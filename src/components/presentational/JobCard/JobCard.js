@@ -55,21 +55,21 @@ JobCard.propTypes = {
 
 export default JobCard;
 
-function diffMonths(dt2, dt1) {
+export function diffMonths(dt2, dt1) {
   let diff = (dt2.getTime() - dt1.getTime());
   if (diff < 0) return 'Expired';
   diff /= (1000 * 60 * 60 * 24 * 7 * 4);
   return Math.abs(Math.round(diff));
 }
 
-function diffDays(dt2, dt1) {
+export function diffDays(dt2, dt1) {
   let diff = (dt2.getTime() - dt1.getTime());
   if (diff < 0) return 'Expired';
   diff /= (1000 * 60 * 60 * 24);
   return Math.abs(Math.round(diff));
 }
 
-function timeLeft(deadline) {
+export function timeLeft(deadline) {
   let expiration = {};
   const monthDiff = diffMonths(new Date(deadline), new Date(Date.now()));
 

@@ -5,7 +5,7 @@ import { NavbarContainer, Logo, Nav, SubNav, HighLight, Conditional } from './st
 const Navbar = () => (
   <NavbarContainer>
     <Logo>
-      <img src="#" alt="" />
+      <i className="fa fa-compass fa-2x" aria-hidden="true" />
       <h2><Link to="/">jobbatical</Link></h2>
     </Logo>
 

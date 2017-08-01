@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Skype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="skype_options_menu.css"/>
+</head>
+<body>
+    <div class="body">
+        <div class="title">
+            <div class="logo">
+                <img src="skypelogo_128.png" alt="Skype">
+            </div>
+            <div class="info">
+                <div class="heading">
+                    <h1>SKYPE</h1>
+                </div>
+                <div class="company-branding">
+                    <strong>BY MICROSOFT CORPORATION</strong>
+                </div>
+            </div>
+        </div>
+        <div id="about" class="about">
+            <h1>ABOUT</h1>
+            <div class="description">
+                <p></p>
+            </div>
+            <a href="https://go.skype.com/skype.extension.faq" target="_blank">Learn more</a> <span>about the Skype Extension</p>
+        </div>
+        <div id="settings" class="settings">
+            <h1>SETTINGS</h1>
+            <div id='meetingsToggle' class="setting">
+                <button id="enableMeetingsToggle" class="toggle-button" type="button" role="checkbox" aria-labelledby="userSettings-notifications"></button>
+                <span>ENABLE MEETINGS</span>
+            </div>
+            <div id='backpackToggle' class="setting">
+                <button id="enableBackpackToggle" class="toggle-button" type="button" role="checkbox" aria-labelledby="userSettings-notifications"></button>
+                <span>ENABLE BACKPACK</span>
+            </div>
+
+        </div>
+        <div id="backpack" class="backpack">
+            <h1>Backpack</h1>
+            <a id="backpackDownload" download="backpack.json">Download Backpack data</a>
+        </div>
+        <button id='signout'>Sign out</button>
+    </div>
+    <footer></footer>
+    <script src="skype_options_menu.js"></script>
+</body>
+</html>

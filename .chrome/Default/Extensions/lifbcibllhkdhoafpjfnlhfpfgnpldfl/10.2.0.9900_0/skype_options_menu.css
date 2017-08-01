@@ -1,0 +1,134 @@
+body {
+    font-family: 'Segoe UI Local', 'Segoe WP', 'Segoe UI Web', Tahoma, 'Helvetica Neue', Helvetica, 'Meiryo UI', Meiryo, 'Arial Unicode MS', sans-serif;
+}
+
+body header {
+    height: 16vh;
+    text-align: center;
+}
+
+body header img {
+    vertical-align: middle;
+}
+
+body header .message {
+    margin: 5px;
+    padding: 8px;
+    background-color: #e8f9ff;
+    border-radius: 5px;
+    font-size: 0.97em;
+}
+
+body header .info.noDisplay {
+    visibility: hidden;
+}
+
+body .body {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 50vw;
+    font-size: 1em;
+    margin: auto
+}
+body .body a {
+    text-decoration: none;
+    color: #00AFF0
+}
+body .body .title {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+body .body .title .logo {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+body .body .title .logo img {
+    width: 64px
+}
+body .body .title .info {
+    padding-left: 15px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+body .body .title .info .heading h1 {
+    font-weight: 200;
+    font-size: 2em;
+    margin: 0
+}
+body .body .title .info .company-branding {
+    font-size: .9em
+}
+body .body .about {
+    margin-top: 15px
+}
+
+body .body .toggle-button {
+    width: 46px;
+    height: 24px;
+    margin-top: 0px;
+    border: 2px solid transparent;
+    transition-property: border-color,background-color;
+    transition-duration: .2s;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    background-color: #A2C5D3;
+}
+
+body .body .toggle-button.checked {
+    background-color: #7FBA00;
+}
+
+body .body .toggle-button::after {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 1.25px 1.25px rgba(0,0,0,0.1);
+    content: "";
+    position: absolute;
+    transition-property: all;
+    transition-duration: .2s;
+    left: 0;
+    top: 0;
+}
+
+body .body .toggle-button.checked::after {
+    left: 22px;
+}
+
+.setting {
+    margin-bottom: 14px;
+}
+
+.setting span {
+    height: 20px;
+    vertical-align: super;
+    font-size: 16px;
+}
+
+#signout {
+    margin-top: 20px;
+}

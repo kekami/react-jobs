@@ -15,11 +15,11 @@ export const NavbarContainer = styled.div`
 
 export const Logo = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   margin-right: 1em;
 
-  img {
-    padding-right: 1em;
+  i {
+    margin-right: 0.3em;
   }
 
   h2 {

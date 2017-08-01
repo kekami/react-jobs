@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import JobCard from '../../presentational/JobCard';
 import data from '../../../data.json';
-import { FeaturedJobsContainer, FeaturedJobsHeader, ViewJobsButton } from './styles';
+import { FeaturedJobsContainer, FeaturedJobsHeader, ViewJobsButton, JobCardsContainer } from './styles';
 
 class FeaturedJobs extends Component {
   constructor(props) {
@@ -35,13 +35,13 @@ class FeaturedJobs extends Component {
     ));
 
     return (
-      <div>
+      <FeaturedJobsContainer>
         <FeaturedJobsHeader>Featured Jobs</FeaturedJobsHeader>
-        <FeaturedJobsContainer>
+        <JobCardsContainer>
           {jobCards}
-          {this.showViewJobsButton()}
-        </FeaturedJobsContainer>
-      </div>
+        </JobCardsContainer>
+        {this.showViewJobsButton()}
+      </FeaturedJobsContainer>
     );
   }
 }

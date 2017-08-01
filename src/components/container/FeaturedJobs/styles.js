@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const FeaturedJobsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  text-align: center;
 `;
 
 export const FeaturedJobsHeader = styled.h2`
@@ -13,6 +11,12 @@ export const FeaturedJobsHeader = styled.h2`
   font-weight: 500;
   text-transform: Uppercase;
   font-size: 1.2rem;
+`;
+
+export const JobCardsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const ViewJobsButton = styled.button`

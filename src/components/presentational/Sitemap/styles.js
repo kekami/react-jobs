@@ -23,19 +23,24 @@ export const FlexCol = styled.div`
         &:hover {
             color: #000;
         }
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -7px;
+    }
     }
 `;
 
 export const Column = styled.div`
     width: 25%;
     padding: 15px;
+    flex-wrap: wrap;
+    flex: 1 1 250px (minimum width);
     
 `;
 export const Header = styled.header`
-    border-bottom-color: #839496; {/*
-      why its not working :/?
-     */}
-    border-bottom: solid 1px;
+    border-bottom: #dddddd solid 1px;
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 15px;
@@ -44,6 +49,7 @@ export const Header = styled.header`
 `;
 
 export const I = styled.i`
-     float:right;
+ 
      
 `;
+

@@ -5,7 +5,7 @@ import { ProfileWrapper } from './styles.js';
 export function Profile(props) {
   return (
     <ProfileWrapper>
-    
+    Tutaj
     </ProfileWrapper>
   );
 }

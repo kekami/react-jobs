@@ -4,7 +4,7 @@ import { Profile } from '../../presentational/Profile/Profile';
 import { Sitemap } from '../../presentational/Sitemap/Sitemap';
 
 
-const Profile = () => (
+const ProfilePage= () => (
   <div>
     <Navbar />
     <Profile />

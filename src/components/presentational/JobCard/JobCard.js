@@ -19,7 +19,7 @@ const JobCard = ({ image, title, location, companyName, description, deadline, i
 
   return (
     <JobCardContainer expired={isExpired}>
-      <Link to={`/jobs/${id}`}>
+      <Link to={{ pathname: '/job', hash: `#${id}` }}>
         <img src={image} alt="" />
         <Content>
           <JobHeader expired={isExpired}>{title}</JobHeader>
@@ -69,7 +69,7 @@ function diffDays(dt2, dt1) {
   return Math.abs(Math.round(diff));
 }
 
-function timeLeft(deadline) {
+export function timeLeft(deadline) {
   let expiration = {};
   const monthDiff = diffMonths(new Date(deadline), new Date(Date.now()));
 

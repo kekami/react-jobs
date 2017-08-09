@@ -7,6 +7,7 @@ export const JobCardContainer = styled.div`
   border: 1px solid #ddd;
   border-radius: 5px;
   transition: all 0.3s ease;
+  background-color: #ffffff;
 
   img {
     filter: ${props => props.expired ? 'grayscale(100%)' : 'none'};

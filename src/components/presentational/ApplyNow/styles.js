@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { JobNavSubcomponentLayout } from '../../container/JobDetails/styles.js'
 
-export const Wrapper = styled.div`
-  height: 400px;
-  background-color: #828f40;
+export const ApplyNowTag = styled.div`
+  width: 100%;
+  background-color: white;
 `

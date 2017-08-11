@@ -1,12 +1,14 @@
 import React from 'react';
-import { Wrapper } from './styles';
+import { Wrapper, ApplyNowTag } from './styles';
+import { RoleSummary } from '../JobDetails/JobDetails';
+import { JobNavSubcomponentLayout } from '../../container/JobDetails/styles.js'
+import { Details } from '../../container/JobDetails/styles.js';
 
-export default function ApplyNow(props) {
-  return (
-    <div ref={ props.getRef }>
-      <Wrapper >
-       <p>Sticky Footer</p>
-      </Wrapper>
-    </div>
-  );
-}
+export const ApplyNow = (props) => (
+  <ApplyNowTag>
+    <Details>
+      <RoleSummary {...props} applyNow={true}  />
+      <JobNavSubcomponentLayout />
+    </Details>
+  </ApplyNowTag>
+)

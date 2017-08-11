@@ -197,7 +197,3 @@ export const InfoTag = styled.p`
   border-radius: 2px;
 `
 
-export const ApplyNowTag = styled.div`
-  width: 100%;
-  background-color: white;
-`

@@ -17,12 +17,12 @@ import {
   InfoTag,
   Bold,
   JoinButton,
-  ApplyNowTag } from './styles';
+   } from './styles';
 import { timeLeft } from '../JobCard/JobCard'
 import { Link } from 'react-router-dom';
 
 
-class RoleSummary extends React.Component {
+export class RoleSummary extends React.Component {
   render () {
 
   const {title, deadline, applyNow = false, getRef} = this.props;
@@ -219,8 +219,3 @@ export default function JobDetails(props) {
   );
 }
 
-export const ApplyNow = (props) => (
-  <ApplyNowTag>
-    <RoleSummary {...props} applyNow={true}  />
-  </ApplyNowTag>
-)

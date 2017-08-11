@@ -22,3 +22,13 @@ export const Details = styled.div`
     width: 665px;
   }
 ` 
+
+export const JobNavSubcomponentLayout = styled.div`
+  width: 300px;
+  float: left;
+  
+  @media (max-width: 1000px) {
+    display: none;
+  }
+
+`

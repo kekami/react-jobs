@@ -1,16 +1,11 @@
 import styled from 'styled-components';
+import { JobNavSubcomponentLayout } from '../../container/JobDetails/styles.js'
 import { globalStyles } from '../globalStyles.js';
 
-export const Wrapper = styled.article`
-  width: 300px;
+export const Wrapper = styled(JobNavSubcomponentLayout)`
   min-height: 200px;
-  float: left;
   overflow: hidden;
   font-size: 1rem;
-
-  @media (max-width: 1000px) {
-    display: none;
-  }
 `
 
 export const InnerBox = styled.div`

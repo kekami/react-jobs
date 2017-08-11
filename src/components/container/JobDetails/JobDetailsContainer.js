@@ -1,9 +1,8 @@
 import React from 'react';
 import JobHeader from '../../presentational/JobHeader/JobHeader';
-import JobDetails, { ApplyNow } from '../../presentational/JobDetails/JobDetails';
+import JobDetails from '../../presentational/JobDetails/JobDetails';
 import JobNav from '../../presentational/JobNav/JobNav';
-
-//import ApplyNow from '../../presentational/ApplyNow/ApplyNow';
+import { ApplyNow } from '../../presentational/ApplyNow/ApplyNow';
 import { Wrapper, Details } from './styles.js';
 import data from '../../../data.json';
 

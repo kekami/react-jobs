@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Press component matches standard output 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <styled.div>
+    <styled.h3>
+        THE PRESS
+    </styled.h3>
+    <styled.div>
+        <styled.h1>
+            What they are saying
+        </styled.h1>
+    </styled.div>
+    <PressComments
+        comments={
+            Array [
+                Array [
+                  "They are great!",
+                  "Wicked Websites",
+                ],
+                Array [
+                  "They are great!",
+                  "Wicked Websites",
+                ],
+                Array [
+                  "They are great!",
+                  "Wicked Websites",
+                ],
+              ]
+        }
+    />
+    <Logos
+        logos={
+            Array [
+                "Logo 1",
+                "Logo 2",
+                "Logo 3",
+                "Logo 4",
+                "Logo 5",
+              ]
+        }
+    />
+</styled.div>,
+  "nodes": Array [
+    <styled.div>
+      <styled.h3>
+            THE PRESS
+      </styled.h3>
+      <styled.div>
+            <styled.h1>
+                  What they are saying
+            </styled.h1>
+      </styled.div>
+      <PressComments
+            comments={
+                  Array [
+                        Array [
+                          "They are great!",
+                          "Wicked Websites",
+                        ],
+                        Array [
+                          "They are great!",
+                          "Wicked Websites",
+                        ],
+                        Array [
+                          "They are great!",
+                          "Wicked Websites",
+                        ],
+                      ]
+            }
+      />
+      <Logos
+            logos={
+                  Array [
+                        "Logo 1",
+                        "Logo 2",
+                        "Logo 3",
+                        "Logo 4",
+                        "Logo 5",
+                      ]
+            }
+      />
+</styled.div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <Press />,
+      "_debugID": 47,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <styled.div>
+          <styled.h3>
+                    THE PRESS
+          </styled.h3>
+          <styled.div>
+                    <styled.h1>
+                              What they are saying
+                    </styled.h1>
+          </styled.div>
+          <PressComments
+                    comments={
+                              Array [
+                                        Array [
+                                          "They are great!",
+                                          "Wicked Websites",
+                                        ],
+                                        Array [
+                                          "They are great!",
+                                          "Wicked Websites",
+                                        ],
+                                        Array [
+                                          "They are great!",
+                                          "Wicked Websites",
+                                        ],
+                                      ]
+                    }
+          />
+          <Logos
+                    logos={
+                              Array [
+                                        "Logo 1",
+                                        "Logo 2",
+                                        "Logo 3",
+                                        "Logo 4",
+                                        "Logo 5",
+                                      ]
+                    }
+          />
+</styled.div>,
+        "_debugID": 48,
+        "_renderedOutput": <styled.div>
+          <styled.h3>
+                    THE PRESS
+          </styled.h3>
+          <styled.div>
+                    <styled.h1>
+                              What they are saying
+                    </styled.h1>
+          </styled.div>
+          <PressComments
+                    comments={
+                              Array [
+                                        Array [
+                                          "They are great!",
+                                          "Wicked Websites",
+                                        ],
+                                        Array [
+                                          "They are great!",
+                                          "Wicked Websites",
+                                        ],
+                                        Array [
+                                          "They are great!",
+                                          "Wicked Websites",
+                                        ],
+                                      ]
+                    }
+          />
+          <Logos
+                    logos={
+                              Array [
+                                        "Logo 1",
+                                        "Logo 2",
+                                        "Logo 3",
+                                        "Logo 4",
+                                        "Logo 5",
+                                      ]
+                    }
+          />
+</styled.div>,
+      },
+      "_renderedNodeType": 1,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Press />,
+}
+`;

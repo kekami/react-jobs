@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import { Press, LogoTags } from './Press';
 
-it('renders without crashing', () => {
+test('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<Press />, div);
+});
+
+test('Press component matches standard output', () => {
+  const component = shallow(<Press />);
+  expect(component).toMatchSnapshot();
 });
 
 test('LogoTags object returns lookup table', () => {
@@ -13,4 +19,3 @@ test('LogoTags object returns lookup table', () => {
     2: expect.anything(),
   }));
 });
-

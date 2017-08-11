@@ -19,7 +19,7 @@ const JobCard = ({ image, title, location, companyName, description, deadline, i
 
   return (
     <JobCardContainer expired={isExpired}>
-      <Link to={`/jobs/${id}`}>
+      <Link to={{ pathname: '/job', hash: `#${id}` }}>
         <img src={image} alt="" />
         <Content>
           <JobHeader expired={isExpired}>{title}</JobHeader>

@@ -8,14 +8,16 @@
       "companyName": "Mindvalley",
       "companyLogo": "",
       "headquarters": "Eindhoven, Netherlands",
-      "teamsize": "51-200 Employees",
+      "teamSize": "51-200 Employees",
+      "founded": 2011,
       "type": "Higher Eductation, Internet",
       "website": "www.lipsum.com",
-      "socialMedia": {"facebook": "", "Twitter": "", "Linkedin": ""},
+      "socialMedia": [["Facebook", "www.facebook.com"], ["Twitter", ""], ["Linkedin", ""]],
       "videoLifeAt": "",
-      "deadline": "2017-08-10",
+      "deadline": "2017-09-10",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers.",
+      "descripitionFull": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers.",
       "responsibilities": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "Vivamus euismod dui et metus cursus pharetra.",
@@ -32,7 +34,10 @@
         "Vestibulum at odio id enim blandit auctor id a mi.",
         "Morbi mattis felis eleifend ligula consectetur, eu pellentesque leo mattis.",
         "Nunc nec nisl ut nunc efficitur facilisis sed ut elit."],
-      "job Description": []
+      "jobDescription": [ 
+        "Nulla placerat augue vel ullamcorper scelerisque. Nulla placerat augue vel ullamcorper scelerisque. Nulla placerat augue vel ullamcorper scelerisque. Nulla placerat augue vel ullamcorper scelerisque.",
+        "Vestibulum at odio id enim blandit auctor id a mi.",
+        "Morbi mattis felis eleifend ligula consectetur, eu pellentesque leo mattis."]
     },
     {
       "id": "3241521516",
@@ -48,7 +53,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -57,7 +62,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -66,7 +71,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -75,7 +80,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -84,7 +89,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -93,7 +98,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -102,7 +107,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -111,7 +116,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -120,7 +125,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -129,7 +134,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -138,7 +143,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -147,7 +152,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -156,7 +161,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -165,7 +170,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -174,7 +179,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -183,7 +188,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -192,7 +197,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -201,7 +206,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -210,7 +215,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -219,7 +224,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -228,7 +233,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     },
@@ -237,7 +242,7 @@
       "title": "Email Marketing & Communications Specialist",
       "location": "Kuala Lumpur, Malaysia",
       "companyName": "Mindvalley",
-      "deadline": "2017-10-01",
+      "deadline": "2017-10-08",
       "image": "https://pixabay.com/get/e832b10620f11c22d9584518a33219c8b66ae3d019b014409cf4c57c/kuala-lumpur-170985_1920.jpg",
       "description": "Mindvalley wants you to be their next email marketing and communications specialist in Kuala Lumpur. This is your chance to become one of the masterminds behind the brilliant customer experiences Mindvalley delivers."
     }

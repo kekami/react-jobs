@@ -3,10 +3,10 @@ import { globalStyles } from '../globalStyles.js';
 
 export const Wrapper = styled.article`
   width: 300px;
-  height: 200px;
+  min-height: 200px;
   float: left;
-  border: 1px solid black;
   overflow: hidden;
+  font-size: 1rem;
 
   @media (max-width: 1000px) {
     display: none;
@@ -21,12 +21,12 @@ export const JobItems = styled.ul`
   height: 100%;
   list-style-type: none;
   padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 1rem;
 `
 
 export const Item = styled.li`
-  padding-top: 10px;
-  color: ${ props => props.item === props.parentProps.currentItem ? 'blue' : 'black' };
+  padding-top: 1rem;
+  color: ${ props => props.item === props.parentProps.currentItem ? 'blue' : globalStyles.LIGHTGREY };
 
 
   :hover {

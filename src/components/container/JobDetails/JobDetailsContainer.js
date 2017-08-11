@@ -1,8 +1,9 @@
 import React from 'react';
 import JobHeader from '../../presentational/JobHeader/JobHeader';
-import JobDetails from '../../presentational/JobDetails/JobDetails';
+import JobDetails, { ApplyNow } from '../../presentational/JobDetails/JobDetails';
 import JobNav from '../../presentational/JobNav/JobNav';
-import ApplyNow from '../../presentational/ApplyNow/ApplyNow';
+
+//import ApplyNow from '../../presentational/ApplyNow/ApplyNow';
 import { Wrapper, Details } from './styles.js';
 import data from '../../../data.json';
 
@@ -15,18 +16,18 @@ export function getData(requiredId) {
 }
 
 export function validNavItemList(job) {
-  let navItems = ["responsibilities", "requirements", "compensation", "job description"];
-
-  if (job) {
-    for (let i = 0; i < navItems.length; i++) {
-      if (!job.hasOwnProperty(navItems[i])) { 
-        navItems.splice(i, 1);
-        i--;
-      }
+  let navItems = ["responsibilities", "requirements", "compensation", "jobDescription"];
+ 
+  if (!job) { return navItems }
+  for (let i = 0; i < navItems.length; i++) {
+    if (!job.hasOwnProperty(navItems[i])) { 
+      navItems.splice(i, 1);
+      i--;
     }
   }
+  
   navItems.unshift("role summary");
-  navItems.push("local information");
+  navItems.push(`About ${job.companyName}`);
   return navItems
 }
 
@@ -86,7 +87,9 @@ class JobDetailsContainer extends React.Component {
           />
         </Details>
         <ApplyNow 
-          getRef={ el => this.applyNowRef = el } />
+          getRef={ el => this.applyNowRef = el }
+          title={job.title}
+          deadline={job.deadline} />
       </Wrapper>
     )
   }

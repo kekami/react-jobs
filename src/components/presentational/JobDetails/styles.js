@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { globalStyles } from '../globalStyles.js';
 
-const DARKGREY = "#6e6b6b";
-const LIGHTGREY = "#8a8a8a";
-const GREEN = "#09b480";
-
 export const Wrapper = styled.section`
   width: calc(100% - 200px);
   min-height: 1500px;
@@ -27,6 +23,18 @@ export const Card = styled.article`
   border: 1px solid #edebeb;
   border-radius: 5px;
   padding: 35px;
+  color: ${globalStyles.DARKGREY};
+  position: relative;
+
+  h1 {
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
+    color: black;
+  }
+
+  h2 {
+    margin-top: 0rem;
+  }
 `
 
 export const CardHeader = styled(Card)`
@@ -104,19 +112,31 @@ export const SaveForLater = styled.button`
   };
 `
 
-export const ApplyNowButton = styled.button`
+const Btn = styled.button`
   margin: 5px;
   padding: 1em 3em;
   border: none;
   border-radius: 3px;
+  cursor: pointer;
+`
+
+export const ApplyNowButton = styled(Btn)`
   background-color: #04d092;
   color: #ffffff;
-  cursor: pointer;
 
   &:hover {
     background-color: #09b480;
   };
 `;
+
+export const JoinButton = styled(Btn)`
+background-color: ${globalStyles.LIGHTGREY};
+color: white;
+
+&:hover {
+  background-color: ${globalStyles.DARKGREY}
+}
+`
 
 export const CardShare = styled(Card)`
   min-height: 20px;  
@@ -132,22 +152,17 @@ export const CardShare = styled(Card)`
   p {
     margin: 0px;
     padding: 0px;
-    color: ${DARKGREY};
     }
 `
 
 export const CardGeneralTag = styled(Card)`
   
-  h1 {
-    margin-top: 0px;
-  }
-
   li {
-    color: ${GREEN};
+    color: ${globalStyles.GREEN};
     line-height: 2rem;  
     
     span {
-      color: ${LIGHTGREY};
+      color: ${globalStyles.DARKGREY};
       padding-left: 10px;
     }
   }
@@ -156,4 +171,33 @@ export const CardGeneralTag = styled(Card)`
     margin-bottom: 0px;
   }
 
+  p {
+    line-height: 1.5rem;
+  }
+`
+
+export const Bold = styled.p`
+  font-weight: bold;
+  margin-top: 0px;
+`
+
+
+export const SummaryTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const InfoTag = styled.p`
+  display: inline-block;
+  background-color: ${globalStyles.DARKGREY};
+  color: white;
+  padding: 5px;
+  margin: 5px 10px 5px 0px;
+  font-size: 0.8rem;
+  border-radius: 2px;
+`
+
+export const ApplyNowTag = styled.div`
+  width: 100%;
+  background-color: white;
 `

@@ -3,7 +3,9 @@
   "scripts": {
   },
   "env": {
-    "NPM_CONFIG_PRODUCTION": false
+    "INHERIT_THIS_CONFIG_VAR": {
+      "required": true
+    }
   },
   "formation": {
   },

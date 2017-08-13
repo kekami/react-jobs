@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, First2 } from './styles.js';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, First2, Form } from './styles.js';
 
 
 export class Profile extends Component {
@@ -9,21 +9,30 @@ export class Profile extends Component {
 
     this.state = {
       skills: 'Skills',
+      skillHold: 'Type in a skill and hit Enter',
       skillDesc: 'My most important skills',
       languages: 'Languages',
+      langHold: 'Type in a language and hit Enter',
       langDesc: 'My languages',
     };
   }
 
-  skillnlang(name, desc) {
+  skillnlang(name, desc, hold) {
     return (
-    <First2>
-      <div>
-        <h1><strong>{name}</strong></h1>
-        <p>{desc}</p>
-      </div>
-
-    </First2>);
+      <First2>
+        <div>
+          <p><strong>{name}</strong> {desc}</p>
+        </div>
+        <form >
+          <input
+            type="text"
+            onChange={e => this.setState({ inputValue: e.target.value })}
+            value={this.setState.inputValue}
+            placeholder={hold}
+          />
+        </form>
+      </First2>
+    );
   }
 
   render() {
@@ -40,8 +49,8 @@ export class Profile extends Component {
           <ProgressBar>
             <span>Here we will drop avatar and lift it up to cover space in between of 2 tabs</span>
           </ProgressBar>
-          {this.skillnlang(this.state.skills, this.state.skillDesc)}
-          {this.skillnlang(this.state.languages, this.state.langDesc)}
+          {this.skillnlang(this.state.skills, this.state.skillDesc, this.state.skillHold)}
+          {this.skillnlang(this.state.languages, this.state.langDesc, this.state.langHold)}
         </ProfileContainer>
       </ProfileWrapper>
     );

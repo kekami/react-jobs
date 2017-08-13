@@ -34,5 +34,5 @@ export const First2 = styled.div`
     
 `;
 export const Link = styled.a``;
-export const SectionWrap = styled.div``;
+export const Form = styled.form``;
 

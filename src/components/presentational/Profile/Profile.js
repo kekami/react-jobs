@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, First2, Form } from './styles.js';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, First2, Inputform } from './styles.js';
 
 
 export class Profile extends Component {
@@ -23,14 +23,14 @@ export class Profile extends Component {
         <div>
           <p><strong>{name}</strong> {desc}</p>
         </div>
-        <form >
+        <Inputform >
           <input
             type="text"
             onChange={e => this.setState({ inputValue: e.target.value })}
             value={this.setState.inputValue}
             placeholder={hold}
           />
-        </form>
+        </Inputform>
       </First2>
     );
   }

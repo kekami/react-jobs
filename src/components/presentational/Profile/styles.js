@@ -34,5 +34,22 @@ export const First2 = styled.div`
     
 `;
 export const Link = styled.a``;
-export const Form = styled.form``;
+export const Inputform = styled.form`
+    display: flex;
+    flex-direction: column;
+    input {
+        margin: 0;
+        padding: 0.5em;
+    }
+
+    @media (min-width: 50em) {
+        flex-direction: row;
+        justify-content: left;
+
+        input {
+            margin: 0;
+            width: 25em;
+        }
+    }
+`;
 

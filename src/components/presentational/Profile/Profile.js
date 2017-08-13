@@ -16,6 +16,8 @@ export class Profile extends Component {
       langDesc: 'My languages',
       addSkill: '',
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event){
@@ -40,6 +42,7 @@ export class Profile extends Component {
               placeholder={hold}
             />
           </Inputform>
+          {addTags()}
         </First2>
       </SectionWrapper>
     );

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { globalStyles } from '../globalStyles.js';
+import { globalStyles } from '../globalStyles';
 
 export const ProfileWrapper = styled.div`
     min-height: 100vh;
@@ -17,14 +17,17 @@ export const ProfileWrapper = styled.div`
 export const ProfileContainer = styled.div`
  background-color: #fff;
  border-radius: 10px;
+ padding: 2em;
 `;
 
 export const ProfileNav = styled.div``;
 export const ProgressBar = styled.div`
    
 `;
-export const SectionBox = styled.div`
-     padding: 2em;
+export const SectionWrapper = styled.div`
+    margin: 3em;
+    background-color:#eee;
+    padding: 2em;
 `;
 export const SectionHead = styled.div`
     padding: 1em;

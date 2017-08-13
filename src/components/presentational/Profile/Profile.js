@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, First2, Inputform } from './styles.js';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Inputform } from './styles';
 
 
 export class Profile extends Component {
@@ -14,24 +14,34 @@ export class Profile extends Component {
       languages: 'Languages',
       langHold: 'Type in a language and hit Enter',
       langDesc: 'My languages',
+      addSkill: '',
     };
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    this.setState({
+      addSkill: this.setState.inputValue,
+    });
   }
 
   skillnlang(name, desc, hold) {
     return (
-      <First2>
-        <div>
-          <p><strong>{name}</strong> {desc}</p>
-        </div>
-        <Inputform >
-          <input
-            type="text"
-            onChange={e => this.setState({ inputValue: e.target.value })}
-            value={this.setState.inputValue}
-            placeholder={hold}
-          />
-        </Inputform>
-      </First2>
+      <SectionWrapper>
+        <First2>
+          <div>
+            <p><strong>{name}</strong> {desc}</p>
+          </div>
+          <Inputform onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              onChange={e => this.setState({ inputValue: e.target.value })}
+              value={this.setState.inputValue}
+              placeholder={hold}
+            />
+          </Inputform>
+        </First2>
+      </SectionWrapper>
     );
   }
 

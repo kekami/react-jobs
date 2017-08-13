@@ -30,8 +30,8 @@ export const SectionHead = styled.div`
     padding: 1em;
     
 `;
-export const Description = styled.div`
-    color: grey;
+export const First2 = styled.div`
+    
 `;
 export const Link = styled.a``;
 export const SectionWrap = styled.div``;

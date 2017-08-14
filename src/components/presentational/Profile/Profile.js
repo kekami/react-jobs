@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Inputform } from './styles';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Inputform, SkillTag } from './styles';
 
 
 export class Profile extends Component {
@@ -15,19 +15,25 @@ export class Profile extends Component {
       langHold: 'Type in a language and hit Enter',
       langDesc: 'My languages',
       addSkill: '',
+      tags: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(event){
+  handleSubmit(event) {
     event.preventDefault();
     this.setState({
-      addSkill: this.setState.inputValue,
+      addSkill: this.state.inputValue,
     });
   }
 
   skillnlang(name, desc, hold) {
+    let tags = [];
+    if (this.state.addSkill) {
+      tags = tags.push(this.state.addSkill);
+      tags.shift((tag, i) => <SkillTag key={i} {...tag} />);
+    }
     return (
       <SectionWrapper>
         <First2>
@@ -42,14 +48,13 @@ export class Profile extends Component {
               placeholder={hold}
             />
           </Inputform>
-          {addTags()}
+          {tags}
         </First2>
       </SectionWrapper>
     );
   }
 
   render() {
-    const Links = '';
     return (
       <ProfileWrapper>
         <ProfileContainer>

@@ -37,6 +37,15 @@ export const First2 = styled.div`
     
 `;
 export const Link = styled.a``;
+export const SkillTag = styled.p`
+    display: inline:block;
+    background-color: ${globalStyles.DARKGREY};
+    color: white;
+    padding: 5px;
+    margin: 5px 10px 5px 0px;
+    font-size: 0.8rem;
+    border-radius: 2px;
+`;
 export const Inputform = styled.form`
     display: flex;
     flex-direction: column;

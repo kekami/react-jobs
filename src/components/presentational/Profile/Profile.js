@@ -28,12 +28,11 @@ export class Profile extends Component {
     });
   }
 
+  addingTags(tag) {
+    return <SkillTag> {tag} </SkillTag> ;
+  }
+
   skillnlang(name, desc, hold) {
-    let tags = [];
-    if (this.state.addSkill) {
-      tags = tags.push(this.state.addSkill);
-      tags.shift((tag, i) => <SkillTag key={i} {...tag} />);
-    }
     return (
       <SectionWrapper>
         <First2>
@@ -48,7 +47,7 @@ export class Profile extends Component {
               placeholder={hold}
             />
           </Inputform>
-          {tags}
+          {this.addingTags(this.state.addSkill)}
         </First2>
       </SectionWrapper>
     );

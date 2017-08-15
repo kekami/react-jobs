@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Edit, Inputform, TagsForm, SkillTag } from './styles';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Edit, Inputform, I, TagsForm, SkillTag } from './styles';
 
 
 export class Profile extends Component {
@@ -8,6 +8,7 @@ export class Profile extends Component {
     super(props);
 
     this.state = {
+      show: false,
       addSkill: '',
       tags: [],
     };
@@ -24,8 +25,14 @@ export class Profile extends Component {
     });
   }
 
+  onClick() {
+    this.setState({ show: !this.state.show });
+
+  }
+
   addingTags(tags) {
-    return this.state.tags.map((tag, i) => <SkillTag key={i}> {tag} </SkillTag>);
+    return this.state.tags.map((tag, i) => 
+      <SkillTag key={i}> {tag} </SkillTag>);
   }
 
   skill() {
@@ -34,9 +41,11 @@ export class Profile extends Component {
         <First2>
           <div>
             <p><strong>Skill</strong> My important skills</p>     
-            <Edit>Edit</Edit>
+            <Edit onClick={this.onClick}><I className="fa fa-pencil" aria-hidden="true"/>
+              Edit
+            </Edit>
           </div>
-          <Inputform onSubmit={this.handleSubmit}>
+          <Inputform style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
             <input
               type="text"
               onChange={e => this.setState({ inputValue: e.target.value })}

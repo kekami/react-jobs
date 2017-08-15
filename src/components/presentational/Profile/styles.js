@@ -3,7 +3,7 @@ import { globalStyles } from '../globalStyles';
 
 export const ProfileWrapper = styled.div`
     min-height: 100vh;
-    min-width: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,9 +15,9 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const ProfileContainer = styled.div`
- background-color: #fff;
- border-radius: 10px;
- padding: 2em;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2em;
 `;
 
 export const ProfileNav = styled.div``;
@@ -42,8 +42,9 @@ export const First2 = styled.div`
     
 `;
 export const Edit = styled.button`
-    border: solid 2px white;
-    
+    padding: 0.4em;
+    background-color:#eee;
+    border: none;
 `;
 export const Link = styled.a``;
 export const TagsForm = styled.div`
@@ -67,6 +68,7 @@ export const Inputform = styled.form`
     input {
         margin: 0;
         padding: 0.5em;
+        min-width: 50vw;
     }
 
     @media (min-width: 50em) {
@@ -79,4 +81,6 @@ export const Inputform = styled.form`
         }
     }
 `;
-
+export const I = styled.i`
+    padding-right: 0.2em;
+`;

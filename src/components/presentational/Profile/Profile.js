@@ -9,7 +9,7 @@ export class Profile extends Component {
 
     this.state = {
       show: false,
-      show1: false,
+      show1: true,
       addSkill: '',
       tags: [],
     };
@@ -32,7 +32,7 @@ export class Profile extends Component {
     this.setState({ show: !this.state.show });
   }
   onDoubleClick() {
-    this.setState({ show: !this.state.show1 });
+    this.setState({ show1: !this.state.show1 });
   }
 
   addingTags(tags) {
@@ -40,7 +40,8 @@ export class Profile extends Component {
       <SkillTag key={i} onDoubleClick={this.onDoubleClick} >
         <Btn>{tag} <I className="fa fa-times" aria-hidden="true" /></Btn>
       </SkillTag>),
-    ); }
+    );
+  }
 
   skill() {
     return (

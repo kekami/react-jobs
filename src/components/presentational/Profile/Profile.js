@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Inputform, TagsForm, SkillTag } from './styles';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Edit, Inputform, TagsForm, SkillTag } from './styles';
 
 
 export class Profile extends Component {
@@ -33,7 +33,8 @@ export class Profile extends Component {
       <SectionWrapper>
         <First2>
           <div>
-            <p><strong>Skill</strong> My important skills</p>
+            <p><strong>Skill</strong> My important skills</p>     
+            <Edit>Edit</Edit>
           </div>
           <Inputform onSubmit={this.handleSubmit}>
             <input

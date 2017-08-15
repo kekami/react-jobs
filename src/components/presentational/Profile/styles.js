@@ -34,6 +34,15 @@ export const SectionHead = styled.div`
     
 `;
 export const First2 = styled.div`
+    div {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+`;
+export const Edit = styled.button`
+    border: solid 2px white;
     
 `;
 export const Link = styled.a``;

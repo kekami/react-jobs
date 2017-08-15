@@ -1,17 +1,6 @@
 import React from 'react';
 import { 
   Wrapper, 
-  CardHeader, 
-  JobHeaderTitle, 
-  JobHeaderBaseContainer, 
-  ExpiredMessage,
-  TimeContainer,
-  TimeLeft, 
-  JobHeaderBase, 
-  HeaderActions,
-  SaveForLater,
-  ApplyNowButton,
-  CardShare,
   CardGeneralTag,
   SummaryTitle,
   InfoTag,
@@ -19,64 +8,7 @@ import {
   JoinButton,
    } from './styles';
 import { timeLeft } from '../JobCard/JobCard'
-import { Link } from 'react-router-dom';
-
-
-export class RoleSummary extends React.Component {
-  render () {
-
-  const {title, deadline, applyNow = false, getRef} = this.props;
-
-  const expiration = timeLeft(deadline);
-  const isExpired = expiration.expiresIn === 'Expired';  
- 
-// if expired display note that it has
-// link for further information on an organisation from the summary page.
-
-    return (
-      <div ref={ ( applyNow ) ? getRef : "" }>
-        <CardHeader>
-          <JobHeaderTitle>{title}</JobHeaderTitle>
-          <JobHeaderBaseContainer>      
-            { isExpired ? <ExpiredMessage>Expired</ExpiredMessage> : 
-              ( 
-                <JobHeaderBase>
-                  <TimeContainer>
-                    <p>
-                      <TimeLeft
-                        expiring={expiration.unit === 'day' || expiration.unit === 'days'}
-                      > 
-                        {`${expiration.expiresIn} ${expiration.unit}`} left
-                      </TimeLeft> 
-                      <span> </span> to apply
-                    </p>
-                    <p>
-                      Position available immediately
-                    </p>
-                  </TimeContainer>
-                  <HeaderActions>
-                    <SaveForLater>Save for later<i className="fa fa-bookmark" aria-hidden="true" /></SaveForLater>
-                    <Link to="/apply">
-                      <ApplyNowButton>
-                        Apply Now 
-                      </ApplyNowButton>
-                    </Link>
-                  </HeaderActions>
-                </JobHeaderBase>
-              )
-            }
-          </JobHeaderBaseContainer>
-        </CardHeader>
-        { applyNow ? <div/> :
-          <CardShare>
-              <p>Know someone who would be perfect for this job? Share the link:</p>
-          </CardShare>  
-        }
-      </div>
-    )
-  }
-}
-
+import { RoleSummaryHeader } from '../RoleSummary/RoleSummary'
 
 
 const AboutTitle = (props) => {
@@ -196,7 +128,7 @@ export default function JobDetails(props) {
   const cardIndex = {
     "role summary": 
       <div>
-        <RoleSummary {...props.job}/>
+        <RoleSummaryHeader {...props.job}/>
         <AboutSummary {...props.job} />
       </div>,
     "responsibilities": <GeneralCard points={props.job.responsibilities} type={'Responsibilites'} />,

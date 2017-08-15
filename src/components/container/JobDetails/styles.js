@@ -23,6 +23,12 @@ export const Details = styled.div`
   }
 ` 
 
+export const JobDetailsWrapper = styled.section`
+  width: calc(100% - 200px);
+  padding: 10px;
+  float: left;
+`
+
 export const JobNavSubcomponentLayout = styled.div`
   width: 300px;
   float: left;
@@ -30,5 +36,5 @@ export const JobNavSubcomponentLayout = styled.div`
   @media (max-width: 1000px) {
     display: none;
   }
-
 `
+

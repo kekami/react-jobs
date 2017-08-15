@@ -2,7 +2,7 @@ import React from 'react';
 import JobHeader from '../../presentational/JobHeader/JobHeader';
 import JobDetails from '../../presentational/JobDetails/JobDetails';
 import JobNav from '../../presentational/JobNav/JobNav';
-import { ApplyNow } from '../../presentational/ApplyNow/ApplyNow';
+import { RoleSummaryFooter } from '../../presentational/RoleSummary/RoleSummary';
 import { Wrapper, Details } from './styles.js';
 import data from '../../../data.json';
 
@@ -37,7 +37,7 @@ class JobDetailsContainer extends React.Component {
     this.state = {
       jobData: null,
       currentItem: "description",
-      applyNowOffsetTop: null
+      roleSummaryFooterOffsetTop: null
     }
   }
 
@@ -58,7 +58,7 @@ class JobDetailsContainer extends React.Component {
   componentDidUpdate() {
     if (this.state.newData) {
       this.setState({
-        applyNowOffsetTop: this.applyNowRef.offsetTop,
+        roleSummaryBottomOffsetTop: this.roleSummaryFooterRef.offsetTop,
         jobNavHeight: this.jobNavRef.clientHeight,
         newData: false
       })
@@ -85,9 +85,10 @@ class JobDetailsContainer extends React.Component {
             getRef={ el => this.jobNavRef = el } 
           />
         </Details>
-        <ApplyNow 
-          getRef={ el => this.applyNowRef = el }
+        <RoleSummaryFooter 
+          ref={ el => this.roleSummaryFooterRef = el }
           title={job.title}
+          companyName={job.companyName}
           deadline={job.deadline} />
       </Wrapper>
     )

@@ -9,12 +9,14 @@ export class Profile extends Component {
 
     this.state = {
       show: false,
+      show1: false,
       addSkill: '',
       tags: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.onDoubleClick = this.onDoubleClick.bind(this);
   }
 
   handleSubmit(event) {
@@ -29,12 +31,14 @@ export class Profile extends Component {
   onClick() {
     this.setState({ show: !this.state.show });
   }
+  onDoubleClick() {
+    this.setState({ show: !this.state.show1 });
+  }
 
   addingTags(tags) {
     return this.state.tags.map((tag, i) => (
-      <SkillTag key={i}>
-        {tag}
-        <Btn><I className="fa fa-times" aria-hidden="true" /></Btn>
+      <SkillTag key={i} onDoubleClick={this.onDoubleClick} >
+        <Btn>{tag} <I className="fa fa-times" aria-hidden="true" /></Btn>
       </SkillTag>),
     ); }
 

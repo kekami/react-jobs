@@ -14,6 +14,7 @@ export class Profile extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   handleSubmit(event) {

@@ -41,6 +41,10 @@ export const First2 = styled.div`
     }
     
 `;
+export const Btn = styled.button`
+    background-color:#eee;
+    border: none;
+`;
 export const Edit = styled.button`
     padding: 0.4em;
     background-color:#eee;

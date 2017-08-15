@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Edit, Inputform, I, TagsForm, SkillTag } from './styles';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, SkillTag } from './styles';
 
 
 export class Profile extends Component {
@@ -19,7 +19,7 @@ export class Profile extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let tags = this.state.tags.concat(this.state.inputValue);
+    const tags = this.state.tags.concat(this.state.inputValue);
     this.setState({
       tags,
       inputValue: '',
@@ -28,13 +28,15 @@ export class Profile extends Component {
 
   onClick() {
     this.setState({ show: !this.state.show });
-
   }
 
   addingTags(tags) {
-    return this.state.tags.map((tag, i) => 
-      <SkillTag key={i}> {tag} </SkillTag>);
-  }
+    return this.state.tags.map((tag, i) => (
+      <SkillTag key={i}>
+        {tag}
+        <Btn><I className="fa fa-times" aria-hidden="true" /></Btn>
+      </SkillTag>),
+    ); }
 
   skill() {
     return (
@@ -43,8 +45,10 @@ export class Profile extends Component {
           <div>
             <p><strong>Skill</strong> My important skills</p>
             <Edit onClick={this.onClick}>
-              {this.state.show ? <div><I className="fa fa-floppy-o" aria-hidden="true" /> Save</div> : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div>}
-              
+              { this.state.show ?
+                <div><I className="fa fa-floppy-o" aria-hidden="true" /> Save</div>
+                : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div> }
+
             </Edit>
           </div>
           <Inputform style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>

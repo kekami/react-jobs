@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { globalStyles } from '../globalStyles.js';
-import { JobDetailsWrapper } from '../../container/JobDetails/styles';
 import { C1_Card, C1_Btn } from '../JobDetails/styles';
 
 export const CardHeader = styled(C1_Card)`
@@ -51,6 +49,7 @@ export const TimeContainer = styled.div`
 
 export const HeaderActions = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const SaveForLater = styled.button`

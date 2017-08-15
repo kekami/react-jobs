@@ -7,7 +7,6 @@ import {
   Bold,
   JoinButton,
    } from './styles';
-import { timeLeft } from '../JobCard/JobCard'
 import { RoleSummaryHeader } from '../RoleSummary/RoleSummary'
 
 
@@ -25,7 +24,7 @@ const AboutTitle = (props) => {
     }
   }
 
-  const InfoTags = tags.map( tag => <InfoTag>{tag[1]}: {props[tag[0]]}</InfoTag> );
+  const InfoTags = tags.map( tag => <InfoTag key={tag[0]}>{tag[1]}: {props[tag[0]]}</InfoTag> );
 
   return (
     <div>
@@ -60,7 +59,7 @@ const About = (props) => {
 
   if (props.hasOwnProperty("socialMedia")) {
     const socialMediaMap = props.socialMedia.map( (media) => {
-      return media[1] ? (<a href={media[1]} alt={`company ${media[0]}`}>{media[0]}</a>) : null
+      return media[1] ? (<a key={'media[0]'} href={media[1]} alt={`company ${media[0]}`}>{media[0]}</a>) : null
       }
     );
 
@@ -68,7 +67,7 @@ const About = (props) => {
       (acc, media ) => { return (media == null) ? acc : acc.concat([media]) },
        []);
     
-    socialMedia = (socialMediaReduced == []) ? "" : ( <p>Social Media: {socialMediaReduced}</p> )
+    socialMedia = (socialMediaReduced === []) ? "" : ( <p>Social Media: {socialMediaReduced}</p> )
   }
  
   return (
@@ -101,7 +100,7 @@ const GeneralCard = ({points, type }) => {
 const JobDescriptionCard = ({content}) => {
 
   if (content === undefined) { return <CardGeneralTag />}
-  const paragraphs = content.map( item => <p>{item}</p> )
+  const paragraphs = content.map( item => <p key={item.slice(0, 10)}>{item}</p> )
 
   return (
     <CardGeneralTag>
@@ -127,16 +126,16 @@ export default function JobDetails(props) {
   
   const cardIndex = {
     "role summary": 
-      <div>
+      <div key={'roleSummary'}>
         <RoleSummaryHeader {...props.job}/>
         <AboutSummary {...props.job} />
       </div>,
-    "responsibilities": <GeneralCard points={props.job.responsibilities} type={'Responsibilites'} />,
-    "requirements": <GeneralCard points={props.job.requirements} type={'Requirements'} />,
-    "compensation": <GeneralCard points={props.job.compensation} type={'Compensation'} />,
-    "jobDescription": <JobDescriptionCard content={props.job.jobDescription} />,
-    "about": <About {...props.job} />,
-    "notifications": <NotificationsCard />
+    "responsibilities": <GeneralCard key={'responsibilities'} points={props.job.responsibilities} type={'Responsibilites'} />,
+    "requirements": <GeneralCard key={'requirements'} points={props.job.requirements} type={'Requirements'} />,
+    "compensation": <GeneralCard key={'compensation'} points={props.job.compensation} type={'Compensation'} />,
+    "jobDescription": <JobDescriptionCard key={'jobDescription'} content={props.job.jobDescription} />,
+    "about": <About key={'about'} {...props.job} />,
+    "notifications": <NotificationsCard key={'notifications'} />
   } 
   
   let displayCards = props.items.map((item) => cardIndex[item])

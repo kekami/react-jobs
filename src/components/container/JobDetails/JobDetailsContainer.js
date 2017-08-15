@@ -71,7 +71,7 @@ class JobDetailsContainer extends React.Component {
     const job = this.state.jobData ? this.state.jobData : {};
 
     return (
-      <Wrapper>   
+      <Wrapper ref={ el => this.pageRef = el} >   
         <JobHeader imageUrl={imageUrl}/>
         <Details>
           <JobDetails 

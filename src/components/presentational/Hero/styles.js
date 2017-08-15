@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { globalStyles } from '../globalStyles';
-import rick from './assets/rick.jpg';
+//import rick from './assets/rick.jpg';
 
 export const Wrapper = styled.div`
   height: 100vh;

@@ -81,11 +81,10 @@ export class RoleSummaryFooter extends React.Component {
 
     const expiration = timeLeft(deadline);
     const isExpired = expiration.expiresIn === 'Expired';      
-  
+    
     return (
       <div ref={getRef}>
-        { isExpired ? <FooterWrapper isExpired />  : (
-          <FooterWrapper> 
+          <FooterWrapper isExpired={isExpired} > 
             <Details>
               <JobDetailsWrapper>
                 <CardFooter>
@@ -116,7 +115,6 @@ export class RoleSummaryFooter extends React.Component {
               <JobNavSubcomponentLayout />
             </Details>
           </FooterWrapper>
-        )}
     </div>
     )
   }

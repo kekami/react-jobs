@@ -40,6 +40,7 @@ export const Link = styled.a``;
 export const TagsForm = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 `;
 export const SkillTag = styled.p`
     display: inline:block;

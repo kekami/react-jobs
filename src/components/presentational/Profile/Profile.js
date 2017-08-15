@@ -41,9 +41,10 @@ export class Profile extends Component {
       <SectionWrapper>
         <First2>
           <div>
-            <p><strong>Skill</strong> My important skills</p>     
-            <Edit onClick={this.onClick}><I className="fa fa-pencil" aria-hidden="true"/>
-              Edit
+            <p><strong>Skill</strong> My important skills</p>
+            <Edit onClick={this.onClick}>
+              {this.state.show ? <div><I className="fa fa-floppy-o" aria-hidden="true" /> Save</div> : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div>}
+              
             </Edit>
           </div>
           <Inputform style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>

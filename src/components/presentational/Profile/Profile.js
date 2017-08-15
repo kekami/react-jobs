@@ -25,7 +25,7 @@ export class Profile extends Component {
   }
 
   addingTags(tags) {
-    return this.state.tags.map(tag => <SkillTag> {tag} </SkillTag>) ;
+    return this.state.tags.map((tag, i) => <SkillTag key={i}> {tag} </SkillTag>);
   }
 
   skill() {
@@ -33,7 +33,7 @@ export class Profile extends Component {
       <SectionWrapper>
         <First2>
           <div>
-            <p><strong>Skill</strong>My important skills</p>
+            <p><strong>Skill</strong> My important skills</p>
           </div>
           <Inputform onSubmit={this.handleSubmit}>
             <input

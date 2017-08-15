@@ -50,6 +50,7 @@ export const SkillTag = styled.p`
     margin: 5px 10px 5px 0px;
     font-size: 0.8rem;
     border: solid 2px #fff;
+    border-radius: 5px;
 `;
 export const Inputform = styled.form`
     display: flex;

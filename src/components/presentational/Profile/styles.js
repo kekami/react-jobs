@@ -37,14 +37,18 @@ export const First2 = styled.div`
     
 `;
 export const Link = styled.a``;
+export const TagsForm = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
 export const SkillTag = styled.p`
     display: inline:block;
     background-color: ${globalStyles.DARKGREY};
-    color: white;
+    color: black;
     padding: 5px;
     margin: 5px 10px 5px 0px;
     font-size: 0.8rem;
-    border-radius: 2px;
+    border: solid 2px #fff;
 `;
 export const Inputform = styled.form`
     display: flex;

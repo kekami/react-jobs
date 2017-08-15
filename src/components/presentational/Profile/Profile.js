@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Inputform, SkillTag } from './styles';
+import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Inputform, TagsForm, SkillTag } from './styles';
 
 
 export class Profile extends Component {
@@ -8,9 +8,6 @@ export class Profile extends Component {
     super(props);
 
     this.state = {
-      languages: 'Languages',
-      langHold: 'Type in a language and hit Enter',
-      langDesc: 'My languages',
       addSkill: '',
       tags: [],
     };
@@ -20,13 +17,15 @@ export class Profile extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    let tags = this.state.tags.concat(this.state.inputValue);
     this.setState({
-      addSkill: this.state.inputValue,
+      tags,
+      inputValue: '',
     });
   }
 
-  addingTags(tag) {
-    return <SkillTag> {tag} </SkillTag> ;
+  addingTags(tags) {
+    return this.state.tags.map(tag => <SkillTag> {tag} </SkillTag>) ;
   }
 
   skill() {
@@ -40,11 +39,13 @@ export class Profile extends Component {
             <input
               type="text"
               onChange={e => this.setState({ inputValue: e.target.value })}
-              value={this.setState.inputValue}
+              value={this.state.inputValue}
               placeholder="Type in a skill and hit Enter"
             />
           </Inputform>
-          {this.addingTags(this.state.addSkill)}
+          <TagsForm>
+            {this.addingTags(this.state.addSkill)}
+          </TagsForm>
         </First2>
       </SectionWrapper>
     );

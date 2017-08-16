@@ -10,19 +10,24 @@ export default function JobNav(props) {
       if ( item === "jobDescription" ) { item = "job description"};
       const itemCap = capitalise(item)
 
-      return <Item key={item} item={item} parentProps={props}>{itemCap}</Item>
+      return <Item key={item} data-item={item} parentProps={props}>{itemCap}</Item>
     }
   )
   
   return (
-      <Wrapper>
-           <div ref={props.getRef}>
-         <InnerBox>
-          <JobItems>
+    <Wrapper 
+      fixed={props.fixed} 
+      bottom={props.bottom}
+      top={props.top} 
+      left={props.left}
+      >
+        <div ref={props.getRef}> 
+        <InnerBox>
+          <JobItems onClick={ props.handleClick }>
             {Items}
           </JobItems>
         </InnerBox>
-        </div>
-      </Wrapper>
+      </div>
+    </Wrapper>
   );
 }

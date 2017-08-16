@@ -6,4 +6,11 @@ export const Wrapper = styled.div`
   width: 100vw;
   border: none;
   background-color: ${globalStyles.bgColor};
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+  }
 ` 

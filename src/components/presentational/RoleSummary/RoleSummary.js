@@ -77,14 +77,14 @@ export class RoleSummaryHeader extends React.Component {
 
 export class RoleSummaryFooter extends React.Component {
   render() {
-    const { getRef, title, companyName, deadline } = this.props;
+    const { getRef, title, companyName, deadline, fixed } = this.props;
 
     const expiration = timeLeft(deadline);
     const isExpired = expiration.expiresIn === 'Expired';      
     
     return (
       <div ref={getRef}>
-          <FooterWrapper isExpired={isExpired} > 
+          <FooterWrapper isExpired={isExpired} fixed={fixed} > 
             <Details>
               <JobDetailsWrapper>
                 <CardFooter>

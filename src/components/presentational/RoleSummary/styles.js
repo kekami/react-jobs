@@ -110,7 +110,9 @@ export const FooterWrapper = styled.div`
   width: 100%;
   background-color: white;
   display: ${props => props.isExpired ? 'none' : 'block'};
-  margin-bottom: -100px;
+  position: ${props => props.fixed ? 'fixed' : 'static'};
+  bottom: 0px;
+  margin-bottom: ${props => props.fixed ? '0px' : '-100px'};
 `;
 
 export const CardFooter = styled.article`
@@ -118,6 +120,9 @@ export const CardFooter = styled.article`
     padding: 0px 35px 35px 35px;
     position: relative;
     display: flex;
+    justify-content: space-between;
+
+    font-size: 0.8rem;
 
     p {
       margin-top: 2px;

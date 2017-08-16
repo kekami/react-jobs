@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { SkillTags } from './SkillTags';
 import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, SkillTag } from './styles';
 
 
@@ -10,7 +9,7 @@ export class Profile extends Component {
 
     this.state = {
       show: false,
-      show1: '',
+      show1: true,
       addSkill: '',
       tags: [],
     };
@@ -22,25 +21,29 @@ export class Profile extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const tags = this.state.tags.concat(this.state.inputValue);
+    const newTag = {
+      title: this.state.inputValue,
+      isShowing: true,
+    }
+    const tags = this.state.tags.concat(newTag);
     this.setState({
       tags,
       inputValue: '',
-      show1: true,
     });
   }
 
   onClick() {
     this.setState({ show: !this.state.show });
   }
-  onClick1() {
-    this.setState({ show1: !this.state.show1 });
+  onClick1(index) {
+    const tags = this.state.tags.filter((tag, i) => i !== index);
+    this.setState({ tags });
   }
 
-  addingTags() {
+  addingTags() { 
     return this.state.tags.map((tag, i) => (
-      <SkillTag key={i} onClick={this.onClick1} showing={this.state.show1}>
-        <Btn>{tag} <I className="fa fa-times" aria-hidden="true" /></Btn>
+      <SkillTag key={i} onClick={() => this.onClick1(i)} showing={tag.isShowing}>
+        <Btn>{tag.title} <I className="fa fa-times" aria-hidden="true" /></Btn>
       </SkillTag>
     ),
     );

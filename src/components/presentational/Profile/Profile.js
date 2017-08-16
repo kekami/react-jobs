@@ -16,7 +16,7 @@ export class Profile extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClick = this.onClick.bind(this);
-    this.onDoubleClick = this.onDoubleClick.bind(this);
+    this.onClick1 = this.onClick1.bind(this);
   }
 
   handleSubmit(event) {
@@ -25,21 +25,23 @@ export class Profile extends Component {
     this.setState({
       tags,
       inputValue: '',
+      show1: true,
     });
   }
 
   onClick() {
     this.setState({ show: !this.state.show });
   }
-  onDoubleClick() {
+  onClick1() {
     this.setState({ show1: !this.state.show1 });
   }
 
-  addingTags(tags) {
+  addingTags() {
     return this.state.tags.map((tag, i) => (
-      <SkillTag key={i} onDoubleClick={this.onDoubleClick} >
+      <SkillTag key={i} onClick={this.onClick1} showing={this.state.show1}>
         <Btn>{tag} <I className="fa fa-times" aria-hidden="true" /></Btn>
-      </SkillTag>),
+      </SkillTag>
+    ),
     );
   }
 
@@ -48,7 +50,7 @@ export class Profile extends Component {
       <SectionWrapper>
         <First2>
           <div>
-            <p><strong>Skill</strong> My important skills</p>
+            <p><strong>Skills</strong> My important skills</p>
             <Edit onClick={this.onClick}>
               { this.state.show ?
                 <div><I className="fa fa-floppy-o" aria-hidden="true" /> Save</div>

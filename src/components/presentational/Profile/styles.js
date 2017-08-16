@@ -49,6 +49,7 @@ export const Edit = styled.button`
     padding: 0.4em;
     background-color:#eee;
     border: none;
+    cursor: pointer;
 `;
 export const Link = styled.a``;
 export const TagsForm = styled.div`
@@ -57,7 +58,7 @@ export const TagsForm = styled.div`
     flex-wrap: wrap;
 `;
 export const SkillTag = styled.p`
-    display: inline:block;
+    display: ${props => props.showing ? 'inline-block' : 'none'};
     background-color: ${globalStyles.DARKGREY};
     color: black;
     padding: 5px;

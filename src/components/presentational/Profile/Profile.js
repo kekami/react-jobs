@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
+import { SkillTags } from './SkillTags';
 import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link, SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, SkillTag } from './styles';
 
 
@@ -9,7 +10,7 @@ export class Profile extends Component {
 
     this.state = {
       show: false,
-      show1: true,
+      show1: '',
       addSkill: '',
       tags: [],
     };

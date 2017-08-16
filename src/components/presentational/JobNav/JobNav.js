@@ -7,10 +7,12 @@ const capitalise = (str) => str.toUpperCase()
 export default function JobNav(props) {
 
   const Items = props.items.map((item) => {
-      if ( item === "jobDescription" ) { item = "job description"};
-      const itemCap = capitalise(item)
+    let itemName = typeof(item) === 'string' ? item : item[0]
+    
+    if ( itemName === "jobDescription" ) { itemName = "job description"};
+      const itemCap = capitalise(itemName)
 
-      return <Item key={item} data-item={item} parentProps={props}>{itemCap}</Item>
+      return <Item key={itemName} data-item={itemName} parentProps={props}>{itemCap}</Item>
     }
   )
   

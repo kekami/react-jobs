@@ -32,7 +32,7 @@ export class RoleSummaryHeader extends React.Component {
 // link for further information on an organisation from the summary page.
 
     return (
-      <div>
+      <div ref={(ref) => this.props.storeRef(ref, 'role summary')}>
         <CardHeader>
           <JobHeaderTitle>{title}</JobHeaderTitle>
           <JobHeaderBaseContainer>      

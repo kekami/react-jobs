@@ -71,42 +71,48 @@ const About = (props) => {
   }
  
   return (
-    <CardGeneralTag>
-      <AboutTitle 
-        {...props}  
-      />
-      <p>{props.descriptionFull}</p>
-      <p>Website: <a href={props.website} alt="company website">{props.website}</a></p>
-      {socialMedia}
-    </CardGeneralTag>
+    <div  ref={(ref) => props.storeRef(ref, 'about')}>
+      <CardGeneralTag>
+        <AboutTitle 
+          {...props}  
+        />
+        <p>{props.descriptionFull}</p>
+        <p>Website: <a href={props.website} alt="company website">{props.website}</a></p>
+        {socialMedia}
+      </CardGeneralTag>
+    </div>
   )
 }
 
-const GeneralCard = ({points, type }) => {
+const GeneralCard = ({points, type, storeRef}) => {
   
   if (points === undefined) { return <CardGeneralTag /> }
   const listItems = points.map( item => <li key={item.slice(0, 10)}><span>{item}</span></li>);
   
   return (
-    <CardGeneralTag>
-      <h1>{type}</h1>
-      <ul>
-        {listItems}
-      </ul>
-    </CardGeneralTag>
+    <div  ref={(ref) => storeRef(ref, type)}>
+      <CardGeneralTag >
+        <h1>{type}</h1>
+        <ul>
+          {listItems}
+        </ul>
+      </CardGeneralTag>
+    </div>
   )
 }
 
-const JobDescriptionCard = ({content}) => {
+const JobDescriptionCard = ({content, storeRef}) => {
 
   if (content === undefined) { return <CardGeneralTag />}
   const paragraphs = content.map( item => <p key={item.slice(0, 10)}>{item}</p> )
 
   return (
-    <CardGeneralTag>
-      <h1>Job Description</h1>
-      {paragraphs}
-    </CardGeneralTag>
+    <div  ref={(ref) => storeRef(ref, 'jobDescription')}>
+      <CardGeneralTag >
+        <h1>Job Description</h1>
+        {paragraphs}
+      </CardGeneralTag>
+    </div>
   )
 }
 
@@ -127,18 +133,22 @@ export default function JobDetails(props) {
   const cardIndex = {
     "role summary": 
       <div key={'roleSummary'}>
-        <RoleSummaryHeader {...props.job}/>
+        <RoleSummaryHeader {...props.job} storeRef={props.storeRef}/>
         <AboutSummary {...props.job} />
       </div>,
-    "responsibilities": <GeneralCard key={'responsibilities'} points={props.job.responsibilities} type={'Responsibilites'} />,
-    "requirements": <GeneralCard key={'requirements'} points={props.job.requirements} type={'Requirements'} />,
-    "compensation": <GeneralCard key={'compensation'} points={props.job.compensation} type={'Compensation'} />,
-    "jobDescription": <JobDescriptionCard key={'jobDescription'} content={props.job.jobDescription} />,
-    "about": <About key={'about'} {...props.job} />,
+    "responsibilities": <GeneralCard key={'responsibilities'} points={props.job.responsibilities} type={'responsibilities'} storeRef={props.storeRef} />,
+    "requirements": <GeneralCard key={'requirements'} points={props.job.requirements} type={'requirements'} storeRef={props.storeRef} />,
+    "compensation": <GeneralCard key={'compensation'} points={props.job.compensation} type={'compensation'} storeRef={props.storeRef} />,
+    "jobDescription": <JobDescriptionCard key={'jobDescription'} content={props.job.jobDescription} storeRef={props.storeRef} />,
+    "about": <About key={'about'} {...props.job} storeRef={props.storeRef}  />,
     "notifications": <NotificationsCard key={'notifications'} />
   } 
   
-  let displayCards = props.items.map((item) => cardIndex[item])
+  let displayCards = props.items.map((item) => {
+    const itemName = (typeof(item) === 'string') ? item : item[0];
+    return cardIndex[itemName]
+    }
+  )
   displayCards.push(cardIndex["about"], cardIndex["notifications"])
 
   return (

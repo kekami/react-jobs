@@ -8,6 +8,16 @@ import data from '../../../data.json';
 
 // animate appearance of Role Summary Footer
 
+function debounce(func) {
+  let timeout
+  return function(...args) {
+    const context = this
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func.apply(context, args), 10)
+  }
+}
+
+
 export function getData(requiredId) {
   return new Promise ((resolve, reject) => {
     const jobs = data.jobs;
@@ -28,13 +38,15 @@ export function validNavItemList(job) {
   }
   
   navItems.unshift("role summary");
-  navItems.push(`About ${job.companyName}`);
+  navItems.push(`about`);
   return navItems
 }
 
 class JobDetailsContainer extends React.Component {
   constructor(props) {
     super(props);
+
+    this.componentRefs = [];
 
     this.state = {
       jobData: null,
@@ -49,7 +61,9 @@ class JobDetailsContainer extends React.Component {
       jobNavHeight: null,
       jobNavTop: null,
       jobNavLeft: null,
-    }
+    };
+    this.updateRefState = this.updateRefState.bind(this)
+    this.updateRefStateDebounced = debounce(this.updateRefState)
   }
 
   componentWillMount() {
@@ -145,6 +159,33 @@ class JobDetailsContainer extends React.Component {
     console.log(e.target.getAttribute('data-item'))
   }
 
+  updateRefState() {
+    this.setState({navItems: this.componentRefs})
+  }
+
+  storeRef(ref, component) {
+    if(ref === null) { return }
+    let updated = false;
+
+    if(this.componentRefs.length == 0) { this.componentRefs = this.state.navItems }
+    
+    this.componentRefs = this.componentRefs.map( item => {
+      if (typeof(item) === 'string' && item === component) {
+        const scroll = window.scrollY;
+        const top = ref.getBoundingClientRect().top + scroll;
+        updated = true;
+        return [item, top]
+      }
+      return item;
+    })
+
+    if (updated) {
+      this.updateRefStateDebounced()
+    }
+ } 
+  
+  
+
   render() {    
     const imageUrl = this.state.jobData ? this.state.jobData.image : "";
     const job = this.state.jobData ? this.state.jobData : {};
@@ -159,6 +200,7 @@ class JobDetailsContainer extends React.Component {
             job={job}  
             items={this.state.navItems} 
             currentItem={this.state.currentItem}
+            storeRef={ this.storeRef.bind(this) }
           />
           <JobNav 
             items={this.state.navItems} 
@@ -183,7 +225,5 @@ class JobDetailsContainer extends React.Component {
     )
   }
 }
-
-//             offsetTop={ this.state.scrollHeight - this.state.windowHeight + ((this.state.windowHeight - this.state.jobNavHeight) / 2) }
 
 export default JobDetailsContainer;

@@ -19,18 +19,6 @@ export class Profile extends Component {
     this.onClick1 = this.onClick1.bind(this);
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    const newTag = {
-      title: this.state.inputValue,
-      isShowing: true,
-    }
-    const tags = this.state.tags.concat(newTag);
-    this.setState({
-      tags,
-      inputValue: '',
-    });
-  }
 
   onClick() {
     this.setState({ show: !this.state.show });
@@ -40,7 +28,20 @@ export class Profile extends Component {
     this.setState({ tags });
   }
 
-  addingTags() { 
+  handleSubmit(event) {
+    event.preventDefault();
+    const newTag = {
+      title: this.state.inputValue,
+      isShowing: true,
+    };
+    const tags = this.state.tags.concat(newTag);
+    this.setState({
+      tags,
+      inputValue: '',
+    });
+  }
+
+  addingTags() {
     return this.state.tags.map((tag, i) => (
       <SkillTag key={i} onClick={() => this.onClick1(i)} showing={tag.isShowing}>
         <Btn>{tag.title} <I className="fa fa-times" aria-hidden="true" /></Btn>

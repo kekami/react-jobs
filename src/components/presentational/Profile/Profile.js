@@ -9,21 +9,20 @@ export class Profile extends Component {
 
     this.state = {
       show: false,
-      show1: true,
       addSkill: '',
       tags: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClick = this.onClick.bind(this);
-    this.onClick1 = this.onClick1.bind(this);
+    this.deleteTag = this.deleteTag.bind(this);
   }
 
 
   onClick() {
     this.setState({ show: !this.state.show });
   }
-  onClick1(index) {
+  deleteTag(index) {
     const tags = this.state.tags.filter((tag, i) => i !== index);
     this.setState({ tags });
   }
@@ -43,7 +42,7 @@ export class Profile extends Component {
 
   addingTags() {
     return this.state.tags.map((tag, i) => (
-      <SkillTag key={i} onClick={() => this.onClick1(i)} showing={tag.isShowing}>
+      <SkillTag key={i} onClick={() => this.deleteTag(i)} showing={tag.isShowing}>
         <Btn>{tag.title} <I className="fa fa-times" aria-hidden="true" /></Btn>
       </SkillTag>
     ),

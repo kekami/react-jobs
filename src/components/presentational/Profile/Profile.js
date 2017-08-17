@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { SkillSection } from './SkillSection';
 import { LangSection } from './LangSection';
 import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link } from './styles';

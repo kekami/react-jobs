@@ -68,6 +68,8 @@ export const SkillTag = styled.p`
     border: solid 2px #EEE;
     border-radius: 5px;
 `;
+
+export const LangTag = styled(SkillTag)``;
 export const Inputform = styled.form`
     display: flex;
     flex-direction: column;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, SkillTag } from './styles';
+import { SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, LangTag } from './styles';
 
 
 export class LangSection extends Component {
@@ -40,16 +40,16 @@ export class LangSection extends Component {
 
   addingTags() {
     return this.state.tags.map((tag, i) => (
-      <SkillTag key={i} onClick={() => this.deleteTag(i)} showing={tag.isShowing}>
+      <LangTag key={i} onClick={() => this.deleteTag(i)} showing={tag.isShowing}>
         <Btn>{tag.title} <I className="fa fa-times" aria-hidden="true" /></Btn>
-      </SkillTag>
+      </LangTag>
     ),
     );
   }
 
   render() {
     return (
-      <SectionWrapper>
+      <SectionWrapper edited={this.state.show}>
         <First2>
           <div>
             <p><strong>Languages</strong> My languages</p>

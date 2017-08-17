@@ -11,7 +11,7 @@ export const ProfileWrapper = styled.div`
     padding-right: 5vw;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #E1D6D6;
+    background-color: #DDEDF5;
 `;
 
 export const ProfileContainer = styled.div`
@@ -26,7 +26,7 @@ export const ProgressBar = styled.div`
 `;
 export const SectionWrapper = styled.div`
     margin: 3em;
-    background-color:#eee;
+    background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     padding: 2em;
 `;
 export const SectionHead = styled.div`
@@ -34,6 +34,7 @@ export const SectionHead = styled.div`
     
 `;
 export const First2 = styled.div`
+    
     div {
         display:flex;
         flex-direction: row;
@@ -42,12 +43,12 @@ export const First2 = styled.div`
     
 `;
 export const Btn = styled.button`
-    background-color:#eee;
+    
     border: none;
 `;
 export const Edit = styled.button`
     padding: 0.4em;
-    background-color:#eee;
+    background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     border: none;
     cursor: pointer;
 `;
@@ -59,12 +60,12 @@ export const TagsForm = styled.div`
 `;
 export const SkillTag = styled.p`
     display: ${props => props.showing ? 'inline-block' : 'none'};
-    background-color: ${globalStyles.DARKGREY};
+    background-color: #E1D6D6;
     color: black;
-    padding: 5px;
+    padding: 10px;
     margin: 5px 10px 5px 0px;
     font-size: 0.8rem;
-    border: solid 2px #fff;
+    border: solid 2px #EEE;
     border-radius: 5px;
 `;
 export const Inputform = styled.form`

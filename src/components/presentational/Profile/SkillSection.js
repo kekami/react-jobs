@@ -51,11 +51,11 @@ export class SkillSection extends Component {
 
   render() {
     return (
-      <SectionWrapper>
+      <SectionWrapper edited={this.state.show}>
         <First2>
           <div>
             <p><strong>Skills</strong> My important skills</p>
-            <Edit onClick={this.onClick}>
+            <Edit onClick={this.onClick} edited={this.state.show}>
               { this.state.show ?
                 <div><I className="fa fa-floppy-o" aria-hidden="true" /> Save</div>
                 : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div> }

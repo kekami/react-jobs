@@ -9,19 +9,15 @@ import { Sitemap } from '../../presentational/Sitemap/Sitemap';
 //     <p>{JSON.stringify(this.props.location)}</p>
 //   </div>
 
-class Job extends React.Component {
-   render() {
-   // Mock hash
-   const mockProps = {'hash': '#3241521515'};
-   
-   return (
-      <div>
-        <Navbar />
-        <JobDetailsContainer hash={mockProps.hash}/>
-        <Sitemap />
-      </div>
-    )
-  }
-}
+export default function Job() {
+  // Mock hash
+  const mockProps = { hash: '#3241521515' };
 
-export default Job;
+  return (
+    <div>
+      <Navbar />
+      <JobDetailsContainer hash={mockProps.hash} />
+      <Sitemap />
+    </div>
+  );
+}

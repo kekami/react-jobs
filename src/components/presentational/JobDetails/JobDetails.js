@@ -12,9 +12,9 @@ import { RoleSummaryHeader } from '../RoleSummary/RoleSummary'
 
 const AboutTitle = (props) => {
   const tags = [
-    ["teamSize", "TEAM SIZE"],
-    ["founded", "FOUNDED"], 
-    ["type", "TYPE"]
+    ['teamSize', 'TEAM SIZE'],
+    ['founded', 'FOUNDED'], 
+    ['type', 'TYPE']
   ];
   
   for (let i = 0; i < tags.length; i++) {
@@ -57,7 +57,7 @@ const About = (props) => {
   
   let socialMedia = [];
 
-  if (props.hasOwnProperty("socialMedia")) {
+  if (props.hasOwnProperty('socialMedia')) {
     const socialMediaMap = props.socialMedia.map( (media) => {
       return media[1] ? (<a key={'media[0]'} href={media[1]} alt={`company ${media[0]}`}>{media[0]}</a>) : null
       }
@@ -67,7 +67,7 @@ const About = (props) => {
       (acc, media ) => { return (media == null) ? acc : acc.concat([media]) },
        []);
     
-    socialMedia = (socialMediaReduced === []) ? "" : ( <p>Social Media: {socialMediaReduced}</p> )
+    socialMedia = (socialMediaReduced === []) ? '' : ( <p>Social Media: {socialMediaReduced}</p> )
   }
  
   return (
@@ -129,19 +129,18 @@ const NotificationsCard = (props) => {
 }
 
 export default function JobDetails(props) {
-  
   const cardIndex = {
-    "role summary": 
+    'role summary':
       <div key={'roleSummary'}>
         <RoleSummaryHeader {...props.job} storeRef={props.storeRef}/>
         <AboutSummary {...props.job} />
       </div>,
-    "responsibilities": <GeneralCard key={'responsibilities'} points={props.job.responsibilities} type={'responsibilities'} storeRef={props.storeRef} />,
-    "requirements": <GeneralCard key={'requirements'} points={props.job.requirements} type={'requirements'} storeRef={props.storeRef} />,
-    "compensation": <GeneralCard key={'compensation'} points={props.job.compensation} type={'compensation'} storeRef={props.storeRef} />,
-    "jobDescription": <JobDescriptionCard key={'jobDescription'} content={props.job.jobDescription} storeRef={props.storeRef} />,
-    "about": <About key={'about'} {...props.job} storeRef={props.storeRef}  />,
-    "notifications": <NotificationsCard key={'notifications'} />
+    'responsibilities': <GeneralCard key={'responsibilities'} points={props.job.responsibilities} type={'responsibilities'} storeRef={props.storeRef} />,
+    'requirements': <GeneralCard key={'requirements'} points={props.job.requirements} type={'requirements'} storeRef={props.storeRef} />,
+    'compensation': <GeneralCard key={'compensation'} points={props.job.compensation} type={'compensation'} storeRef={props.storeRef} />,
+    'jobDescription': <JobDescriptionCard key={'jobDescription'} content={props.job.jobDescription} storeRef={props.storeRef} />,
+    'about': <About key={'about'} {...props.job} storeRef={props.storeRef}  />,
+    'notifications': <NotificationsCard key={'notifications'} />
   } 
   
   let displayCards = props.items.map((item) => {
@@ -149,7 +148,7 @@ export default function JobDetails(props) {
     return cardIndex[itemName]
     }
   )
-  displayCards.push(cardIndex["about"], cardIndex["notifications"])
+  displayCards.push(cardIndex['notifications'])
 
   return (
     <Wrapper>

@@ -29,9 +29,9 @@ export const JobItems = styled.ul`
 
 export const Item = styled.li`
   padding-top: 1rem;
-  color: ${ props => props['data-item'] === props.parentProps.currentItem ? globalStyles.BLUE : globalStyles.LIGHTGREY };
+  color: ${props => props['data-item'] === props.parentProps.currentItem ? globalStyles.BLUE : globalStyles.LIGHTGREY};
   font-size: 0.8rem;
   :hover {
-    color: ${globalStyles.DARKGREY};
+    color:  ${ props => props['data-item'] === props.parentProps.currentItem ? globalStyles.BLUE : globalStyles.DARKGREY};
   }
 `

@@ -133,6 +133,10 @@ export const Label = styled.div`
     min-width:15em;
     align-self: center;
 `;
+
+export const LinkTag = styled.div`
+    border: solid 1px white;
+`;
 export const I = styled.i`
     padding-right: 0.2em;
 `;

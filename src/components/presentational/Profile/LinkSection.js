@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, LinkHead, Edit, I, InputformLink, SocMediaInput, Label } from './styles';
+import { SectionWrapper, LinkHead, Edit, I, InputformLink, SocMediaInput, Label, LinkTag } from './styles';
 
 export class LinkSection extends Component {
   constructor(props) {
@@ -7,14 +7,35 @@ export class LinkSection extends Component {
 
     this.state = {
       show: false,
+      Links: [],
     };
     this.onClick = this.onClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   onClick() {
     this.setState({ show: !this.state.show });
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    const newLink = {
+      address: this.state.inputValue,
+      shownbelow: true,
+    };
+    const Links = this.state.Links.concat(newLink);
+    this.setState({
+      Links,
+    });
+  }
+
+  addingLinks() {
+    return this.state.Links.map((link, i) => (
+      <LinkTag key={i} showingbelow={link.shownbelow}>
+        Logo {link.address}
+      </LinkTag>
+    ));
+  }
   render() {
     return (
       <SectionWrapper edited={this.state.show}>
@@ -33,12 +54,12 @@ export class LinkSection extends Component {
               type="url"
               onChange={e => this.setState({ inputValue: e.target.value })}
               value={this.state.inputValue}
-              placeholder="https://www.linedin.com/ln/example"
+              placeholder="https://www.linkedin.com/in/example"
               required
             />
           </SocMediaInput>
         </InputformLink>
-
+        {this.addingLinks(this.state.inputValue)}
       </SectionWrapper>
     );
   }

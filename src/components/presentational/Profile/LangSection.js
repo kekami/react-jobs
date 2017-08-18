@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, LangTag } from './styles';
+import { SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, LangTag, LangHead } from './styles';
 
 
 export class LangSection extends Component {
@@ -51,7 +51,7 @@ export class LangSection extends Component {
     return (
       <SectionWrapper edited={this.state.show}>
         <First2>
-          <div>
+          <LangHead>
             <p><strong>Languages</strong> My languages</p>
             <Edit onClick={this.onClick}>
               { this.state.show ?
@@ -59,7 +59,7 @@ export class LangSection extends Component {
                 : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div> }
 
             </Edit>
-          </div>
+          </LangHead>
           <Inputform style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
             <input
               type="text"

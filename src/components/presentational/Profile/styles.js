@@ -34,16 +34,16 @@ export const SectionHead = styled.div`
     
 `;
 export const First2 = styled.div`
-    
-    div {
-        display:flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
+ 
 `;
-export const Btn = styled.button`
-    
+export const SkillHead = styled.div`
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+`;
+export const LangHead = styled(SkillHead)``;
+
+export const Btn = styled.button` 
     border: none;
 `;
 export const Edit = styled.button`

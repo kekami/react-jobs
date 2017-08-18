@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-import { SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, SkillTag } from './styles';
+import { SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, SkillTag, SkillHead } from './styles';
 
 
 export class SkillSection extends Component {
@@ -53,7 +53,7 @@ export class SkillSection extends Component {
     return (
       <SectionWrapper edited={this.state.show}>
         <First2>
-          <div>
+          <SkillHead>
             <p><strong>Skills</strong> My important skills</p>
             <Edit onClick={this.onClick} edited={this.state.show}>
               { this.state.show ?
@@ -61,7 +61,7 @@ export class SkillSection extends Component {
                 : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div> }
 
             </Edit>
-          </div>
+          </SkillHead>
           <Inputform style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
             <input
               type="text"

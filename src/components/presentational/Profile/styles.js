@@ -15,6 +15,9 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const ProfileContainer = styled.div`
+    margin: auto;
+    min-width: 75vw;
+    max-width: 75vw;
     background-color: #fff;
     border-radius: 10px;
     padding: 2em;
@@ -28,6 +31,7 @@ export const SectionWrapper = styled.div`
     margin: 3em;
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     padding: 2em;
+    border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
 `;
 export const SectionHead = styled.div`
     padding: 1em;
@@ -42,6 +46,7 @@ export const SkillHead = styled.div`
     justify-content: space-between;
 `;
 export const LangHead = styled(SkillHead)``;
+export const LinkHead = styled(SkillHead)``;
 
 export const Btn = styled.button` 
     border: none;
@@ -88,6 +93,45 @@ export const Inputform = styled.form`
             width: 25em;
         }
     }
+`;
+export const InputformLink = styled.form`
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+        
+`;
+export const SocMediaInput = styled.div`
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    width:inherit;
+    
+
+    input {
+        margin: 0;
+        padding: 0.5em;
+        min-width: 50%;
+    }
+
+    @media (min-width: 50em) {
+        flex-direction: row;
+        justify-content: left;
+
+        input {
+            margin: 5;
+            width: 25em;
+        }
+    }
+
+
+`;
+export const Label = styled.div`
+    min-width:15em;
+    align-self: center;
 `;
 export const I = styled.i`
     padding-right: 0.2em;

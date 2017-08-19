@@ -129,7 +129,7 @@ export const SocMediaInput = styled.div`
 
 
 `;
-export const Label = styled.div`
+export const Label = styled.label`
     min-width:15em;
     align-self: center;
 `;

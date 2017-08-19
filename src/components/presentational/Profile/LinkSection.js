@@ -11,28 +11,39 @@ export class LinkSection extends Component {
     };
     this.onClick = this.onClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   onClick() {
     this.setState({ show: !this.state.show });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    const newLink = {
-      address: this.state.inputValue,
-      shownbelow: true,
-    };
-    const Links = this.state.Links.concat(newLink);
-    this.setState({
-      Links,
-    });
+  handleSubmit(e) {
+    e.preventDefault();
+    // const newLink = {
+    //  address: this.state.inputValue,
+    //  shownbelow: true,
+    // };
+    // const Links = this.state.Links.concat(newLink);
+    // this.setState({
+    //  Links,
+    // });
+  }
+
+  handleChange(e) {
+    const Links = this.state.Links.concat(
+      {
+        name: [e.target.name], 
+        url: e.target.value,
+      },
+    );
+    this.setState({ Links });
   }
 
   addingLinks() {
     return this.state.Links.map((link, i) => (
-      <LinkTag key={i} showingbelow={link.shownbelow}>
-        Logo {link.address}
+      <LinkTag key={i} showingbelow="true">
+        {link.name} {link.url}
       </LinkTag>
     ));
   }
@@ -51,16 +62,24 @@ export class LinkSection extends Component {
           <SocMediaInput>
             <Label>Linkedin profile </Label>
             <input
+              name="linkedIn"
               type="url"
-              onChange={e => this.setState({ inputValue: e.target.value })}
-              value={this.state.inputValue}
-              placeholder="https://www.linkedin.com/in/example"
-              required
+              onChange={this.handleChange}
+              value={this.state.Links.input1}
+              placeholder="paste your link here and hit Enter"
+            />
+            <Label>Facebook profile </Label>
+            <input
+              name="Facebook"
+              type="url"
+              onChange={this.handleChange}
+              value={this.state.Links.input2}
+              placeholder="paste your link here and hit Enter"
             />
           </SocMediaInput>
         </InputformLink>
         <Websites style={{ display: !this.state.show ? 'block' : 'none' }}>
-          {this.addingLinks(this.state.inputValue)}
+          {this.addingLinks()}
         </Websites>
       </SectionWrapper>
     );

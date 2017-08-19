@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, LinkHead, Edit, I, InputformLink, SocMediaInput, Label, LinkTag } from './styles';
+import { SectionWrapper, LinkHead, Edit, I, InputformLink, SocMediaInput, Label, LinkTag, Websites } from './styles';
 
 export class LinkSection extends Component {
   constructor(props) {
@@ -59,7 +59,9 @@ export class LinkSection extends Component {
             />
           </SocMediaInput>
         </InputformLink>
-        {this.addingLinks(this.state.inputValue)}
+        <Websites style={{ display: !this.state.show ? 'block' : 'none' }}>
+          {this.addingLinks(this.state.inputValue)}
+        </Websites>
       </SectionWrapper>
     );
   }

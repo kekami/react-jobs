@@ -8,7 +8,9 @@ import data from '../../../data.json';
 
 // animate appearance of Role Summary Footer
 // 'about' to have name of company
-// adjust to original sizing 
+// adjust to original sizing
+// adjust page on resize
+// job desription doesn't highlight
 // connect to dynamic hash id in routing
 // lint
 // proptypes
@@ -169,12 +171,12 @@ class JobDetailsContainer extends React.Component {
       }
     };
 
-    function updateComponentInView() {
+    const updateComponentInView = () => {
       let lessThan = null;
       const navItems = this.state.navItems;
       navItems.map((item, index) => {
-        if (scrollHeight < item[1]) {
-          lessThan = index;
+        if (scrollHeight + 100 < item[1]) {
+          lessThan = lessThan || index;
         }
       });
       lessThan = lessThan || navItems.length;
@@ -186,7 +188,7 @@ class JobDetailsContainer extends React.Component {
 
     updateRoleSummaryFooter.call(this);
     updateJobNavPlacement.call(this);
-    updateComponentInView.call(this);
+    updateComponentInView();
 
   }
 

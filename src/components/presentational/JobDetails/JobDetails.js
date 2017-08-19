@@ -88,11 +88,12 @@ const GeneralCard = ({points, type, storeRef}) => {
   
   if (points === undefined) { return <CardGeneralTag /> }
   const listItems = points.map( item => <li key={item.slice(0, 10)}><span>{item}</span></li>);
-  
+  const name = type[0].toUpperCase() + type.slice(1, type.length)
+
   return (
     <div  ref={(ref) => storeRef(ref, type)}>
       <CardGeneralTag >
-        <h1>{type}</h1>
+        <h1>{name}</h1>
         <ul>
           {listItems}
         </ul>

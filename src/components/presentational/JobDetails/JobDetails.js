@@ -128,7 +128,7 @@ const GeneralCard = ({ points, type, storeRef }) => {
 };
 
 GeneralCard.propTypes = {
-  points: PropTypes.string.isRequired,
+  points: PropTypes.arrayOf(PropTypes.string).isRequired,
   type: PropTypes.string.isRequired,
   storeRef: PropTypes.func.isRequired,
 };
@@ -148,7 +148,7 @@ const JobDescriptionCard = ({ content, storeRef }) => {
 };
 
 JobDescriptionCard.propTypes = {
-  content: PropTypes.string.isRequired,
+  content: PropTypes.arrayOf(PropTypes.string).isRequired,
   storeRef: PropTypes.func.isRequired,
 };
 
@@ -205,7 +205,7 @@ JobDetails.propTypes = {
     companyLogo: PropTypes.string.isRequired,
     headquarters: PropTypes.string.isRequired,
     teamSize: PropTypes.string.isRequired,
-    founded: PropTypes.string.isRequired,
+    founded: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
     website: PropTypes.string.isRequired,
     socialMedia: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),

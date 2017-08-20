@@ -9,7 +9,6 @@ import data from '../../../data.json';
 
 // animate appearance of Role Summary Footer
 // adjust to original sizing
-// adjust page on resize #
 // connect to dynamic hash id in routing
 // tests
 
@@ -60,6 +59,7 @@ class JobDetailsContainer extends React.Component {
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       jobNavFixed: false,
+      jobNavBottom: false,
       jobNavHeight: null,
       jobNavTop: null,
       jobNavLeft: null,
@@ -233,50 +233,57 @@ class JobDetailsContainer extends React.Component {
   }
 
   render() {
-    const imageUrl = this.state.jobData ? this.state.jobData.image : '';
+    const imageUrl = this.state.jobData ? this.state.jobData.image : null;
     const job = this.state.jobData ? this.state.jobData : {};
-    const companyName = job ? job.companyName : '';
+    const companyName = job ? job.companyName : null;
+
+    const LoadingPage = <div />;
 
     return (
       <Wrapper
         ref={(el) => { this.pageRef = el; }}
       >
-        <JobHeader imageUrl={imageUrl} />
-        <Details>
-          <JobDetails
-            job={job}
-            items={this.state.navItems}
-            currentItem={this.state.currentItem}
-            storeRef={this.storeRef}
-          />
-          <JobNav
-            items={this.state.navItems}
-            currentItem={this.state.currentItem}
-            companyName={companyName}
-            getRef={(el) => { this.jobNavRef = el; }}
+        {!this.state.jobData ? LoadingPage : (
+          <div>
+            <JobHeader imageUrl={imageUrl} />
+            <Details>
+              <JobDetails
+                job={job}
+                items={this.state.navItems}
+                currentItem={this.state.currentItem}
+                storeRef={this.storeRef}
+              />
+              <JobNav
+                items={this.state.navItems}
+                currentItem={this.state.currentItem}
+                companyName={companyName}
+                getRef={(el) => { this.jobNavRef = el; }}
 
-            fixed={this.state.jobNavFixed}
-            bottom={this.state.jobNavBottom}
-            top={(this.state.windowHeight - this.state.jobNavHeight) / 2}
-            left={this.state.jobNavLeft}
+                fixed={this.state.jobNavFixed}
+                bottom={this.state.jobNavBottom}
+                top={(this.state.windowHeight - this.state.jobNavHeight) / 2}
+                left={this.state.jobNavLeft}
 
-            handleClick={this.jobNavSelect}
-          />
-        </Details>
-        <RoleSummaryFooter
-          getRef={(el) => { this.roleSummaryFooterRef = el; }}
-          fixed={this.state.fixedRoleSummary}
-          title={job.title}
-          companyName={job.companyName}
-          deadline={job.deadline}
-        />
+                handleClick={this.jobNavSelect}
+              />
+            </Details>
+            <RoleSummaryFooter
+              getRef={(el) => { this.roleSummaryFooterRef = el; }}
+              fixed={this.state.fixedRoleSummary}
+              title={job.title}
+              companyName={job.companyName}
+              deadline={job.deadline}
+            />
+          </div>
+
+        )}
       </Wrapper>
     );
   }
 }
 
 JobDetailsContainer.propTypes = {
-  hash: PropTypes.number.isRequired,
+  hash: PropTypes.string.isRequired,
 };
 
 export default JobDetailsContainer;

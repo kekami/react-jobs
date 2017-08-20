@@ -35,7 +35,7 @@ export function validNavItemList(job) {
   const navItems = [['responsibilities', 0], ['requirements', 0], ['compensation', 0], ['jobDescription', 0]];
   if (!job) { return navItems; }
   for (let i = 0; i < navItems.length; i += 1) {
-    if (!Object.prototype.hasOwnProperty.call(job, navItems[i])) {
+    if (!Object.prototype.hasOwnProperty.call(job, navItems[i][0])) {
       navItems.splice(i, 1);
       i -= 1;
     }
@@ -210,11 +210,11 @@ class JobDetailsContainer extends React.Component {
     if (this.componentRefs.length === 0) { this.componentRefs = this.state.navItems; }
 
     this.componentRefs = this.componentRefs.map((item) => {
-      if (typeof (item) === 'string' && item === component) {
+      if (item[0] === component && item[1] === 0) {
         const scroll = window.scrollY;
         const top = ref.getBoundingClientRect().top + scroll;
         updated = true;
-        return [item, top];
+        return [item[0], top];
       }
       return item;
     });

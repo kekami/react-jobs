@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { globalStyles } from '../globalStyles.js';
+import { globalStyles } from '../globalStyles';
 
 export const Wrapper = styled.div`
   height: 600px;
@@ -13,4 +13,4 @@ export const Wrapper = styled.div`
     object-fit: cover;
     object-position: 0 0;
   }
-` 
+`;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDom from 'react-dom';
 import { SectionWrapper, LinkHead, Edit, I, InputformLink, SocMediaInput, Label, LinkTag, Websites } from './styles';
 
 export class LinkSection extends Component {
@@ -11,7 +12,7 @@ export class LinkSection extends Component {
     };
     this.onClick = this.onClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    
   }
 
   onClick() {
@@ -20,23 +21,17 @@ export class LinkSection extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const newLink = {
-    //  address: this.state.inputValue,
-    //  shownbelow: true,
-    // };
-    // const Links = this.state.Links.concat(newLink);
-    // this.setState({
-    //  Links,
-    // });
+    this.submitData();
   }
 
-  handleChange(e) {
-    const Links = this.state.Links.concat(
-      {
-        name: [e.target.name], 
-        url: e.target.value,
-      },
-    );
+  submitData() {
+    let Links = this.state.Links;
+    Links = [
+      { name: 'linkedIn', url: this.linkedIn.value },
+      { name: 'facebook', url: this.facebook.value },
+      { name: 'twitter', url: this.twitter.value },
+      { name: 'google+', url: this.googlepl.value },
+    ];
     this.setState({ Links });
   }
 
@@ -58,26 +53,47 @@ export class LinkSection extends Component {
               : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div> }
           </Edit>
         </LinkHead>
-        <InputformLink style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
+        <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
           <SocMediaInput>
-            <Label>Linkedin profile </Label>
-            <input
-              name="linkedIn"
-              type="url"
-              onChange={this.handleChange}
-              value={this.state.Links.input1}
-              placeholder="paste your link here and hit Enter"
-            />
-            <Label>Facebook profile </Label>
-            <input
-              name="Facebook"
-              type="url"
-              onChange={this.handleChange}
-              value={this.state.Links.input2}
-              placeholder="paste your link here and hit Enter"
-            />
+            <div className="form-group">
+              <label>Linkedin profile </label>
+              <input
+                name="linkedIn"
+                ref={(input) => {this.linkedIn = input; }}
+                type="url"
+                placeholder="paste your link here and hit Enter"
+              />
+            </div>
+            <div className="form-group">
+              <label>Facebook profile </label>
+              <input
+                name="Facebook"
+                ref={(input) => {this.facebook = input; }}
+                type="url"
+                placeholder="paste your link here and hit Enter"
+              />
+            </div>
+            <div className="form-group">
+              <label>Twitter profile </label>
+              <input
+                name="Twitter"
+                ref={(input) => {this.twitter = input; }}
+                type="url"
+                placeholder="paste your link here and hit Enter"
+              />
+            </div>
+            <div className="form-group">
+              <label>Google+ profile </label>
+              <input
+                name="google+"
+                ref={(input) => {this.googlepl = input; }}
+                type="url"
+                placeholder="paste your link here and hit Enter"
+              />
+            </div>
           </SocMediaInput>
-        </InputformLink>
+          <button className="btn btn-primary" type="submit">Save</button>
+        </form>
         <Websites style={{ display: !this.state.show ? 'block' : 'none' }}>
           {this.addingLinks()}
         </Websites>

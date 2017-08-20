@@ -96,10 +96,7 @@ export const Inputform = styled.form`
 `;
 export const InputformLink = styled.form`
 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-        
+  
 `;
 export const SocMediaInput = styled.div`
     -webkit-box-sizing: border-box;
@@ -110,12 +107,14 @@ export const SocMediaInput = styled.div`
     flex-direction: column;
     width:inherit;
     
-
-    input {
-        margin: 0;
-        padding: 0.5em;
-        min-width: 50%;
+    div {
+        input {
+            margin: 0;
+            padding: 0.5em;
+            min-width: 50%;
+        }
     }
+    
 
     @media (min-width: 50em) {
         flex-direction: row;

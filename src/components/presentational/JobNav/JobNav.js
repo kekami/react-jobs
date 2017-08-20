@@ -1,14 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, InnerBox, JobItems, Item } from './styles';
-
 
 const capitalise = str => str.toUpperCase();
 
 export default function JobNav(props) {
-
   const Items = props.items.map((item) => {
-    const itemName = typeof (item) === 'string' ? item : item[0];
-    let displayName = itemName; 
+    const itemName = item[0];
+    let displayName = itemName;
 
     if (displayName === 'jobDescription') { displayName = 'job description'; }
     const displayNameCap = capitalise(displayName);
@@ -17,12 +16,12 @@ export default function JobNav(props) {
   });
   return (
     <Wrapper
-      fixed={props.fixed} 
+      fixed={props.fixed}
       bottom={props.bottom}
-      top={props.top} 
+      top={props.top}
       left={props.left}
     >
-      <div ref={props.getRef}> 
+      <div ref={props.getRef}>
         <InnerBox>
           <JobItems onClick={props.handleClick}>
             {Items}
@@ -32,3 +31,25 @@ export default function JobNav(props) {
     </Wrapper>
   );
 }
+
+JobNav.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired],
+      ),
+    ),
+  ).isRequired,
+  fixed: PropTypes.bool.isRequired,
+  bottom: PropTypes.bool.isRequired,
+  top: PropTypes.number,
+  left: PropTypes.number,
+  getRef: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
+
+JobNav.defaultProps = {
+  top: 0,
+  left: 0,
+};

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { globalStyles } from '../globalStyles.js';
+import { globalStyles } from '../globalStyles';
 import { JobDetailsWrapper } from '../../container/JobDetails/styles';
 
 export const Wrapper = styled(JobDetailsWrapper)`
@@ -13,9 +13,9 @@ export const Wrapper = styled(JobDetailsWrapper)`
   @media (max-width: 775px) {
     margin-top: 0px;
   }
-`
+`;
 
-export const C1_Card = styled.article`
+export const c1Card = styled.article`
   width: auto;
   min-height: 100px;
   margin: 10px 10px;
@@ -35,9 +35,9 @@ export const C1_Card = styled.article`
   h2 {
     margin-top: 0rem;
   }
-`
+`;
 
-export const C1_Btn = styled.button`
+export const c1Btn = styled.button`
   margin-left: 5px;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -45,9 +45,9 @@ export const C1_Btn = styled.button`
   border: none;
   border-radius: 3px;
   cursor: pointer;
-`
+`;
 
-export const CardGeneralTag = styled(C1_Card)`
+export const CardGeneralTag = styled(c1Card)`
   
   li {
     color: ${globalStyles.GREEN};
@@ -66,18 +66,18 @@ export const CardGeneralTag = styled(C1_Card)`
   p {
     line-height: 1.5rem;
   }
-`
+`;
 
 export const Bold = styled.p`
   font-weight: bold;
   margin-top: 0px;
-`
+`;
 
 
 export const SummaryTitle = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 export const InfoTag = styled.p`
   display: inline-block;
@@ -87,13 +87,13 @@ export const InfoTag = styled.p`
   margin: 5px 10px 5px 0px;
   font-size: 0.8rem;
   border-radius: 2px;
-`
+`;
 
-export const JoinButton = styled(C1_Btn)`
+export const JoinButton = styled(c1Btn)`
 background-color: ${globalStyles.LIGHTGREY};
 color: white;
 
 &:hover {
   background-color: ${globalStyles.DARKGREY}
 }
-`
+`;

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { C1_Card, C1_Btn } from '../JobDetails/styles';
+import { c1Card, c1Btn } from '../JobDetails/styles';
 
-export const CardHeader = styled(C1_Card)`
+export const CardHeader = styled(c1Card)`
   margin-bottom: 0px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   padding-bottom: 17px;
-`
+`;
 
 export const JobHeaderTitle = styled.h2`
   margin-top: 0;
@@ -30,11 +30,10 @@ export const JobHeaderBase = styled.div`
   justify-content: space-between;
 `;
 
-  
 export const TimeLeft = styled.span`
   font-weight: 700;
   margin-bottom: 0px;
-  color: ${props => props.expiring ? 'red' : '#26b999'}
+  color: ${props => (props.expiring ? 'red' : '#26b999')}
 `;
 
 export const TimeContainer = styled.div`
@@ -80,7 +79,7 @@ export const SaveForLater = styled.button`
   };
 `;
 
-export const ApplyNowButton = styled(C1_Btn)`
+export const ApplyNowButton = styled(c1Btn)`
   background-color: #04d092;
   color: #ffffff;
 
@@ -89,7 +88,7 @@ export const ApplyNowButton = styled(C1_Btn)`
   };
 `;
 
-export const CardShare = styled(C1_Card)`
+export const CardShare = styled(c1Card)`
   min-height: 20px;  
   background-color: #e1dddd;  
   border-top: 0px;
@@ -104,15 +103,15 @@ export const CardShare = styled(C1_Card)`
     margin: 0px;
     padding: 0px;
     }
-`
+`;
 
 export const FooterWrapper = styled.div`
   width: 100%;
   background-color: white;
-  display: ${props => props.isExpired ? 'none' : 'block'};
-  position: ${props => props.fixed ? 'fixed' : 'static'};
+  display: ${props => (props.isExpired ? 'none' : 'block')};
+  position: ${props => (props.fixed ? 'fixed' : 'static')};
   bottom: 0px;
-  margin-bottom: ${props => props.fixed ? '0px' : '-100px'};
+  margin-bottom: ${props => (props.fixed ? '0px' : '-100px')};
 `;
 
 export const CardFooter = styled.article`
@@ -139,11 +138,10 @@ export const JobFooterTitle = styled.h3`
 
 export const Expired = styled.p`
   color: red;
-`
+`;
 
 export const FooterActions = styled.div`
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-
-`
+`;

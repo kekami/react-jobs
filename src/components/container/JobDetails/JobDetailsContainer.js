@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import JobHeader from '../../presentational/JobHeader/JobHeader';
 import JobDetails from '../../presentational/JobDetails/JobDetails';
 import JobNav from '../../presentational/JobNav/JobNav';
@@ -10,10 +11,7 @@ import data from '../../../data.json';
 // 'about' to have name of company
 // adjust to original sizing
 // adjust page on resize
-// job desription doesn't highlight
 // connect to dynamic hash id in routing
-// lint
-// proptypes
 // tests
 
 function debounce(func) {
@@ -34,7 +32,7 @@ export function getData(requiredId) {
 }
 
 export function validNavItemList(job) {
-  const navItems = ['responsibilities', 'requirements', 'compensation', 'jobDescription'];
+  const navItems = [['responsibilities', 0], ['requirements', 0], ['compensation', 0], ['jobDescription', 0]];
   if (!job) { return navItems; }
   for (let i = 0; i < navItems.length; i += 1) {
     if (!Object.prototype.hasOwnProperty.call(job, navItems[i])) {
@@ -42,8 +40,8 @@ export function validNavItemList(job) {
       i -= 1;
     }
   }
-  navItems.unshift('role summary');
-  navItems.push('about');
+  navItems.unshift(['role summary', 0]);
+  navItems.push(['about', 0]);
   return navItems;
 }
 
@@ -71,6 +69,8 @@ class JobDetailsContainer extends React.Component {
     this.updateRefState = this.updateRefState.bind(this);
     this.updateRefStateDebounced = debounce(this.updateRefState);
     this.handleScroll = this.handleScroll.bind(this);
+    this.storeRef = this.storeRef.bind(this);
+    this.jobNavSelect = this.jobNavSelect.bind(this);
   }
 
   componentWillMount() {
@@ -82,66 +82,65 @@ class JobDetailsContainer extends React.Component {
           jobData,
           newData: true,
           navItems: validNavItemList(jobData),
-        });
+        }, this.setRefDataIntoState);
       });
     }
     window.addEventListener('scroll', this.handleScroll);
   }
 
-  componentDidUpdate() {
-    if (this.state.newData) {
-      const boundingRectJobNav = this.jobNavRef.getBoundingClientRect();
-      const boundingRectRoleSummaryFooter = this.roleSummaryFooterRef.getBoundingClientRect();
-
-      const scroll = window.scrollY;
-
-      this.setState({
-        roleSummaryFooterTop: boundingRectRoleSummaryFooter.top + scroll,
-        roleSummaryFooterHeight: boundingRectRoleSummaryFooter.height,
-        jobNavHeight: boundingRectJobNav.height,
-        jobNavTop: boundingRectJobNav.top + scroll,
-        jobNavLeft: boundingRectJobNav.left,
-        newData: false,
-      }, () => {
-        const jobNavFixedHeightOffsetTop = (this.state.windowHeight - this.state.jobNavHeight) / 2;
-
-        this.setState({
-          minFooterFixedHeight: this.state.windowHeight,
-          maxFooterFixedHeight:
-            (this.state.roleSummaryFooterTop + this.state.roleSummaryFooterHeight)
-            - this.state.windowHeight,
-          minJobNavFixedHeight: this.state.jobNavTop - jobNavFixedHeightOffsetTop,
-          maxJobNavFixedHeight:
-           this.state.roleSummaryFooterTop
-           - this.state.jobNavHeight
-           - jobNavFixedHeightOffsetTop,
-        });
-      });
-    }
-  }
-
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll);
   }
-  
+
+  setRefDataIntoState() {
+    const boundingRectJobNav = this.jobNavRef.getBoundingClientRect();
+    const boundingRectRoleSummaryFooter = this.roleSummaryFooterRef.getBoundingClientRect();
+
+    const scroll = window.scrollY;
+
+    this.setState({
+      roleSummaryFooterTop: boundingRectRoleSummaryFooter.top + scroll,
+      roleSummaryFooterHeight: boundingRectRoleSummaryFooter.height,
+      jobNavHeight: boundingRectJobNav.height,
+      jobNavTop: boundingRectJobNav.top + scroll,
+      jobNavLeft: boundingRectJobNav.left,
+      newData: false,
+    }, this.setScrollMeasurementsIntoState);
+  }
+
+  setScrollMeasurementsIntoState() {
+    const jobNavFixedHeightOffsetTop = (this.state.windowHeight - this.state.jobNavHeight) / 2;
+
+    this.setState({
+      minFooterFixedHeight: this.state.windowHeight,
+      maxFooterFixedHeight:
+        (this.state.roleSummaryFooterTop + this.state.roleSummaryFooterHeight)
+        - this.state.windowHeight,
+      minJobNavFixedHeight: this.state.jobNavTop - jobNavFixedHeightOffsetTop,
+      maxJobNavFixedHeight:
+        this.state.roleSummaryFooterTop
+        - this.state.jobNavHeight
+        - jobNavFixedHeightOffsetTop,
+    });
+  }
+
   handleScroll(e) {
-    const scrollHeight = e.target.scrollingElement.scrollTop;    
+    const scrollHeight = e.target.scrollingElement.scrollTop;
 
     function updateRoleSummaryFooter() {
-      if (scrollHeight > this.state.minFooterFixedHeight && scrollHeight < this.state.maxFooterFixedHeight) {
+      if (scrollHeight > this.state.minFooterFixedHeight
+        && scrollHeight < this.state.maxFooterFixedHeight) {
         if (this.state.fixedRoleSummary === false) {
           this.setState({
             fixedRoleSummary: true,
-          })
+          });
         }
-      } else {
-        if (this.state.fixedRoleSummary === true) {
-          this.setState({
-          fixedRoleSummary: false
-          })
-        }
+      } else if (this.state.fixedRoleSummary === true) {
+        this.setState({
+          fixedRoleSummary: false,
+        });
       }
-    };
+    }
 
     function updateJobNavPlacement() {
       if (scrollHeight < this.state.minJobNavFixedHeight) {
@@ -149,121 +148,125 @@ class JobDetailsContainer extends React.Component {
           this.setState({
             jobNavFixed: false,
             jobNavBottom: false,
-          })
+          });
         }
-        return      
+        return;
       }
 
-      if (scrollHeight > this.state.minJobNavFixedHeight && scrollHeight < this.state.maxJobNavFixedHeight) {
+      if (scrollHeight > this.state.minJobNavFixedHeight
+        && scrollHeight < this.state.maxJobNavFixedHeight) {
         if (this.state.jobNavFixed === false) {
           this.setState({
             jobNavFixed: true,
             jobNavBottom: false,
-          })
+          });
         }
-      } else {
-        if (this.state.jobNavFixed === true) {
-          this.setState({
-            jobNavFixed: false,
-            jobNavBottom: true,
-          })
-        } 
+      } else if (this.state.jobNavFixed === true) {
+        this.setState({
+          jobNavFixed: false,
+          jobNavBottom: true,
+        });
       }
-    };
+    }
 
     const updateComponentInView = () => {
       let lessThan = null;
       const navItems = this.state.navItems;
-      navItems.map((item, index) => {
-        if (scrollHeight + 100 < item[1]) {
-          lessThan = lessThan || index;
+      for (let i = 0; i < navItems.length; i += 1) {
+        if (scrollHeight + 100 < navItems[i][1]) {
+          lessThan = i;
+          break;
         }
-      });
+      }
       lessThan = lessThan || navItems.length;
       const inView = navItems[lessThan - 1][0];
       if (this.state.currentItem !== inView) {
-        this.setState({currentItem: inView});
+        this.setState({ currentItem: inView });
       }
     };
 
     updateRoleSummaryFooter.call(this);
     updateJobNavPlacement.call(this);
     updateComponentInView();
-
   }
 
   jobNavSelect(e) {
     const selected = e.target.getAttribute('data-item');
 
-    if (selected === this.state.currentItem) { return };
+    if (selected === this.state.currentItem) { return; }
     this.setState({
-      currentItem: selected
-    })
+      currentItem: selected,
+    });
   }
 
   updateRefState() {
-    this.setState({navItems: this.componentRefs})
+    this.setState({ navItems: this.componentRefs });
   }
 
   storeRef(ref, component) {
-    if(ref === null) { return }
+    if (ref === null) { return; }
     let updated = false;
 
-    if(this.componentRefs.length === 0) { this.componentRefs = this.state.navItems }
-    
-    this.componentRefs = this.componentRefs.map( item => {
-      if (typeof(item) === 'string' && item === component) {
+    if (this.componentRefs.length === 0) { this.componentRefs = this.state.navItems; }
+
+    this.componentRefs = this.componentRefs.map((item) => {
+      if (typeof (item) === 'string' && item === component) {
         const scroll = window.scrollY;
         const top = ref.getBoundingClientRect().top + scroll;
         updated = true;
-        return [item, top]
+        return [item, top];
       }
       return item;
-    })
+    });
 
     if (updated) {
-      this.updateRefStateDebounced()
+      this.updateRefStateDebounced();
     }
-  } 
-  
-  render() {    
+  }
+
+  render() {
     const imageUrl = this.state.jobData ? this.state.jobData.image : '';
     const job = this.state.jobData ? this.state.jobData : {};
 
     return (
-      <Wrapper 
-        ref={ el => this.pageRef = el}
-        >   
-        <JobHeader imageUrl={imageUrl}/>
+      <Wrapper
+        ref={(el) => { this.pageRef = el; }}
+      >
+        <JobHeader imageUrl={imageUrl} />
         <Details>
-          <JobDetails 
-            job={job}  
-            items={this.state.navItems} 
+          <JobDetails
+            job={job}
+            items={this.state.navItems}
             currentItem={this.state.currentItem}
-            storeRef={ this.storeRef.bind(this) }
+            storeRef={this.storeRef}
           />
-          <JobNav 
-            items={this.state.navItems} 
+          <JobNav
+            items={this.state.navItems}
             currentItem={this.state.currentItem}
-            getRef={ el => this.jobNavRef = el } 
+            getRef={(el) => { this.jobNavRef = el; }}
 
-            fixed={ this.state.jobNavFixed }
-            bottom={ this.state.jobNavBottom }
-            top={ (this.state.windowHeight - this.state.jobNavHeight) / 2 }
-            left= { this.state.jobNavLeft }
+            fixed={this.state.jobNavFixed}
+            bottom={this.state.jobNavBottom}
+            top={(this.state.windowHeight - this.state.jobNavHeight) / 2}
+            left={this.state.jobNavLeft}
 
-            handleClick={this.jobNavSelect.bind(this) }
+            handleClick={this.jobNavSelect}
           />
         </Details>
-        <RoleSummaryFooter 
-          getRef={ el => this.roleSummaryFooterRef = el }
+        <RoleSummaryFooter
+          getRef={(el) => { this.roleSummaryFooterRef = el; }}
           fixed={this.state.fixedRoleSummary}
           title={job.title}
           companyName={job.companyName}
-          deadline={job.deadline} />
+          deadline={job.deadline}
+        />
       </Wrapper>
-    )
+    );
   }
 }
+
+JobDetailsContainer.propTypes = {
+  hash: PropTypes.number.isRequired,
+};
 
 export default JobDetailsContainer;

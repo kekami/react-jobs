@@ -18,7 +18,7 @@ export const Button = styled.button`
   min-height: 70px;
   min-width: 220px;
   display: inline-block;
-  background-color: ${globalStyles.button};
+  background-color: ${globalStyles.LIGHTBLUE};
   border: 0px;
   border-radius: 2px;
   box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);

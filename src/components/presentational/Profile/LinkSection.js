@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ReactDom from 'react-dom';
-import { SectionWrapper, LinkHead, Edit, I, InputformLink, SocMediaInput, Label, LinkTag, Websites } from './styles';
+import { SectionWrapper, LinkHead, Edit, I, SocMediaInput, LinkTag, Websites } from './styles';
 
 export class LinkSection extends Component {
   constructor(props) {
@@ -12,7 +11,6 @@ export class LinkSection extends Component {
     };
     this.onClick = this.onClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    
   }
 
   onClick() {
@@ -27,10 +25,10 @@ export class LinkSection extends Component {
   submitData() {
     let Links = this.state.Links;
     Links = [
-      { name: 'linkedIn', url: this.linkedIn.value },
-      { name: 'facebook', url: this.facebook.value },
-      { name: 'twitter', url: this.twitter.value },
-      { name: 'google+', url: this.googlepl.value },
+      { logo: 'linkedIn', url: this.linkedIn.value },
+      { logo: 'facebook', url: this.facebook.value },
+      { logo: 'twitter', url: this.twitter.value },
+      { logo: 'google+', url: this.googlepl.value },
     ];
     this.setState({ Links });
   }
@@ -38,7 +36,7 @@ export class LinkSection extends Component {
   addingLinks() {
     return this.state.Links.map((link, i) => (
       <LinkTag key={i} showingbelow="true">
-        {link.name} {link.url}
+        {link.logo} {link.url}
       </LinkTag>
     ));
   }
@@ -54,12 +52,13 @@ export class LinkSection extends Component {
           </Edit>
         </LinkHead>
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
+          <p>Add some extra firepower to your profile by providing links to professional and social media profiles.</p>
           <SocMediaInput>
             <div className="form-group">
               <label>Linkedin profile </label>
               <input
                 name="linkedIn"
-                ref={(input) => {this.linkedIn = input; }}
+                ref={(input) => { this.linkedIn = input; }}
                 type="url"
                 placeholder="paste your link here and hit Enter"
               />
@@ -68,7 +67,7 @@ export class LinkSection extends Component {
               <label>Facebook profile </label>
               <input
                 name="Facebook"
-                ref={(input) => {this.facebook = input; }}
+                ref={(input) => { this.facebook = input; }}
                 type="url"
                 placeholder="paste your link here and hit Enter"
               />
@@ -77,7 +76,7 @@ export class LinkSection extends Component {
               <label>Twitter profile </label>
               <input
                 name="Twitter"
-                ref={(input) => {this.twitter = input; }}
+                ref={(input) => { this.twitter = input; }}
                 type="url"
                 placeholder="paste your link here and hit Enter"
               />
@@ -86,7 +85,7 @@ export class LinkSection extends Component {
               <label>Google+ profile </label>
               <input
                 name="google+"
-                ref={(input) => {this.googlepl = input; }}
+                ref={(input) => { this.googlepl = input; }}
                 type="url"
                 placeholder="paste your link here and hit Enter"
               />

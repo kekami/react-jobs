@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { globalStyles } from '../globalStyles';
 
 export const ProfileWrapper = styled.div`
     min-height: 100vh;
@@ -16,8 +15,8 @@ export const ProfileWrapper = styled.div`
 
 export const ProfileContainer = styled.div`
     margin: auto;
-    min-width: 75vw;
-    max-width: 75vw;
+    min-width: 65vw;
+    max-width: 65vw;
     background-color: #fff;
     border-radius: 10px;
     padding: 2em;
@@ -32,6 +31,13 @@ export const SectionWrapper = styled.div`
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     padding: 2em;
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
+
+    form {
+        p {
+            padding: 0.2em;
+            color: grey;
+        }
+    }
 `;
 export const SectionHead = styled.div`
     padding: 1em;
@@ -94,30 +100,36 @@ export const Inputform = styled.form`
         }
     }
 `;
-export const InputformLink = styled.form`
 
-  
-`;
 export const SocMediaInput = styled.div`
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
     display: flex;
-    flex-direction: column;
-    width:inherit;
+    flex-flow: column wrap;
     
     div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0.1em;
+        margin-top: 0.8em;
+        margin-bottom: 0.8em;
+       
+
+        label {
+            align-self: center;
+            padding: 0.2em;
+        }
+
         input {
-            margin: 0;
+            float:right;
+            margin-right: 5em;
             padding: 0.5em;
-            min-width: 50%;
+            min-width: 5em;
+            
         }
     }
     
 
-    @media (min-width: 50em) {
-        flex-direction: row;
+    @media (min-width: 1000px) {
         justify-content: left;
 
         input {
@@ -132,7 +144,10 @@ export const Label = styled.label`
     min-width:15em;
     align-self: center;
 `;
-export const Websites = styled.div``;
+export const Websites = styled.div`
+    margin-top: 1em;
+    margin-bottom: 1em;
+`;
 export const LinkTag = styled.div`
     border: solid 1px white;
 `;

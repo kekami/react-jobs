@@ -8,9 +8,9 @@ import { Wrapper, Details } from './styles';
 import data from '../../../data.json';
 
 // animate appearance of Role Summary Footer
-// 'about' to have name of company
+// 'about' to have name of company #
 // adjust to original sizing
-// adjust page on resize
+// adjust page on resize #
 // connect to dynamic hash id in routing
 // tests
 
@@ -227,6 +227,7 @@ class JobDetailsContainer extends React.Component {
   render() {
     const imageUrl = this.state.jobData ? this.state.jobData.image : '';
     const job = this.state.jobData ? this.state.jobData : {};
+    const companyName = job ? job.companyName : '';
 
     return (
       <Wrapper
@@ -243,6 +244,7 @@ class JobDetailsContainer extends React.Component {
           <JobNav
             items={this.state.navItems}
             currentItem={this.state.currentItem}
+            companyName={companyName}
             getRef={(el) => { this.jobNavRef = el; }}
 
             fixed={this.state.jobNavFixed}

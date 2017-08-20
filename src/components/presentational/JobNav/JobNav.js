@@ -10,6 +10,7 @@ export default function JobNav(props) {
     let displayName = itemName;
 
     if (displayName === 'jobDescription') { displayName = 'job description'; }
+    if (displayName === 'about') { displayName = `about ${props.companyName}`; }
     const displayNameCap = capitalise(displayName);
 
     return <Item key={itemName} data-item={itemName} parentProps={props}>{displayNameCap}</Item>;
@@ -41,6 +42,7 @@ JobNav.propTypes = {
       ),
     ),
   ).isRequired,
+  companyName: PropTypes.string.isRequired,
   fixed: PropTypes.bool.isRequired,
   bottom: PropTypes.bool.isRequired,
   top: PropTypes.number,

@@ -8,18 +8,17 @@ import { Wrapper, Details } from './styles';
 import data from '../../../data.json';
 
 // animate appearance of Role Summary Footer
-// 'about' to have name of company #
 // adjust to original sizing
 // adjust page on resize #
 // connect to dynamic hash id in routing
 // tests
 
-function debounce(func) {
+function debounce(func, wait) {
   let timeout;
   return function debouceInvoked(...args) {
     const context = this;
     clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(context, args), 10);
+    timeout = setTimeout(() => func.apply(context, args), wait);
   };
 }
 
@@ -67,8 +66,11 @@ class JobDetailsContainer extends React.Component {
     };
 
     this.updateRefState = this.updateRefState.bind(this);
-    this.updateRefStateDebounced = debounce(this.updateRefState);
+    this.updateRefStateDebounced = debounce(this.updateRefState, 10);
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleResize = this.handleResize.bind(this);
+    this.handleResizeDebounced = debounce(this.handleResize, 10);
+    this.setRefDataIntoState = this.setRefDataIntoState.bind(this);
     this.storeRef = this.storeRef.bind(this);
     this.jobNavSelect = this.jobNavSelect.bind(this);
   }
@@ -80,16 +82,17 @@ class JobDetailsContainer extends React.Component {
       getData(id).then((jobData) => {
         this.setState({
           jobData,
-          newData: true,
           navItems: validNavItemList(jobData),
         }, this.setRefDataIntoState);
       });
     }
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleResizeDebounced);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleResizeDebounced);
   }
 
   setRefDataIntoState() {
@@ -104,7 +107,6 @@ class JobDetailsContainer extends React.Component {
       jobNavHeight: boundingRectJobNav.height,
       jobNavTop: boundingRectJobNav.top + scroll,
       jobNavLeft: boundingRectJobNav.left,
-      newData: false,
     }, this.setScrollMeasurementsIntoState);
   }
 
@@ -121,11 +123,11 @@ class JobDetailsContainer extends React.Component {
         this.state.roleSummaryFooterTop
         - this.state.jobNavHeight
         - jobNavFixedHeightOffsetTop,
-    });
+    }, this.handleScroll);
   }
 
-  handleScroll(e) {
-    const scrollHeight = e.target.scrollingElement.scrollTop;
+  handleScroll() {
+    const scrollHeight = window.scrollY;
 
     function updateRoleSummaryFooter() {
       if (scrollHeight > this.state.minFooterFixedHeight
@@ -188,6 +190,12 @@ class JobDetailsContainer extends React.Component {
     updateRoleSummaryFooter.call(this);
     updateJobNavPlacement.call(this);
     updateComponentInView();
+  }
+
+  handleResize() {
+    this.setState({
+      jobNavFixed: false,
+    }, this.setRefDataIntoState);
   }
 
   jobNavSelect(e) {

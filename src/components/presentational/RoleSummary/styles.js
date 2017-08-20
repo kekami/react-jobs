@@ -19,6 +19,31 @@ export const JobHeaderBaseContainer = styled.div`
 `;
 
 export const ExpiredMessage = styled.div`
+  width: 100%;
+  height: 60px;
+  border-radius: 5px;
+  border: 2px solid #faebcc;
+  background-color: #fcf8e3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    margin: 0px 0px 0px 10px;
+  
+    i {
+      margin-right: 3px;
+      color: #cade83;
+    }
+  }
+`;
+
+export const OtherJobsButton = styled(c1Btn)`
+  margin-right: 10px;
+  background-color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: #e6cd98;
 `;
 
 export const JobHeaderBase = styled.div`
@@ -95,14 +120,31 @@ export const CardShare = styled(c1Card)`
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   margin-top: 0px;
-  display: flex:
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
   align-items: center;
-  justify-content: center;
   
   p {
     margin: 0px;
     padding: 0px;
     }
+
+  i {
+    margin-left: 10px;
+  }
+`;
+
+export const Fb = styled.i`
+  color: #3b5998;
+`;
+
+export const Ln = styled.i`
+  color: #08669c;
+`;
+
+export const Twitter = styled.i`
+  color: #10a9e2;
 `;
 
 export const FooterWrapper = styled.div`

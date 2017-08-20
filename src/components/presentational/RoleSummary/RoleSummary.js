@@ -7,6 +7,10 @@ import {
   JobHeaderTitle,
   JobHeaderBaseContainer,
   ExpiredMessage,
+  OtherJobsButton,
+  Fb,
+  Ln,
+  Twitter,
   TimeContainer,
   TimeLeft,
   JobHeaderBase,
@@ -36,7 +40,15 @@ export class RoleSummaryHeader extends React.Component {
         <CardHeader>
           <JobHeaderTitle>{title}</JobHeaderTitle>
           <JobHeaderBaseContainer>
-            { isExpired ? <ExpiredMessage>Expired</ExpiredMessage> :
+            { isExpired ? (
+              <ExpiredMessage>
+                <p>
+                  <i className="fa fa-info-circle fa-lg" aria-hidden="true" />
+                  This Job opening has expired
+                </p>
+                <OtherJobsButton>Other Jobs</OtherJobsButton>
+              </ExpiredMessage>
+            ) :
               (
                 <JobHeaderBase>
                   <TimeContainer>
@@ -72,6 +84,9 @@ export class RoleSummaryHeader extends React.Component {
         </CardHeader>
         <CardShare>
           <p>Know someone who would be perfect for this job? Share the link:</p>
+          <Ln className="fa fa-linkedin-square fa-3x" aria-hidden="true" />
+          <Fb className="fa fa-facebook-square fa-3x" aria-hidden="true" />
+          <Twitter className="fa fa-twitter-square fa-3x" aria-hidden="true" />
         </CardShare>
       </div>
     );

@@ -9,7 +9,6 @@ import data from '../../../data.json';
 
 // animate appearance of Role Summary Footer
 // adjust to original sizing
-// connect to dynamic hash id in routing
 // update what is seen if the job ad is expired
 // tests
 

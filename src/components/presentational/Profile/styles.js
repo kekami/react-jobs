@@ -87,10 +87,10 @@ export const Inputform = styled.form`
     input {
         margin: 0;
         padding: 0.5em;
-        min-width: 50vw;
+        
     }
 
-    @media (min-width: 50em) {
+    @media (min-width: 60em) {
         flex-direction: row;
         justify-content: left;
 
@@ -109,18 +109,21 @@ export const SocMediaInput = styled.div`
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
         padding: 0.1em;
         margin-top: 0.8em;
         margin-bottom: 0.8em;
+        justify-content: space-between;
+        align-items: center;
        
 
         label {
-            align-self: center;
+            min-width: 25%;
             padding: 0.2em;
         }
 
         input {
-            float:right;
             margin-right: 5em;
             padding: 0.5em;
             min-width: 5em;

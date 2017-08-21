@@ -8,7 +8,7 @@ export const Details = styled.div`
   width: 1150px;
   margin: auto;
   display: flex; 
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (max-width: 1200px) {
     width: 950px;

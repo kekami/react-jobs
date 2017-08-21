@@ -25,18 +25,20 @@ export class LinkSection extends Component {
   submitData() {
     let Links = this.state.Links;
     Links = [
-      { logo: 'linkedIn', url: this.linkedIn.value },
-      { logo: 'facebook', url: this.facebook.value },
-      { logo: 'twitter', url: this.twitter.value },
-      { logo: 'google+', url: this.googlepl.value },
+      { index: 1, logo: <div><i className="fa fa-home" aria-hidden="true" /></div>, url: this.website.value },
+      { index: 2, logo: <div><i className="fa fa-linkedin-square" aria-hidden="true" /></div>, url: this.linkedIn.value },
+      { index: 3, logo: <div><i className="fa fa-facebook-square" aria-hidden="true" /></div>, url: this.facebook.value },
+      { index: 4, logo: <div><i className="fa fa-twitter-square" aria-hidden="true" /></div>, url: this.twitter.value },
+      { index: 5, logo: <div><i className="fa fa-google-plus-square" aria-hidden="true" /></div>, url: this.googlepl.value },
     ];
+    Links = Links.filter(link => (link.logo && link.url.length));
     this.setState({ Links });
   }
 
   addingLinks() {
-    return this.state.Links.map((link, i) => (
-      <LinkTag key={i} showingbelow="true">
-        {link.logo} {link.url}
+    return this.state.Links.map((link) => (
+      <LinkTag key={link.index} showingbelow="true">
+        {link.logo} <p>{link.url}</p>
       </LinkTag>
     ));
   }
@@ -54,6 +56,15 @@ export class LinkSection extends Component {
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
           <p>Add some extra firepower to your profile by providing links to professional and social media profiles.</p>
           <SocMediaInput>
+            <div className="form-group">
+              <label>Your website </label>
+              <input
+                name="website"
+                ref={(input) => { this.website = input; }}
+                type="url"
+                placeholder="paste your link here and hit Enter"
+              />
+            </div>
             <div className="form-group">
               <label>Linkedin profile </label>
               <input

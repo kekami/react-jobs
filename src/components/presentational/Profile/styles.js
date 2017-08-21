@@ -133,8 +133,6 @@ export const SocMediaInput = styled.div`
     
 
     @media (min-width: 1000px) {
-        justify-content: left;
-
         input {
             margin: 5;
             width: 25em;
@@ -152,8 +150,51 @@ export const Websites = styled.div`
     margin-bottom: 1em;
 `;
 export const LinkTag = styled.div`
-    border: solid 1px white;
+    display:flex;
+    flex-flow: row wrap;   
+    align-items: center;
+    padding: 0.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+   
+
+    div {
+        display: flex;
+        font-size: 1em;
+        min-height: 1.5em;
+        min-width:1.5em;
+        
+
+        i {
+            margin: 5;
+            font-size: 1em;
+        }
+        p {
+            min-width: 3em;
+        }
+    }
+
+    @media (min-width: 700px) {
+        div {
+            font-size: 1.5em;
+            min-height: 2em;
+            min-width:2em;
+            
+    
+            i {
+                
+                font-size: 1.6em;
+            }
+            p {
+                margin-left: 2em;
+                min-width: 4em;
+            }
+        }
+    }
+
 `;
 export const I = styled.i`
     padding-right: 0.2em;
+
 `;

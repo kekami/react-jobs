@@ -1,3 +1,3 @@
 module.exports = {
-  mongoURI: process.env.MONGO_URI,
+  mongoURI: 'mongodb://jobbatical:jobbatical@ds153003.mlab.com:53003/jobbatical',
 };

@@ -4,7 +4,7 @@ import { Wrapper } from './styles';
 export default function JobHeader(props) {
   return (
     <Wrapper>
-      <img src={props.imageUrl ? props.imageUrl : ""} alt=""/>
+      <img src={props.imageUrl ? props.imageUrl : ''} alt="" />
     </Wrapper>
-  )
+  );
 }

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { globalStyles } from '../globalStyles.js';
 
 export const SitemapWrapper = styled.div`
     height: 100%;

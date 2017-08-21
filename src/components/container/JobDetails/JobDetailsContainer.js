@@ -9,7 +9,8 @@ import data from '../../../data.json';
 
 // animate appearance of Role Summary Footer
 // adjust to original sizing
-// update what is seen if the job ad is expired
+// add social media links
+// add explore jobs functionality linking back to feature jobs
 // tests
 
 function debounce(func, wait) {

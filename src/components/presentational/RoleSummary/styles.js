@@ -74,6 +74,10 @@ export const TimeContainer = styled.div`
 export const HeaderActions = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const SaveForLater = styled.button`

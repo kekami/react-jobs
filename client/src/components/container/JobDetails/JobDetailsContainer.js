@@ -1,16 +1,21 @@
 import React from 'react';
+import axios from 'axios';
 import JobHeader from '../../presentational/JobHeader/JobHeader';
 import JobDetails from '../../presentational/JobDetails/JobDetails';
 import JobNav from '../../presentational/JobNav/JobNav';
 import { ApplyNow } from '../../presentational/ApplyNow/ApplyNow';
 import { Wrapper, Details } from './styles.js';
-import data from '../../../data.json';
+// import data from '../../../data.json';
 
 export function getData(requiredId) {
   return new Promise ((resolve, reject) => {
-    const jobs = data.jobs;
-    const jobData = jobs.filter((job) => job.id === requiredId);
-    resolve (jobData[0])
+    axios('/api/jobs')
+      .then(response => response.data)
+      .then((data) => {
+        const jobs = data.jobs;
+        const jobData = jobs.filter(job => job.id === requiredId);
+        resolve(jobData[0]);
+      });
   })
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import JobCard from '../../presentational/JobCard';
-import data from '../../../data.json';
 import { ExploreJobsContainer, SearchForm, JobCardContainer, ResultsText } from './styles';
 
 class ExploreJobs extends Component {
@@ -17,9 +17,13 @@ class ExploreJobs extends Component {
   }
 
   componentWillMount() {
-    this.setState({
-      jobs: data.jobs,
-    });
+    axios('/api/jobs')
+      .then(response => response.data)
+      .then((data) => {
+        this.setState({
+          jobs: data.jobs,
+        });
+      });
   }
 
   handleSubmit(event) {

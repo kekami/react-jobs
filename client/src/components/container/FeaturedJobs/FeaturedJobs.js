@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import JobCard from '../../presentational/JobCard';
-import data from '../../../data.json';
 import { FeaturedJobsContainer, FeaturedJobsHeader, ViewJobsButton, JobCardsContainer } from './styles';
 
 class FeaturedJobs extends Component {
@@ -14,9 +14,13 @@ class FeaturedJobs extends Component {
   }
 
   componentWillMount() {
-    this.setState({
-      jobs: data.jobs,
-    });
+    axios('/api/jobs')
+      .then(response => response.data)
+      .then((data) => {
+        this.setState({
+          jobs: data.jobs,
+        });
+      });
   }
 
   showViewJobsButton() {

@@ -150,6 +150,10 @@ export const Websites = styled.div`
     margin-bottom: 1em;
 `;
 export const LinkTag = styled.div`
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
     display:flex;
     flex-flow: row wrap;   
     align-items: center;
@@ -157,26 +161,30 @@ export const LinkTag = styled.div`
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 
-   
-
     div {
         display: flex;
+        padding: 0.2em;
         font-size: 1em;
         min-height: 1.5em;
         min-width:1.5em;
-        
+        margin: 0.5em;
 
         i {
-            margin: 5;
             font-size: 1em;
         }
-        p {
-            min-width: 3em;
+        
+    }
+
+    p {
+        margin-left: 1em;
+        a {
+            text-decoration: none;
         }
     }
 
     @media (min-width: 700px) {
         div {
+            display: flex;
             font-size: 1.5em;
             min-height: 2em;
             min-width:2em;
@@ -184,12 +192,13 @@ export const LinkTag = styled.div`
     
             i {
                 
-                font-size: 1.6em;
+                font-size: 1.5em;
             }
-            p {
-                margin-left: 2em;
-                min-width: 4em;
-            }
+            
+        }
+        p {
+            margin-left: 2em;
+            min-width: 4em;
         }
     }
 

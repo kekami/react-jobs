@@ -57,8 +57,8 @@ export class SkillSection extends Component {
             <p><strong>Skills</strong> My important skills</p>
             <Edit onClick={this.onClick} edited={this.state.show}>
               { this.state.show ?
-                <div><I className="fa fa-floppy-o" aria-hidden="true" /> Save</div>
-                : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div> }
+                <div><I className="fa fa-times" aria-hidden="true" /></div>
+                : <div>Edit <I className="fa fa-pencil" aria-hidden="true" /></div> }
 
             </Edit>
           </SkillHead>

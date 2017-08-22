@@ -29,7 +29,7 @@ export class LinkSection extends Component {
       { index: 2, logo: <div><i className="fa fa-linkedin-square" aria-hidden="true" /></div>, url: this.linkedIn.value },
       { index: 3, logo: <div><i className="fa fa-facebook-square" aria-hidden="true" /></div>, url: this.facebook.value },
       { index: 4, logo: <div><i className="fa fa-twitter-square" aria-hidden="true" /></div>, url: this.twitter.value },
-      { index: 5, logo: <div><i className="fa fa-google-plus-square" aria-hidden="true" /></div>, url: this.googlepl.value },
+      { index: 5, logo: <div><i logo="g+" className="fa fa-google-plus-square" aria-hidden="true" /></div>, url: this.googlepl.value },
     ];
     Links = Links.filter(link => (link.logo && link.url.length));
     this.setState({ Links });
@@ -49,8 +49,8 @@ export class LinkSection extends Component {
           <p><strong>Links</strong> My social media and homepage links</p>
           <Edit onClick={this.onClick} edited={this.state.show}>
             { this.state.show ?
-              <div><I className="fa fa-floppy-o" aria-hidden="true" /> Save</div>
-              : <div><I className="fa fa-pencil" aria-hidden="true" /> Edit</div> }
+              <div><I className="fa fa-times" aria-hidden="true" /></div>
+              : <div>Edit <I className="fa fa-pencil" aria-hidden="true" /></div> }
           </Edit>
         </LinkHead>
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>

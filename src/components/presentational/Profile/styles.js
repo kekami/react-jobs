@@ -149,6 +149,7 @@ export const Websites = styled.div`
     margin-top: 1em;
     margin-bottom: 1em;
 `;
+
 export const LinkTag = styled.div`
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -205,5 +206,28 @@ export const LinkTag = styled.div`
 `;
 export const I = styled.i`
     padding-right: 0.2em;
+`;
+export const ExperienceHead = styled(LinkHead)``;
+export const ExperienceInput = styled(SocMediaInput)``;
+export const Experiences = styled(Websites)``;
+export const XPTag = styled.div`
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 
+    display:flex;
+    flex-flow: row wrap;   
+    align-items: center;
+    padding: 0.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
+    div {
+        display: flex;
+        padding: 0.2em;
+        font-size: 1em;
+        min-height: 1.5em;
+        min-width:1.5em;
+        margin: 0.5em;
+    }
 `;

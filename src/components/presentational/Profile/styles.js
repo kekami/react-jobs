@@ -14,12 +14,15 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const ProfileContainer = styled.div`
-    margin: auto;
-    min-width: 65vw;
-    max-width: 65vw;
     background-color: #fff;
     border-radius: 10px;
-    padding: 2em;
+    margin: auto;
+
+    @media (min-width: 800px) { 
+        min-width: 65vw;
+        max-width: 65vw;
+        padding: 2em;
+    }
 `;
 
 export const ProfileNav = styled.div``;
@@ -27,16 +30,31 @@ export const ProgressBar = styled.div`
    
 `;
 export const SectionWrapper = styled.div`
-    margin: 3em;
+    margin: 0.7em;
+    padding: 0.8em;
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
-    padding: 2em;
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
 
     form {
         p {
-            padding: 0.2em;
             color: grey;
         }
+    }
+
+    @media (min-width: 650px) { 
+        margin: 1em; 
+        padding: 1.4em;
+
+        form {
+            p {
+                padding: 0.2em;
+            }
+        }
+    }
+
+    @media (min-width: 1000px) {
+        margin: 2.1em;
+        padding: 1.8em;
     }
 `;
 export const SectionHead = styled.div`
@@ -208,7 +226,67 @@ export const I = styled.i`
     padding-right: 0.2em;
 `;
 export const ExperienceHead = styled(LinkHead)``;
-export const ExperienceInput = styled(SocMediaInput)``;
+export const ExperienceInput = styled.div`
+    display: flex;
+    flex-flow: column wrap;
+
+    div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0.1em;
+        margin-top: 0.8em;
+        margin-bottom: 0.8em;
+        justify-content: space-between;
+        align-items: center;
+
+        label {
+            min-width: 25%;
+            padding: 0.2em;
+        }
+
+        input {
+            margin-right: 5em;
+            padding: 0.5em;
+            min-width: 5em;
+            
+        }
+    }
+
+
+    @media (min-width: 1000px) {
+        input {
+            margin: 5;
+            width: 25em;
+        }
+    }
+`;
+
+export const DatePicker = styled.div`
+    DatePicker {
+        label {
+            min-width: 25%;
+            padding: 0.2em;
+        }
+
+        input {
+            margin-right: 5em;
+            padding: 0.5em;
+            min-width: 5em;
+            
+        }
+    }
+
+
+    @media (min-width: 1000px) {
+        input {
+            margin: 5;
+            width: 25em;
+        }
+    }
+`;
 export const Experiences = styled(Websites)``;
 export const XPTag = styled.div`
     -webkit-box-sizing: border-box;

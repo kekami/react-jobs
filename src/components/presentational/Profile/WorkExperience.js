@@ -13,7 +13,6 @@ export class WorkExperience extends Component {
       inputs: [1,2],//for now an array instead of 'click2create new input'
       positions: [],
       experienceData: [],
-      newArr: [],
       show: false,
     };
 
@@ -53,7 +52,6 @@ export class WorkExperience extends Component {
     let long = 0;
     let updated = {};
 
-
     this.state.positions.map((exp, i) => ( 
       long = this.workLen(exp['From-m'], exp['From-y'], exp['To-m'], exp['To-y']),
 
@@ -64,16 +62,7 @@ export class WorkExperience extends Component {
       
     ))
   }
-    //for (var key in positions)
-      //{     
-        //var element = {};
-        //element[key] = experienceData[key];
-        //newArr.push(element);
-      //}
-    //this.setState({
-      //newArr
-    //})
-
+    
   addingXP() {
     return this.state.positions.map((exp, i) => (
       <XPTag key={i} showingbelow="true">

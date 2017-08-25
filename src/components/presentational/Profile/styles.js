@@ -229,6 +229,7 @@ export const ExperienceHead = styled(LinkHead)``;
 export const ExperienceInput = styled.div`
     display: flex;
     flex-flow: column wrap;
+    margin-bottom: 1em;
 
     div {
         -webkit-box-sizing: border-box;

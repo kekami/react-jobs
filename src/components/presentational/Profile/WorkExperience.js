@@ -10,21 +10,20 @@ export class WorkExperience extends Component {
     super(props);
 
     this.state = {
-      inputs: [1,2,3,4,5],
-      ndx: [],
+      inputs: [1,2,3],//for now an array instead of 'click2create new input'
       position: "",
+      company: '',
       positions: [],
-      show: false,
       experienceData: [],
       newArr: [],
+      show: false,
     };
 
     this.onClick = this.onClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInputChange = (e, index) => {
-    const experienceData = this.state.experienceData;
+  handleInputChange =  (e, index) => {
     const value = e.target.value;
     const name = e.target.name;
     const positions = this.state.positions;
@@ -47,7 +46,7 @@ export class WorkExperience extends Component {
     this.submitData();
   }
 
-  submitData() {
+  submitData() {//this function is not useful now - newArr is always creating 2 obj instead of 1 - 
     const experienceData = this.state.experienceData;
     const positions = this.state.positions;
     const newArr = this.state.newArr;
@@ -66,7 +65,7 @@ export class WorkExperience extends Component {
   addingXP() {
     return this.state.experienceData.map((exp, i) => (
       <XPTag key={i} showingbelow="true">
-        <div>I worked as {exp.Position}</div>
+        <div>I worked as {exp.Position} in {exp.Company}</div>
       </XPTag>
     ));
   }
@@ -94,6 +93,15 @@ export class WorkExperience extends Component {
                     name='Position'
                     value={this.state.position[key]}
                     onChange={(e) => this.handleInputChange(e, index)}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Company{this.state.inputs[key]}</label>
+                  <input
+                    type="text"
+                    name="Company"
+                    value={this.state.company[key]}
+                    onChange={(e) => this.handleInputChange(e, index)}           placeholder="e.g. Wexpose"
                   />
                 </div>
               </ExperienceInput>

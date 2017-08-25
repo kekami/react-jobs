@@ -56,7 +56,8 @@ export class WorkExperience extends Component {
 
     this.state.positions.map((exp, i) => ( 
       long = this.workLen(exp['From-m'], exp['From-y'], exp['To-m'], exp['To-y']),
-      updated = Object.assign({}, positions[i], { length: long }),
+
+      updated = Object.assign({}, positions[i], { Length: long }),
       this.setState({
         positions: Object.assign([], positions, { [i]: updated })
       })
@@ -76,7 +77,8 @@ export class WorkExperience extends Component {
   addingXP() {
     return this.state.positions.map((exp, i) => (
       <XPTag key={i} showingbelow="true">
-        <div>I worked for as {exp.Position} in {exp.Company} during my time in {exp.Location}</div>
+        <div>I worked for {exp.Length} as {exp.Position} at {exp.Company} during my time in {exp.Location}</div>
+        <div>{exp.additionalInfo}</div>
       </XPTag>
     ));
   }

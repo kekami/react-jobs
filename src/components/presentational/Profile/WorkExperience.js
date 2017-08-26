@@ -3,14 +3,17 @@ import { SectionWrapper, ExperienceHead, Edit, I, ExperienceInput, DatePicker, X
 
 
 // Add option 'still working' to auto 'GET DATE' and pass it to the newXP object
+
 // Sort XP Tags according to their chronology
-// Allow for multiple XPTags to be added (clickable 'add experience')
+//  --> property Length disappeared - we have to bring it back
+//  --> sorting function should work fine - but look above (issue)
+
 export class WorkExperience extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      inputs: [1,2],//for now an array instead of 'click2create new input'
+      inputs: [1,2,3 ],//for now an array instead of 'click2create new input'
       positions: [],
       experienceData: [],
       show: false,
@@ -40,6 +43,7 @@ export class WorkExperience extends Component {
 
   handleSubmit(e) {
     e.preventDefault(); 
+    this.sorting();
     this.submitData();
   }
 
@@ -47,26 +51,39 @@ export class WorkExperience extends Component {
     return ((((m2 + (12 * y2)) - (m1 + (12 * y1))) / 100000));
   }
 
-  submitData() {//this function is not useful now - newArr is always creating 2 obj instead of 1 - 
-    const positions = this.state.positions;
-    let long = 0;
-    let updated = {};
+  sorting() {
 
-    this.state.positions.map((exp, i) => ( 
-      long = this.workLen(exp['From-m'], exp['From-y'], exp['To-m'], exp['To-y']),
-
-      updated = Object.assign({}, positions[i], { Length: long }),
-      this.setState({
-        positions: Object.assign([], positions, { [i]: updated })
-      })
-      
-    ))
   }
-    
+
+  submitData() {//this function is not useful now - newArr is always creating 2 obj instead of 1 - 
+      const positions = this.state.positions;
+      let howLong = 0;
+      let fresh = 0;//number used to set chronology
+      let updated = {};
+      let recent = {};//the higher the number the more recent job it is
+  
+      this.state.positions.map((exp, i) => ( 
+        howLong = this.workLen(exp['From-m'], exp['From-y'], exp['To-m'], exp['To-y']),
+        fresh = (12*(exp['To-y']) + (exp['To-m'])),
+        updated = Object.assign(positions[i], { Length: howLong, isRecent: fresh }),
+  
+        this.setState({
+          positions: Object.assign(positions, { [i]: updated }),
+          
+        })
+        
+        
+      ))
+  }
+
   addingXP() {
-    return this.state.positions.map((exp, i) => (
+    return this.state.positions.sort(
+      function(a,b) {
+        return b.isRecent - a.isRecent;
+      }
+    ).map((exp, i) => (
       <XPTag key={i} showingbelow="true">
-        <div>I worked for {exp.Length} as {exp.Position} at {exp.Company} during my time in {exp.Location}</div>
+        <div>I worked for {exp.Length} month(s) as {exp.Position} at {exp.Company} during my time in {exp.Location}</div>
         <div>{exp.additionalInfo}</div>
       </XPTag>
     ));

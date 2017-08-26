@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { SectionWrapper, ExperienceHead, Edit, I, ExperienceInput, DatePicker, XPTag, Experiences } from './styles';
 
 
-// Add option 'still working' to auto 'GET DATE' and pass it to the newXP object
+// Add option 'currently working' to auto 'GET DATE' and pass it to the newXP object
+// Prevent setting illogical dates (start date is later than finish date)
+// Convert length of > 12 months to ' X year and Y months'
 
-// Sort XP Tags according to their chronology
-//  --> property Length disappeared - we have to bring it back
-//  --> sorting function should work fine - but look above (issue)
+
 
 export class WorkExperience extends Component {
   constructor(props) {
@@ -31,10 +31,7 @@ export class WorkExperience extends Component {
 
     this.setState({
       positions: Object.assign([], positions, { [index]: updated })
-    });
-    //this.setState({
-     // experienceData: Object.assign([], positions, { [name]: value})
-   // });    
+    }); 
   }
 
   onClick() {
@@ -42,8 +39,7 @@ export class WorkExperience extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault(); 
-    this.sorting();
+    e.preventDefault();
     this.submitData();
   }
 
@@ -51,16 +47,12 @@ export class WorkExperience extends Component {
     return ((((m2 + (12 * y2)) - (m1 + (12 * y1))) / 100000));
   }
 
-  sorting() {
-
-  }
-
-  submitData() {//this function is not useful now - newArr is always creating 2 obj instead of 1 - 
+  submitData() {
       const positions = this.state.positions;
       let howLong = 0;
-      let fresh = 0;//number used to set chronology
+      let fresh = 0;
       let updated = {};
-      let recent = {};//the higher the number the more recent job it is
+      let recent = {};
   
       this.state.positions.map((exp, i) => ( 
         howLong = this.workLen(exp['From-m'], exp['From-y'], exp['To-m'], exp['To-y']),

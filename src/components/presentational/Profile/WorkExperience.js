@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { SectionWrapper, ExperienceHead, Edit, I, ExperienceInput, DatePicker, XPTag, Experiences } from './styles';
 
-
-// Add option 'currently working' to auto 'GET DATE' and pass it to the newXP object
 // Prevent setting illogical dates (start date is later than finish date)
 // Convert length of > 12 months to ' X year and Y months'
-
 
 
 export class WorkExperience extends Component {
@@ -13,7 +10,7 @@ export class WorkExperience extends Component {
     super(props);
 
     this.state = {
-      inputs: [1,2,3 ],//for now an array instead of 'click2create new input'
+      inputs: [1,2 ],//for now an array instead of 'click2create new input'
       positions: [],
       experienceData: [],
       show: false,
@@ -43,14 +40,14 @@ export class WorkExperience extends Component {
   }
 
   checked(i) {//this function was supposed to change a state (or add property pair dynamically) so that based on this state I can add props to the two select elements (month, year) and disable them. if ticked - disable date picker, untick - enable date picker.
-    //const disabler = this.state.disableDate;
-    //let ticked = {};
-    //ticked = Object.assign(disabler[i], { tickbox: 'true' });
-    //this.setState({
-    //  disabler: Object.assign(disabler, { [i]: ticked }), 
-    //})
-   // this.setState({ disableDate[index]: !this.state.disableDate });    
-  }
+    //maybe create an entry with key(index): false/true when clicked the checkbox - basing on this prop 'disabled' of datepicker will hide/show date picker
+  const disableDate = this.state.disableDate;
+  
+ /*this.setState({
+    disableDate: {i:true}
+  });*/
+
+}
 
   onClick() {
     this.setState({ show: !this.state.show });
@@ -61,8 +58,12 @@ export class WorkExperience extends Component {
     this.submitData();
   }
 
-  workLen(m1, y1, m2, y2) {
-    return ((((m2 + (12 * y2)) - (m1 + (12 * y1))) / 100000));
+  workLen(m1, y1, m2, y2) {//have to parseInt for every number
+    m1 = parseInt(m1,10);
+    m2 = parseInt(m2,10);
+    y1 = parseInt(y1,10);
+    y2 = parseInt(y2,10);
+    return (((m2 + (12 * y2)) - (m1 + (12 * y1))));
   }
 
   submitData() {
@@ -73,8 +74,8 @@ export class WorkExperience extends Component {
   
       this.state.positions.map((exp, i) => ( 
         howLong = this.workLen(exp['From-m'], exp['From-y'], exp['To-m'], (exp['To-y'] || '2017')),
-        fresh = (12*(exp['To-y'] || '2017') + (exp['To-m'])),
-        updated = Object.assign(positions[i], { Length: howLong, isRecent: fresh }),
+        fresh = (12*(parseInt((exp['To-y'] || '2017'), 10)) + parseInt((exp['To-m']),10)),
+        updated = Object.assign(positions[i], { Length: howLong, isRecent: fresh, currentlyWorking: false }),
   
         this.setState({
           positions: Object.assign(positions, { [i]: updated }), 

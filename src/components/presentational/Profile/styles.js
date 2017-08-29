@@ -256,6 +256,7 @@ export const ExperienceInput = styled.div`
     display: flex;
     flex-flow: row wrap;
     margin-bottom: 1em;
+    border-bottom: solid 1px #04d092;
 
     div {
         -webkit-box-sizing: border-box;
@@ -337,26 +338,7 @@ export const Calendar = styled.div`
         }
     }
 `;
-export const DatePicker = styled.div`
-        label {
-            min-width: 25%;
-            padding: 0.2em;
-        }
 
-        input {
-            margin-right: 5em;
-            padding: 0.5em;
-            min-width: 5em;
-            
-        }
-
-    @media (min-width: 1000px) {
-        input {
-            margin: 5;
-            width: 25em;
-        }
-    }
-`;
 export const Experiences = styled(Websites)``;
 export const XPTag = styled.div`
     -webkit-box-sizing: border-box;

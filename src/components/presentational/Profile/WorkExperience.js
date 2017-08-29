@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, DatePicker, XPTag, Experiences, WhiteSpace, Company, Calendar } from './styles';
+import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, XPTag, Experiences, WhiteSpace, Company, Calendar } from './styles';
 
 // Prevent setting illogical dates (start date is later than finish date)
 // Convert length of > 12 months to ' X year and Y months'
@@ -10,7 +10,7 @@ export class WorkExperience extends Component {
     super(props);
 
     this.state = {
-      inputs: [],//for now an array instead of 'click2create new input'
+      inputs: [],
       positions: [],
       experienceData: [],
       show: false,
@@ -125,7 +125,7 @@ export class WorkExperience extends Component {
 
               <ExperienceInput>
                 <div className="form-group">
-                  <label>Position{this.state.inputs[key]}</label>
+                  <label>Position</label>
                   <input
                     type="text"
                     name="Position"
@@ -135,7 +135,7 @@ export class WorkExperience extends Component {
                 </div>
                 <Company>
                   <div className="form-group">
-                    <label>Company{this.state.inputs[key]}</label>
+                    <label>Company</label>
                     <input
                       type="text"
                       name="Company"
@@ -144,7 +144,7 @@ export class WorkExperience extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label>Location{this.state.inputs[key]}</label>
+                    <label>Location</label>
                     <input
                       type="text"
                       name="Location"
@@ -155,7 +155,7 @@ export class WorkExperience extends Component {
                 </Company>
                 <Calendar>
                   <div className="select group">
-                    <label>From{this.state.inputs[key]}</label>
+                    <label>From</label>
                     <div>
                       <select defaultValue="Month" name="From-m" className="form-control" onChange={(e) => this.handleInputChange(e,index) }>
                           <option disabled="disabled">Month</option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
@@ -168,7 +168,7 @@ export class WorkExperience extends Component {
                   </div>
 
                   <div className="select group">
-                    <label>To{this.state.inputs[key]}</label>
+                    <label>To</label>
                     <div>
                       <select defaultValue="Month" name="To-m" className="form-control" /*disabled={this.checked()}*/ onChange={(e) => this.handleInputChange(e,index) }>
                           <option disabled="disabled">Month</option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
@@ -180,7 +180,7 @@ export class WorkExperience extends Component {
                   </div>
                 </Calendar>
                 <div className="form-group">
-                  <label>Additional information (optional){this.state.inputs[key]}</label>
+                  <label>Additional information (optional)</label>
                   <input
                     type="text"
                     name="additionalInfo"

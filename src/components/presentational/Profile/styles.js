@@ -36,6 +36,7 @@ export const SectionWrapper = styled.div`
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
 
     form {
+        
         p {
             color: grey;
         }
@@ -250,9 +251,25 @@ export const Click2AddWork = styled.div`
     }
 
 `;
+export const Company = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    
+    div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0.1em;
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+        width: 50%;
+    }
+`;
 export const ExperienceInput = styled.div`
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     margin-bottom: 1em;
 
     div {
@@ -262,10 +279,9 @@ export const ExperienceInput = styled.div`
         display: flex;
         flex-flow: row wrap;
         padding: 0.1em;
-        margin-top: 0.8em;
-        margin-bottom: 0.8em;
-        justify-content: space-between;
-        align-items: center;
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+        
 
         label {
             min-width: 25%;
@@ -288,9 +304,38 @@ export const ExperienceInput = styled.div`
         }
     }
 `;
+export const Calendar = styled.div`
+    display: flex;
+    flex-flow: row no-wrap;
+    
+    div {
+        display: flex;
+        flex-flow: column no-wrap;
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+        
+        
+        
+        label {
+            
+        }
 
+        div {
+            display: flex;
+            flex-flow: row no-wrap;
+            
+
+            select {
+                margin-right: 0.7em;
+                padding: 0.3em;
+                font-size: 150%;
+            }
+        }
+    }
+`;
 export const DatePicker = styled.div`
-    DatePicker {
+        width: 30%;
+
         label {
             min-width: 25%;
             padding: 0.2em;
@@ -302,7 +347,6 @@ export const DatePicker = styled.div`
             min-width: 5em;
             
         }
-    }
 
 
     @media (min-width: 1000px) {

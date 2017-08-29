@@ -107,8 +107,8 @@ export class WorkExperience extends Component {
     
     return (
       <SectionWrapper edited={this.state.show}>
-        <ExperienceHead>
-          <p><strong>Work Experience</strong> Previous and current positions</p>
+        <ExperienceHead edited={this.state.show}>
+          <p><strong>Work Experience</strong><span></span> Previous and current positions</p>
           <Edit onClick={this.onClick} edited={this.state.show}>
             { this.state.show ?
               <div><I className="fa fa-times" aria-hidden="true" /></div>
@@ -125,7 +125,7 @@ export class WorkExperience extends Component {
 
               <ExperienceInput>
                 <div className="form-group">
-                  <label>Position</label>
+                  <label><strong>Position</strong></label>
                   <input
                     type="text"
                     name="Position"
@@ -135,7 +135,7 @@ export class WorkExperience extends Component {
                 </div>
                 <Company>
                   <div className="form-group">
-                    <label>Company</label>
+                    <label><strong>Company</strong></label>
                     <input
                       type="text"
                       name="Company"
@@ -144,7 +144,7 @@ export class WorkExperience extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label>Location</label>
+                    <label><strong>Location</strong></label>
                     <input
                       type="text"
                       name="Location"
@@ -155,7 +155,7 @@ export class WorkExperience extends Component {
                 </Company>
                 <Calendar>
                   <div className="select group">
-                    <label>From</label>
+                    <label><strong>From</strong></label>
                     <div>
                       <select defaultValue="Month" name="From-m" className="form-control" onChange={(e) => this.handleInputChange(e,index) }>
                           <option disabled="disabled">Month</option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
@@ -168,7 +168,7 @@ export class WorkExperience extends Component {
                   </div>
 
                   <div className="select group">
-                    <label>To</label>
+                    <label><strong>To</strong></label>
                     <div>
                       <select defaultValue="Month" name="To-m" className="form-control" /*disabled={this.checked()}*/ onChange={(e) => this.handleInputChange(e,index) }>
                           <option disabled="disabled">Month</option><option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option><option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option><option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
@@ -180,7 +180,7 @@ export class WorkExperience extends Component {
                   </div>
                 </Calendar>
                 <div className="form-group">
-                  <label>Additional information (optional)</label>
+                  <label><strong>Additional information (optional)</strong></label>
                   <input
                     type="text"
                     name="additionalInfo"

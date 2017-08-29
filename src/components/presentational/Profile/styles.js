@@ -30,12 +30,13 @@ export const ProgressBar = styled.div`
    
 `;
 export const SectionWrapper = styled.div`
-    margin: 0.7em;
+    margin: 0.5em;
     padding: 0.8em;
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
 
     form {
+        padding:1em;
         
         p {
             color: grey;
@@ -43,8 +44,8 @@ export const SectionWrapper = styled.div`
     }
 
     @media (min-width: 650px) { 
-        margin: 1em; 
-        padding: 1.4em;
+        margin: 0.7em; 
+        padding: 1em;
 
         form {
             p {
@@ -54,8 +55,8 @@ export const SectionWrapper = styled.div`
     }
 
     @media (min-width: 1000px) {
-        margin: 2.1em;
-        padding: 1.8em;
+        margin: 1em;
+        padding: 1.2em;
     }
 `;
 export const SectionHead = styled.div`
@@ -69,7 +70,19 @@ export const SkillHead = styled.div`
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1.5em;
+    color: #9b9b9b;
+    border-bottom: solid 1px ${props => !props.edited ? '#DDEDF5' : 'none'};
+    
+    strong {
+        color: black;
+        font-size: 1.3em;
+        padding-right: 0.9em;
+
+    }
+    
 `;
 export const LangHead = styled(SkillHead)``;
 export const LinkHead = styled(SkillHead)``;
@@ -82,6 +95,8 @@ export const Edit = styled.button`
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     border: none;
     cursor: pointer;
+    color: #04d092;
+    outline:none;
 `;
 export const Link = styled.a``;
 export const TagsForm = styled.div`
@@ -332,7 +347,7 @@ export const Calendar = styled.div`
             select {
                 padding:0.1em;
                 margin-right: 0.2em;
-                font-size: 1.5em;
+                font-size: 1.1em;
                 width: 38%;
             }
         }

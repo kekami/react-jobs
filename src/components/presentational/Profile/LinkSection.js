@@ -45,7 +45,7 @@ export class LinkSection extends Component {
   render() {
     return (
       <SectionWrapper edited={this.state.show}>
-        <LinkHead>
+        <LinkHead edited={this.state.show}>
           <p><strong>Links</strong> My social media and homepage links</p>
           <Edit onClick={this.onClick} edited={this.state.show}>
             { this.state.show ?

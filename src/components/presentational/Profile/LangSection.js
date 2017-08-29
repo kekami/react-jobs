@@ -51,7 +51,7 @@ export class LangSection extends Component {
     return (
       <SectionWrapper edited={this.state.show}>
         <First2>
-          <LangHead>
+          <LangHead edited={this.state.show}>
             <p><strong>Languages</strong> My languages</p>
             <Edit onClick={this.onClick} edited={this.state.show}>
               { this.state.show ?

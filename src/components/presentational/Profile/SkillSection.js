@@ -53,7 +53,7 @@ export class SkillSection extends Component {
     return (
       <SectionWrapper edited={this.state.show}>
         <First2>
-          <SkillHead>
+          <SkillHead edited={this.state.show}>
             <p><strong>Skills</strong> My important skills</p>
             <Edit onClick={this.onClick} edited={this.state.show}>
               { this.state.show ?

@@ -36,10 +36,27 @@ export const SectionWrapper = styled.div`
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
 
     form {
-        padding:1em;
+        padding: 1em;
         
         p {
             color: grey;
+        }
+        button {
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: #04d092;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #9b9b9b;
+            }
         }
     }
 
@@ -244,6 +261,8 @@ export const I = styled.i`
 `;
 export const ExperienceHead = styled(LinkHead)``;
 export const Click2AddWork = styled.div`
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
     width: inherit;
     cursor: pointer;
     padding: 1em;

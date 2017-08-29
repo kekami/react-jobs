@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, ExperienceHead, Edit, I, ExperienceInput, DatePicker, XPTag, Experiences } from './styles';
+import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, DatePicker, XPTag, Experiences } from './styles';
 
 // Prevent setting illogical dates (start date is later than finish date)
 // Convert length of > 12 months to ' X year and Y months'
@@ -10,7 +10,7 @@ export class WorkExperience extends Component {
     super(props);
 
     this.state = {
-      inputs: [1,2 ],//for now an array instead of 'click2create new input'
+      inputs: [],//for now an array instead of 'click2create new input'
       positions: [],
       experienceData: [],
       show: false,
@@ -19,8 +19,15 @@ export class WorkExperience extends Component {
 
     this.onClick = this.onClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.addSection = this.addSection.bind(this);
   }
 
+  addSection() {
+    const inputs = this.state.inputs;
+    this.setState({
+      inputs: inputs.concat(inputs.length),
+    });
+  }
   handleInputChange = (e, index) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -107,6 +114,9 @@ export class WorkExperience extends Component {
               : <div>Edit <I className="fa fa-pencil" aria-hidden="true" /></div> }
           </Edit>
         </ExperienceHead>
+        <Click2AddWork onClick={this.addSection}>
+          <I className="fa fa-plus-circle" aria-hidden="true" /> Add a position
+        </Click2AddWork>
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
           {this.state.inputs.map((key, index) =>
 

@@ -68,6 +68,7 @@ export const SkillHead = styled.div`
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 1em;
 `;
 export const LangHead = styled(SkillHead)``;
 export const LinkHead = styled(SkillHead)``;
@@ -226,6 +227,29 @@ export const I = styled.i`
     padding-right: 0.2em;
 `;
 export const ExperienceHead = styled(LinkHead)``;
+export const Click2AddWork = styled.div`
+    width: inherit;
+    cursor: pointer;
+    padding: 1em;
+    background-color: #04d092;
+    color: white;
+
+    I {
+        color: white;
+        padding: 0.2em;
+    }
+
+    &:hover {
+        background-color: white;
+        color: #04d092;
+
+        I {
+            color: #04d092;
+            padding: 0.2em;
+        }
+    }
+
+`;
 export const ExperienceInput = styled.div`
     display: flex;
     flex-flow: column wrap;

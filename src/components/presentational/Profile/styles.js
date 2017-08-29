@@ -251,22 +251,7 @@ export const Click2AddWork = styled.div`
     }
 
 `;
-export const Company = styled.div`
-    display: flex;
-    flex-flow: row wrap;
-    
-    div {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: row wrap;
-        padding: 0.1em;
-        margin-top: 0.4em;
-        margin-bottom: 0.4em;
-        width: 50%;
-    }
-`;
+
 export const ExperienceInput = styled.div`
     display: flex;
     flex-flow: row wrap;
@@ -304,38 +289,55 @@ export const ExperienceInput = styled.div`
         }
     }
 `;
+export const Company = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+
+    div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+        width: 50%;
+
+    }
+`;
 export const Calendar = styled.div`
     display: flex;
     flex-flow: row no-wrap;
+    width: 100%;
     
     div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
         display: flex;
         flex-flow: column no-wrap;
         margin-top: 0.4em;
         margin-bottom: 0.4em;
-        
-        
-        
-        label {
-            
-        }
+        width: 50%;
 
+        label {
+            width: 75%;
+        } 
         div {
             display: flex;
             flex-flow: row no-wrap;
+            width:100%;
             
-
             select {
-                margin-right: 0.7em;
-                padding: 0.3em;
-                font-size: 150%;
+                padding:0.1em;
+                margin-right: 0.2em;
+                font-size: 1.5em;
+                width: 38%;
             }
         }
     }
 `;
 export const DatePicker = styled.div`
-        width: 30%;
-
         label {
             min-width: 25%;
             padding: 0.2em;
@@ -347,7 +349,6 @@ export const DatePicker = styled.div`
             min-width: 5em;
             
         }
-
 
     @media (min-width: 1000px) {
         input {

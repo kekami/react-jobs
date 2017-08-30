@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+/* Start of General Profile styling */
 export const ProfileWrapper = styled.div`
     
     display: flex;
@@ -11,7 +12,6 @@ export const ProfileWrapper = styled.div`
     padding-bottom: 10px;
     background-color: #DDEDF5;
 `;
-
 export const ProfileContainer = styled.div`
     background-color: #fff;
     border-radius: 10px;
@@ -23,11 +23,12 @@ export const ProfileContainer = styled.div`
         padding: 2em;
     }
 `;
-
 export const ProfileNav = styled.div``;
-export const ProgressBar = styled.div`
-   
+export const ProgressBar = styled.div`  
 `;
+/* End of General Profile styling */
+
+/* Start of General Section styling */
 export const SectionWrapper = styled.div`
     margin: 0.5em;
     padding: 0.8em;
@@ -77,9 +78,27 @@ export const SectionWrapper = styled.div`
     }
 `;
 export const SectionHead = styled.div`
-    padding: 1em;
-    
+    padding: 1em;  
 `;
+export const Btn = styled.button` 
+    border: none;
+    outline:none;
+    background-color: #eee;
+`;
+export const Edit = styled.button`
+    padding: 0.4em;
+    background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
+    border: none;
+    cursor: pointer;
+    color: #04d092;
+    outline:none;
+`;
+export const I = styled.i`
+    padding-right: 0.2em;
+`;
+/* End of General Section styling */
+
+/* Start of Skills and Languages Sections styling */
 export const First2 = styled.div`
  
 `;
@@ -102,19 +121,6 @@ export const SkillHead = styled.div`
 `;
 export const LangHead = styled(SkillHead)``;
 export const LinkHead = styled(SkillHead)``;
-
-export const Btn = styled.button` 
-    border: none;
-    background-color: #eee;
-`;
-export const Edit = styled.button`
-    padding: 0.4em;
-    background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
-    border: none;
-    cursor: pointer;
-    color: #04d092;
-    outline:none;
-`;
 export const Link = styled.a``;
 export const TagsForm = styled.div`
     display: flex;
@@ -131,8 +137,9 @@ export const SkillTag = styled.p`
     border: solid 2px #EEE;
     border-radius: 5px;
 `;
-
 export const LangTag = styled(SkillTag)``;
+
+/* Start of Links Section styling */
 export const Inputform = styled.form`
     display: flex;
     flex-direction: column;
@@ -201,7 +208,6 @@ export const Websites = styled.div`
     margin-top: 1em;
     margin-bottom: 1em;
 `;
-
 export const LinkTag = styled.div`
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -256,9 +262,8 @@ export const LinkTag = styled.div`
     }
 
 `;
-export const I = styled.i`
-    padding-right: 0.2em;
-`;
+/* Start of Experience Section styling */
+
 export const ExperienceHead = styled(LinkHead)``;
 export const Click2AddWork = styled.div`
     -webkit-transition-duration: 0.6s;
@@ -285,7 +290,6 @@ export const Click2AddWork = styled.div`
     }
 
 `;
-
 export const ExperienceInput = styled.div`
     display: flex;
     flex-flow: row wrap;
@@ -467,3 +471,16 @@ export const Info = styled.p`
     padding-top: 0.8em;
     width: 100%;
 `;
+
+
+/* Start of Education Section styling */
+export const EducationHead = styled(ExperienceHead)``;
+export const EducationInput = styled(ExperienceInput)``;
+export const Click2AddEdu = styled(Click2AddWork)``;
+export const EduTag = styled(XPTag)``;
+export const EduDetails = styled(WorkDetails)``;
+export const SchoolLocation = styled(CompanyLocation)``;
+export const Degree = styled(PostitionInCorp)``;
+export const Schools = styled(Experiences)``;
+export const WhatDegree = styled(Company)``;
+export const WhatUni = styled(Company)``;

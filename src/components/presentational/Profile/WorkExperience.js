@@ -11,7 +11,6 @@ export class WorkExperience extends Component {
     this.state = {
       inputs: [],
       positions: [],
-      experienceData: [],
       show: false,
       //disableDate: [],
     };
@@ -198,7 +197,7 @@ export class WorkExperience extends Component {
             ))}
           <button className="btn btn-primary" type="submit">Save</button>
         </form>
-        <Experiences style={{ display: 'block' }}>
+        <Experiences style={{ display: this.state.show ? 'none' : 'block' }} >
           {this.addingXP()}
         </Experiences>
       </SectionWrapper>

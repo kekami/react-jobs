@@ -378,25 +378,53 @@ export const XPTag = styled.div`
     width: 100%;
     display:flex;
     flex-flow: row wrap;   
-    padding: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 
-    div {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: row wrap;
-        width: 50%;
-        
-        p {
-            
-            width:100%;
-        }
-    }
 `;
 
-export const Position = styled.div`
-    font-size: 2em;
+export const Dates = styled.div`
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+    width: 35%;
+`;
+export const WorkDetails = styled.div`
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+    width: 65%;
+`;
+export const SinceDate = styled.p`
+    margin: 0;
+    padding-bottom: 0.4em;
+    width: 100%;
+    color: #1c75bc;  
+`;
+export const YearsMonths = styled(SinceDate)`
+    color: #9b9b9b;
+`;
+
+export const CompanyLocation = styled.p`
+    color: #9b9b9b;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+`;
+export const PostitionInCorp = styled.p`
+    margin: 0;
+    padding-top: 0.7em;
+    width: 100%;
+    font-size: 1.4em;
+`;
+export const Info = styled.p`
+    margin: 0;
+    padding-top: 0.8em;
+    width: 100%;
 `;

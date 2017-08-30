@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, XPTag, Experiences, WhiteSpace, Company, Calendar, Position } from './styles';
+import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, XPTag, SinceDate,YearsMonths, CompanyLocation, PostitionInCorp, Info, Dates, WorkDetails, Experiences, Company, Calendar, Position } from './styles';
 
 // Convert length of > 12 months to ' X year and Y months'
 // --> Style outputs
@@ -99,16 +99,15 @@ export class WorkExperience extends Component {
       }
     ).map((exp, i) => (
       <XPTag key={i} showingbelow="true">
-        <div>
-          <p> Since {exp['From-m']} {exp['From-y']} </p>
-          <p> {exp.Length} months </p>  
-        </div>
-        <div>
-          <p>At <strong>{exp.Company}</strong> in {exp.Location}</p>
-          <p>{exp.Position}</p>
-          <p>{exp.additionalInfo}</p>
-
-        </div>
+        <Dates>
+          <SinceDate><strong>Since {exp['From-m']} / {exp['From-y']} </strong></SinceDate>
+          <YearsMonths><strong> {exp.Length} months </strong></YearsMonths>  
+        </Dates>
+        <WorkDetails>
+          <CompanyLocation>at <strong>{exp.Company}</strong> in {exp.Location}</CompanyLocation>
+          <PostitionInCorp>{exp.Position}</PostitionInCorp>
+          <Info>{exp.additionalInfo}</Info>
+        </WorkDetails>
       </XPTag>
     ));
   }

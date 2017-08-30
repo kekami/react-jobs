@@ -300,18 +300,24 @@ export const ExperienceInput = styled.div`
         flex-flow: row wrap;
         padding: 0.1em;
         margin-top: 0.4em;
-        margin-bottom: 0.4em;
-        
+        margin-bottom: 0.4em;      
+        width: 100%;  
 
         label {
             min-width: 25%;
             padding: 0.2em;
+
         }
 
         input {
             margin-right: 5em;
             padding: 0.5em;
-            min-width: 5em;
+            width: 100%;
+
+            @media (min-width: 800px) {
+                width: 100%;
+            }    
+
             
         }
     }
@@ -336,7 +342,21 @@ export const Company = styled.div`
         flex-flow: row wrap;
         margin-top: 0.4em;
         margin-bottom: 0.4em;
-        width: 50%;
+        width:100%;
+
+        input {
+            width: 100%;
+
+            @media (min-width: 800px) {
+                width: 100%;
+            }
+
+        }
+        
+
+        @media (min-width: 800px) {        
+            width: 50%;
+        }
 
     }
 `;
@@ -353,10 +373,19 @@ export const Calendar = styled.div`
         flex-flow: column no-wrap;
         margin-top: 0.4em;
         margin-bottom: 0.4em;
-        width: 50%;
+        width: 100%;
+
+        @media (min-width: 800px) {
+            width: 50%;
+        }
 
         label {
-            width: 75%;
+            width: 100%
+
+            @media (min-width: 800px) {
+                width: 75%;
+        
+            }
         } 
         div {
             display: flex;

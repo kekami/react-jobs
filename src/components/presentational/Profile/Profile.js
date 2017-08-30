@@ -3,6 +3,7 @@ import { SkillSection } from './SkillSection';
 import { LangSection } from './LangSection';
 import { LinkSection } from './LinkSection';
 import { WorkExperience } from './WorkExperience';
+import { Education } from './Education';
 import { ProfileWrapper, ProfileContainer, ProfileNav, ProgressBar, Link } from './styles';
 
 
@@ -23,6 +24,7 @@ export function Profile() {
         <LangSection />
         <LinkSection />
         <WorkExperience />
+        <Education />
       </ProfileContainer>
     </ProfileWrapper>
   );

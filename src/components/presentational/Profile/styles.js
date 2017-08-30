@@ -329,7 +329,7 @@ export const ExperienceInput = styled.div`
 
     @media (min-width: 1000px) {
         input {
-            margin: 5;
+            margin: 5; /*wtf is this */
             width: 25em;
         }
     }
@@ -484,3 +484,9 @@ export const Degree = styled(PostitionInCorp)``;
 export const Schools = styled(Experiences)``;
 export const WhatDegree = styled(Company)``;
 export const WhatUni = styled(Company)``;
+
+/* Start of About Me Section styling */
+
+export const AboutInput = styled(ExperienceInput)`
+    border-bottom: none;
+`;

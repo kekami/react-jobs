@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const ProfileWrapper = styled.div`
-    min-height: 100vh;
-    min-width: 100vw;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,6 +33,7 @@ export const SectionWrapper = styled.div`
     padding: 0.8em;
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
+    border-bottom: solid 1px ${props => !props.edited ? '#DDEDF5' : 'none'};
 
     form {
         padding: 1em;
@@ -91,7 +91,6 @@ export const SkillHead = styled.div`
     padding-right: 1em;
     padding-bottom: 1.5em;
     color: #9b9b9b;
-    border-bottom: solid 1px ${props => !props.edited ? '#DDEDF5' : 'none'};
     
     strong {
         color: black;
@@ -380,8 +379,9 @@ export const XPTag = styled.div`
     flex-flow: row wrap;   
     padding-left: 1em;
     padding-right: 1em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: solid 1px #DDEDF5;
 
 `;
 
@@ -391,7 +391,12 @@ export const Dates = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-flow: column wrap;
-    width: 35%;
+    width:100%;
+
+    @media (min-width: 800px) { 
+
+        width: 35%;
+    }
 `;
 export const WorkDetails = styled.div`
     -webkit-box-sizing: border-box;
@@ -399,7 +404,12 @@ export const WorkDetails = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-flow: column wrap;
-    width: 65%;
+    width:100%;
+
+    @media (min-width: 800px) { 
+       
+        width: 65%;
+    }
 `;
 export const SinceDate = styled.p`
     margin: 0;

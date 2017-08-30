@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, XPTag, SinceDate,YearsMonths, CompanyLocation, PostitionInCorp, Info, Dates, WorkDetails, Experiences, Company, Calendar, Position } from './styles';
+import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, XPTag, SinceDate,YearsMonths, CompanyLocation, PostitionInCorp, Info, Dates, WorkDetails, Experiences, Company, Calendar } from './styles';
 
 // Convert length of > 12 months to ' X year and Y months'
-// --> Style outputs
 // create an 'if' to stop people from setting illogical dates (start date is later than finish date)
-// the botyom border is in wrong place - have to be below added elements of each section!
 
 export class WorkExperience extends Component {
   constructor(props) {
@@ -14,8 +12,8 @@ export class WorkExperience extends Component {
       inputs: [],
       positions: [],
       experienceData: [],
-      show: true,
-      disableDate: [],
+      show: false,
+      //disableDate: [],
     };
 
     this.onClick = this.onClick.bind(this);
@@ -50,7 +48,7 @@ export class WorkExperience extends Component {
 
   checked(i) {//this function was supposed to change a state (or add property pair dynamically) so that based on this state I can add props to the two select elements (month, year) and disable them. if ticked - disable date picker, untick - enable date picker.
     //maybe create an entry with key(index): false/true when clicked the checkbox - basing on this prop 'disabled' of datepicker will hide/show date picker
-  const disableDate = this.state.disableDate;
+  //const disableDate = this.state.disableDate;
   
  /*this.setState({
     disableDate: {i:true}

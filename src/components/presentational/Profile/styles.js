@@ -106,6 +106,7 @@ export const LinkHead = styled(SkillHead)``;
 
 export const Btn = styled.button` 
     border: none;
+    background-color: #eee;
 `;
 export const Edit = styled.button`
     padding: 0.4em;
@@ -123,7 +124,7 @@ export const TagsForm = styled.div`
 `;
 export const SkillTag = styled.p`
     display: ${props => props.showing ? 'inline-block' : 'none'};
-    background-color: #E1D6D6;
+    background-color: #eee;
     color: black;
     padding: 10px;
     margin: 5px 10px 5px 0px;
@@ -372,26 +373,30 @@ export const Calendar = styled.div`
         }
     }
 `;
-
 export const Experiences = styled(Websites)``;
 export const XPTag = styled.div`
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
+    width: 100%;
     display:flex;
     flex-flow: row wrap;   
-    align-items: center;
     padding: 0.2em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 
     div {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
         display: flex;
-        padding: 0.2em;
-        font-size: 1em;
-        min-height: 1.5em;
-        min-width:1.5em;
-        margin: 0.5em;
+        flex-flow: row wrap;
+        width: 50%;
+        
+        p {
+            
+            width:100%;
+        }
     }
+`;
+
+export const Position = styled.div`
+    font-size: 2em;
 `;

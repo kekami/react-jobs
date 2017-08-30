@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, XPTag, Experiences, WhiteSpace, Company, Calendar } from './styles';
+import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput, XPTag, Experiences, WhiteSpace, Company, Calendar, Position } from './styles';
 
-// Prevent setting illogical dates (start date is later than finish date)
 // Convert length of > 12 months to ' X year and Y months'
-
+// --> Style outputs
+// create an 'if' to stop people from setting illogical dates (start date is later than finish date)
+// the botyom border is in wrong place - have to be below added elements of each section!
 
 export class WorkExperience extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export class WorkExperience extends Component {
       inputs: [],
       positions: [],
       experienceData: [],
-      show: false,
+      show: true,
       disableDate: [],
     };
 
@@ -98,8 +99,16 @@ export class WorkExperience extends Component {
       }
     ).map((exp, i) => (
       <XPTag key={i} showingbelow="true">
-        <div>I worked for {exp.Length} month(s) as {exp.Position} at {exp.Company} during my time in {exp.Location}</div>
-        <div>{exp.additionalInfo}</div>
+        <div>
+          <p> Since {exp['From-m']} {exp['From-y']} </p>
+          <p> {exp.Length} months </p>  
+        </div>
+        <div>
+          <p>At <strong>{exp.Company}</strong> in {exp.Location}</p>
+          <p>{exp.Position}</p>
+          <p>{exp.additionalInfo}</p>
+
+        </div>
       </XPTag>
     ));
   }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { SectionWrapper, AboutMeHead, AboutMeBody, Edit, I, AboutMeInput, Company } from './styles';
 
-// --> Fix presentational output of the About Me seciton
-
 export class AboutMe extends Component {
   constructor(props) {
     super(props);

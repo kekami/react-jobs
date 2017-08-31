@@ -18,7 +18,12 @@ export class ProfileNav extends Component {
   render() {
     return (
       <NavWrapper>
-        
+        <nav>
+          <ul>
+            <li><strong>MY PROFILE</strong></li>
+            <li><strong>MY PREFERENCES</strong></li>
+          </ul>
+        </nav>
       </NavWrapper>
     );
   }

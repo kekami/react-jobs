@@ -14,9 +14,7 @@ export function Profile() {
     <ProfileWrapper>
       <ProfileContainer>
         <ProfileNav />
-        <ProgressBar>
-          <span>Here we will drop avatar and some paragraph copied from Jobbatical</span>
-        </ProgressBar>
+        <ProgressBar />
         <AboutMe />
         <SkillSection />
         <LangSection />

@@ -10,30 +10,63 @@ export const ProfileWrapper = styled.div`
     background-color: #DDEDF5;
 `;
 export const ProfileContainer = styled.div`
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 25px;
     margin: auto;
+    min-width: 100vw;
 
-    @media (min-width: 800px) { 
-        min-width: 65vw;
-        max-width: 65vw;
-        padding: 2em;
+    @media (min-width: 500px) {   
+        min-width: 90vw;
+        max-width: 90vw;
+        padding: 0em 1.5em 1.5em 1.5em ;
+    }
+
+    @media (min-width: 650px) {   
+        min-width: 80vw;
+        max-width: 80vw;
+        padding: 0em 2em 2em 2em ;
+    }
+
+    @media (min-width: 800px) {   
+        min-width: 70vw;
+        max-width: 70vw;
+        padding: 0em 3em 3em 3em ;
     }
 `;
 /* End of General Profile styling */
-
 /* Start of the upper part of the Profile styling */
-export const NavWrapper = styled.div``;
+export const NavWrapper = styled.div`
+    nav {
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+
+
+            li {
+                display: inline-block;
+                text-align: center;
+                font-size: 0.9em;
+                width: 50%;
+                
+            }
+        }
+    }
+`;
 export const ProgressBar = styled.div`  
 `;
 /* End of the upper part of the Profile styling */
-
 /* Start of General Section styling */
 export const SectionWrapper = styled.div`
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
     border-bottom: solid 1px ${props => !props.edited ? '#DDEDF5' : 'none'};
-
+    maring: auto;
     form {
         padding: 1em;
         
@@ -163,6 +196,7 @@ export const Inputform = styled.form`
 export const SocMediaInput = styled.div`
     display: flex;
     flex-flow: column wrap;
+
     
     div {
         -webkit-box-sizing: border-box;

@@ -6,7 +6,8 @@ import { WorkExperience } from './WorkExperience';
 import { Education } from './Education';
 import { AboutMe } from './AboutMe';
 import { ProfileNav } from './ProfileNav';
-import { ProfileWrapper, ProfileContainer, ProgressBar } from './styles';
+import { AvatarAndProgress } from './AvatarAndProgress';
+import { ProfileWrapper, ProfileContainer } from './styles';
 
 
 export function Profile() {
@@ -14,7 +15,7 @@ export function Profile() {
     <ProfileWrapper>
       <ProfileContainer>
         <ProfileNav />
-        <ProgressBar />
+        <AvatarAndProgress />
         <AboutMe />
         <SkillSection />
         <LangSection />

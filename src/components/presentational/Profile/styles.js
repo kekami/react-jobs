@@ -2,12 +2,9 @@ import styled from 'styled-components';
 
 /* Start of General Profile styling */
 export const ProfileWrapper = styled.div`
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 5vw;
-    padding-right: 5vw;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #DDEDF5;
@@ -490,7 +487,13 @@ export const AboutMeBody = styled.div`
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 1em;
-    
+
+    div {
+        font-size: 0.95em;
+    }
+    p:not(:last-child) {
+        font-size: 1.5em;
+    }
 `;
 export const AboutMeInput = styled(ExperienceInput)`
     border-bottom: none;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { NavWrapper } from './styles';
 
 export class ProfileNav extends Component {
@@ -6,13 +7,14 @@ export class ProfileNav extends Component {
     super(props);
 
     this.state = {
+      Profile: true,
     };
 
     this.onClick = this.onClick.bind(this);
   }
 
   onClick() {
-    this.setState({ show: !this.state.show });
+    //this.setState({ Active: !this.state.Active });
   }
 
   render() {
@@ -20,8 +22,8 @@ export class ProfileNav extends Component {
       <NavWrapper>
         <nav>
           <ul>
-            <li><strong>MY PROFILE</strong></li>
-            <li><strong>MY PREFERENCES</strong></li>
+            <li><Link to="/" onClick={this.onClick()}><strong>MY PROFILE</strong></Link></li>
+            <li><Link to="/" onClick={this.onClick()}><strong>MY PREFERENCES</strong></Link></li>
           </ul>
         </nav>
       </NavWrapper>

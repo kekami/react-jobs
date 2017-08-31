@@ -17,6 +17,8 @@ export const ProfileContainer = styled.div`
     border-radius: 25px;
     margin: auto;
     min-width: 100vw;
+    margin-top: 4em;
+    margin-bottom: 2em;
 
     @media (min-width: 500px) {   
         min-width: 90vw;
@@ -34,6 +36,7 @@ export const ProfileContainer = styled.div`
         min-width: 70vw;
         max-width: 70vw;
         padding: 0em 3em 3em 3em ;
+
     }
 `;
 /* End of General Profile styling */
@@ -49,11 +52,18 @@ export const NavWrapper = styled.div`
 
 
             li {
-                display: inline-block;
+                display: block;
                 text-align: center;
                 font-size: 0.9em;
                 width: 50%;
+                color: #1c75bc;
+                padding: 0;
                 
+                a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 1em 0em;
+                }
             }
         }
     }
@@ -517,8 +527,6 @@ export const WhatDegree = styled(Company)``;
 export const WhatUni = styled(Company)``;
 
 /* Start of About Me Section styling */
-
-
 export const AboutMeHead = styled(ExperienceHead)``;
 export const AboutMeBody = styled.div`
     display: flex;
@@ -543,3 +551,4 @@ export const AboutMeBody = styled.div`
 export const AboutMeInput = styled(ExperienceInput)`
     border-bottom: none;
 `;
+/* End of About Me Section styling */

@@ -41,7 +41,11 @@ export const ProfileContainer = styled.div`
 `;
 /* End of General Profile styling */
 /* Start of the upper part of the Profile styling */
+
+// --> First of type doesn't work;
 export const NavWrapper = styled.div`
+
+
     nav {
         ul {
             display: flex;
@@ -50,16 +54,6 @@ export const NavWrapper = styled.div`
             align-items: center;
             padding: 0;
 
-            ul:first-child {
-                background-color: ${props => props.MyProfile ? 'black' : ' white'};
-                color: #1c75bc;
-            }
-            ul:last-child {
-                background-color: ${props => props.MySettings ? '#FAFAFA' : ' white'};
-                color: #1c75bc;
-            }
-
-
             li {
                 display: block;
                 text-align: center;
@@ -67,12 +61,15 @@ export const NavWrapper = styled.div`
                 width: 50%;
                 padding: 0;
                 
-
                 a {
                     display: block;
                     text-decoration: none;
                     padding: 1em 0em;
                 }
+                a:first-of-type {
+                    color: #1c75bc;
+                }
+
             }
         }
     }
@@ -82,9 +79,9 @@ export const ProgressBar = styled.div`
 /* End of the upper part of the Profile styling */
 /* Start of General Section styling */
 export const SectionWrapper = styled.div`
-    background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
-    border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
-    border-bottom: solid 1px ${props => !props.edited ? '#DDEDF5' : 'none'};
+    background-color: ${props => (props.edited ? '#FAFAFA' : ' white')};
+    border: ${props => (props.edited ? 'solid 1px #DDEDF5' : 'none')};
+    border-bottom: solid 1px ${props => (!props.edited ? '#DDEDF5' : 'none')};
     maring: auto;
     form {
         padding: 1em;
@@ -179,7 +176,7 @@ export const TagsForm = styled.div`
     padding-left: 1em;
 `;
 export const SkillTag = styled.p`
-    display: ${props => props.showing ? 'inline-block' : 'none'};
+    display: ${props => (props.showing ? 'inline-block' : 'none')};
     background-color: #eee;
     color: black;
     padding: 10px;

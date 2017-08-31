@@ -36,7 +36,7 @@ export class LinkSection extends Component {
   }
 
   addingLinks() {
-    return this.state.Links.map((link) => (
+    return this.state.Links.map(link => (
       <LinkTag key={link.index} showingbelow="true">
         {link.logo} <p>{link.url}</p>
       </LinkTag>

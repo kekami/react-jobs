@@ -370,17 +370,7 @@ export const ExperienceInput = styled.div`
 
             @media (min-width: 800px) {
                 width: 100%;
-            }    
-
-            
-        }
-    }
-
-
-    @media (min-width: 1000px) {
-        input {
-            margin: 5; /*wtf is this */
-            width: 25em;
+            }     
         }
     }
 `;

@@ -30,8 +30,6 @@ export const ProgressBar = styled.div`
 
 /* Start of General Section styling */
 export const SectionWrapper = styled.div`
-    margin: 0.5em;
-    padding: 0.8em;
     background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
     border: ${props => props.edited ? 'solid 1px #DDEDF5' : 'none'};
     border-bottom: solid 1px ${props => !props.edited ? '#DDEDF5' : 'none'};
@@ -87,7 +85,7 @@ export const Btn = styled.button`
 `;
 export const Edit = styled.button`
     padding: 0.4em;
-    background-color: ${props => props.edited ? '#FAFAFA' : ' white'};
+    background-color: inherit;
     border: none;
     cursor: pointer;
     color: #04d092;
@@ -108,7 +106,7 @@ export const SkillHead = styled.div`
     justify-content: space-between;
     padding-left: 1em;
     padding-right: 1em;
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
     color: #9b9b9b;
     
     strong {
@@ -484,18 +482,16 @@ export const WhatUni = styled(Company)``;
 
 /* Start of About Me Section styling */
 
-export const AboutInput = styled(ExperienceInput)`
+
+export const AboutMeHead = styled(ExperienceHead)``;
+export const AboutMeBody = styled.div`
+    display: flex;
+    flex-flow: column no-wrap;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    
+`;
+export const AboutMeInput = styled(ExperienceInput)`
     border-bottom: none;
 `;
-export const AboutMeOutput = styled.div`
-    margin-top: 1em;
-    margin-bottom: 1em;
-    display: flex;
-    flex-flow: column wrap;
-
-    div {
-        display: flex;
-        width: 100%;
-    }
-`;
-export const ExperienceBody = styled.div``;

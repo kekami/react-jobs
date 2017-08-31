@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionWrapper, ExperienceHead, ExperienceBody, Edit, I, AboutInput, Company, AboutMeOutput } from './styles';
+import { SectionWrapper, AboutMeHead, AboutMeBody, Edit, I, AboutMeInput, Company } from './styles';
 
 // --> Fix presentational output of the About Me seciton
 
@@ -37,17 +37,17 @@ export class AboutMe extends Component {
 
   render() {
     return (
-      <SectionWrapper edited={this.state.show}>
-        <ExperienceHead edited={this.state.show}>
+      <SectionWrapper edited={this.state.show} style={{ 'background-color': '#FAFAFA' }} >
+        <AboutMeHead edited={this.state.show}>
           <p><strong>About me</strong></p>
           <Edit onClick={this.onClick} edited={this.state.show}>
             { this.state.show ?
               <div><I className="fa fa-times" aria-hidden="true" /></div>
               : <div>Edit <I className="fa fa-pencil" aria-hidden="true" /></div> }
           </Edit>
-        </ExperienceHead>
-        <ExperienceBody>
-          <div showingbelow="true">
+        </AboutMeHead>
+        <AboutMeBody style={{ display: this.state.show ? 'none' : 'block' }}>
+          <div>
             <div><strong>Name</strong> </div>
             <p>{this.state.FirstName} {this.state.LastName}</p>
             <div><strong>Living in</strong></div>
@@ -55,9 +55,9 @@ export class AboutMe extends Component {
             <div><strong>Introduction</strong></div>
             <p>{this.state.Intro}</p>
           </div>
-        </ExperienceBody>
+        </AboutMeBody>
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
-          <AboutInput >
+          <AboutMeInput >
             <Company>
               <div className="form-group">
                 <label><strong>First Name</strong></label>
@@ -95,12 +95,9 @@ export class AboutMe extends Component {
                 ref={(input) => { this.Intro = input; }}
               />
             </div>
-          </AboutInput>
+          </AboutMeInput>
           <button className="btn btn-primary" type="submit">Save</button>
         </form>
-        <AboutMeOutput >
-         
-        </AboutMeOutput>
       </SectionWrapper>
     );
   }

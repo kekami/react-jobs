@@ -7,14 +7,18 @@ export class ProfileNav extends Component {
     super(props);
 
     this.state = {
-      Profile: true,
+      myProfile: true,
+      mySettings: false,
     };
 
     this.onClick = this.onClick.bind(this);
   }
 
   onClick() {
-    //this.setState({ Active: !this.state.Active });
+    this.setState({
+      myProfile: !this.state.myProfile,
+      mySettings: !this.state.mySettings,
+    });
   }
 
   render() {
@@ -22,8 +26,16 @@ export class ProfileNav extends Component {
       <NavWrapper>
         <nav>
           <ul>
-            <li><Link to="/" onClick={this.onClick()}><strong>MY PROFILE</strong></Link></li>
-            <li><Link to="/" onClick={this.onClick()}><strong>MY PREFERENCES</strong></Link></li>
+            <li>
+              <Link to="/" onClick={this.onClick}>
+                <strong>MY PROFILE</strong>
+              </Link>
+            </li>
+            <li>
+              <Link to="/" onClick={this.onClick}>
+                <strong>MY PREFERENCES</strong>
+              </Link>
+            </li>
           </ul>
         </nav>
       </NavWrapper>

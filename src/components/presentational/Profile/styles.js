@@ -50,15 +50,24 @@ export const NavWrapper = styled.div`
             align-items: center;
             padding: 0;
 
+            ul:first-child {
+                background-color: ${props => props.MyProfile ? 'black' : ' white'};
+                color: #1c75bc;
+            }
+            ul:last-child {
+                background-color: ${props => props.MySettings ? '#FAFAFA' : ' white'};
+                color: #1c75bc;
+            }
+
 
             li {
                 display: block;
                 text-align: center;
                 font-size: 0.9em;
                 width: 50%;
-                color: #1c75bc;
                 padding: 0;
                 
+
                 a {
                     display: block;
                     text-decoration: none;

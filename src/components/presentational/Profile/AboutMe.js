@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, AboutInput, XPTag, SinceDate, YearsMonths, CompanyLocation, PostitionInCorp, Info, Dates, WorkDetails, Experiences, Company, Calendar } from './styles';
+import { SectionWrapper, ExperienceHead, ExperienceBody, Edit, I, AboutInput, Company, AboutMeOutput } from './styles';
+
+// --> Fix presentational output of the About Me seciton
 
 export class AboutMe extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      identity: [],
-      positions: [],
+      FirstName: '',
+      LastName: '',
+      Location: '',
+      Intro: '',
       show: false,
     };
 
@@ -21,38 +25,16 @@ export class AboutMe extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.submitData();
+
+    this.setState({
+      FirstName: this.FirstName.value,
+      LastName: this.LastName.value,
+      Location: this.Location.value,
+      Intro: this.Intro.value,
+    });
   }
 
-  submitData() {
-    let identity = this.state.Identity;
-    identity = [
-      {
-        index: 1, FirstName: this.FirstName.value,
-      },
-      {
-        index: 2, LastName: this.LastName.value,
-      },
-      {
-        index: 3, Location: this.Location.value,
-      },
-      {
-        index: 4, Info: this.Intro.value,
-      },
-    ];
-    this.setState({ identity });
-  }
 
-  addingXP() {
-    return this.state.identity.map((id, i) => (
-      <XPTag key={id.index} showingbelow="true">
-        <WorkDetails>
-          <CompanyLocation><strong>{id.FirstName}{id.LastName}</strong> in {id.Location}</CompanyLocation>
-          <Info>{id.Intro}</Info>
-        </WorkDetails>
-      </XPTag>
-    ));
-  }
   render() {
     return (
       <SectionWrapper edited={this.state.show}>
@@ -64,6 +46,16 @@ export class AboutMe extends Component {
               : <div>Edit <I className="fa fa-pencil" aria-hidden="true" /></div> }
           </Edit>
         </ExperienceHead>
+        <ExperienceBody>
+          <div showingbelow="true">
+            <div><strong>Name</strong> </div>
+            <p>{this.state.FirstName} {this.state.LastName}</p>
+            <div><strong>Living in</strong></div>
+            <p>{this.state.Location}</p>
+            <div><strong>Introduction</strong></div>
+            <p>{this.state.Intro}</p>
+          </div>
+        </ExperienceBody>
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
           <AboutInput >
             <Company>
@@ -106,9 +98,9 @@ export class AboutMe extends Component {
           </AboutInput>
           <button className="btn btn-primary" type="submit">Save</button>
         </form>
-        <Experiences >
-          {this.addingXP()}
-        </Experiences>
+        <AboutMeOutput >
+         
+        </AboutMeOutput>
       </SectionWrapper>
     );
   }

@@ -354,14 +354,11 @@ export const Company = styled.div`
             @media (min-width: 800px) {
                 width: 100%;
             }
-
-        }
-        
+        } 
 
         @media (min-width: 800px) {        
             width: 50%;
         }
-
     }
 `;
 export const Calendar = styled.div`
@@ -490,3 +487,15 @@ export const WhatUni = styled(Company)``;
 export const AboutInput = styled(ExperienceInput)`
     border-bottom: none;
 `;
+export const AboutMeOutput = styled.div`
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-flow: column wrap;
+
+    div {
+        display: flex;
+        width: 100%;
+    }
+`;
+export const ExperienceBody = styled.div``;

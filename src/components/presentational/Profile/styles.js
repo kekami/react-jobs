@@ -121,6 +121,7 @@ export const TagsForm = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-left: 1em;
 `;
 export const SkillTag = styled.p`
     display: ${props => props.showing ? 'inline-block' : 'none'};
@@ -139,12 +140,13 @@ export const Inputform = styled.form`
     display: flex;
     flex-direction: column;
     input {
+        width: 100%;
         margin: 0;
         padding: 0.5em;
         
     }
 
-    @media (min-width: 60em) {
+    @media (min-width: 800px) {
         flex-direction: row;
         justify-content: left;
 

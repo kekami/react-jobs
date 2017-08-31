@@ -52,7 +52,7 @@ export class AboutMe extends Component {
             <p>{this.state.FirstName} {this.state.LastName}</p>
             <div><strong>Living in</strong></div>
             <p>{this.state.Location}</p>
-            <div><strong>Introduction</strong></div>
+            <div><strong>Introduction </strong> <span>Just a few words about me</span> </div>
             <p>{this.state.Intro}</p>
           </div>
         </AboutMeBody>

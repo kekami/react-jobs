@@ -490,7 +490,13 @@ export const AboutMeBody = styled.div`
 
     div {
         font-size: 0.95em;
+        
+        span {
+            color: #9b9b9b;
+            padding-left: 0.8em;
+        }
     }
+    
     p:not(:last-child) {
         font-size: 1.5em;
     }

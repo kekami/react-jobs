@@ -20,10 +20,13 @@ export const ProfileContainer = styled.div`
         padding: 2em;
     }
 `;
-export const ProfileNav = styled.div``;
+/* End of General Profile styling */
+
+/* Start of the upper part of the Profile styling */
+export const NavWrapper = styled.div``;
 export const ProgressBar = styled.div`  
 `;
-/* End of General Profile styling */
+/* End of the upper part of the Profile styling */
 
 /* Start of General Section styling */
 export const SectionWrapper = styled.div`

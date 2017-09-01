@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const JobsSchema = new Schema({
+const JobSchema = new Schema({
   title: { type: String, trim: true, required: true },
   city: { type: String, trim: true, required: true },
   location: { type: String, trim: true, required: true },
@@ -25,6 +25,6 @@ const JobsSchema = new Schema({
   jobDescription: { type: Array, trim: true, required: true },
 });
 
-const Jobs = mongoose.model('jobs', JobsSchema);
+const Job = mongoose.model('job', JobSchema);
 
-module.exports = Jobs;
+module.exports = Job;

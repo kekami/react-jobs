@@ -1,9 +1,9 @@
-const Jobs = require('../models/jobs');
+const Job = require('../models/job');
 
 exports.jobs = ((req, res, next) => {
-  Jobs.find({}, (err, users) => {
+  Job.find({}, (err, jobs) => {
     res.json({
-      jobs: users
+      jobs
     });
   })
 });

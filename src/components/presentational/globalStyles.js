@@ -7,10 +7,10 @@
 
 export const globalStyles = {
   bgColor: '#1C75BC',
+  button: '#1DB6EF',
   LIGHTBLUE: '#1DB6EF',
   BLUE: '#1C75BC',
   LIGHTGREY: '#8a8a8a',
   DARKGREY: '#6e6b6b',
   GREEN: '#09b480',
 };
-

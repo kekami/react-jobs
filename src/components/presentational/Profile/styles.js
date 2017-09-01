@@ -100,12 +100,14 @@ export const UpperSectionWrapper = styled.div`
         text-align: center;
     }
     p {
-        padding: 1em 2.5em 0em 2.5em;
         text-align: center;
         line-height: 2em;
         font-size: 0.9em;
+        @media(min-width:1000px)
+        padding: 1em 2.5em 0em 2.5em;
     }
 `;
+export const PicUploader = styled.div``;
 
 export const ProgressSection = styled.div`
     display: flex;

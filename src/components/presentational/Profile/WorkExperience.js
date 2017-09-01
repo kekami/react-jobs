@@ -190,6 +190,7 @@ export class WorkExperience extends Component {
                     type="text"
                     name="additionalInfo"
                     onChange={(e) => this.handleInputChange(e, index)}
+                    style={{ height: '100px' }}
                   />
                 </div>
               </ExperienceInput>

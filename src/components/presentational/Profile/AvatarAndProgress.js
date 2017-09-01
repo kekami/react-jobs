@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { UpperSectionWrapper, PicUploader, ProgressSection, ProgressWrapper, ProgressBar } from './styles';
+import { UpperSectionWrapper, Avatar, PicUploader, ProgressSection, ProgressWrapper, ProgressBar } from './styles';
 
 /* In this section I learnt how to dynamically change styles
  and pass them to the target component with the use of props utilising template:
 -->> '${<enter referenced js variable>}<here add anything to concatenate the string you create' */
 
+/* To make sure that HTML input/ browse button will fill parent's space:
+- parent has to have position: relative;
+- input tag has to have position absolute with top:0, left:0 (X,Y axis) and width&height of parent or 100% */
 export class AvatarAndProgress extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       width100: 10,
-      progress: '',
       // here you will find an implementation of technical background behind % bar
     };
 
@@ -38,13 +40,18 @@ export class AvatarAndProgress extends Component {
     };
   }
 
+
   render() {
     return (
       <UpperSectionWrapper>
-        <div>Avatar will be here</div>
+        <Avatar>Avatar will be here</Avatar>
+
         <div>
-          <PicUploader>
-            Here you will be able to change your avatar
+          <PicUploader >
+            <div>
+              <input type="file" accept="image/png,image/jpeg" />
+              Click here to upload a png or jpeg file here (max 10 MB). This picture will be visible to employers, so choose one that is a good representation of you!
+            </div>
           </PicUploader>
         </div>
         <ProgressSection>

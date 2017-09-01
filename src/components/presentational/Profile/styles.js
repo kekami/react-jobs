@@ -103,11 +103,59 @@ export const UpperSectionWrapper = styled.div`
         text-align: center;
         line-height: 2em;
         font-size: 0.9em;
-        @media(min-width:1000px)
-        padding: 1em 2.5em 0em 2.5em;
+
+        @media(min-width:1000px) {
+            padding: 1em 2.5em 0em 2.5em;
+        }
+        
     }
 `;
-export const PicUploader = styled.div``;
+export const Avatar = styled.div`
+    border-radius:50%;
+    border: solid 3px black;
+    height: 100px;
+    width: 100px;
+`;
+export const PicUploader = styled.div`
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px dashed #04d092;
+    border-radius: 10px;
+    justify-content: center;
+
+    div {
+
+        padding: 1em 0.2em 1em 0.2em;
+        line-height: 1.7em;
+        margin: auto;
+        display: flex;
+        font-size: 0.85em;
+        position: relative;
+
+        
+        input {        
+            display:inline-block;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            align-items: baseline;
+            text-align: start;
+                
+        }
+
+
+        @media(min-width:800px){
+            width: 65%
+        }
+        
+    }
+`;
 
 export const ProgressSection = styled.div`
     display: flex;

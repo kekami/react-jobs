@@ -40,11 +40,8 @@ export const ProfileContainer = styled.div`
     }
 `;
 /* End of General Profile styling */
-/* Start of the upper part of the Profile styling */
-
-// --> First of type doesn't work;
+/* Start of Profile Navigation styling */
 export const NavWrapper = styled.div`
-
 
     nav {
         ul {
@@ -74,7 +71,60 @@ export const NavWrapper = styled.div`
         }
     }
 `;
-export const ProgressBar = styled.div`  
+/* End of Profile Navigatoin styling */
+
+/* Start of the upper part of the Profile styling */
+export const UpperSectionWrapper = styled.div`
+    maring: auto;
+    border-bottom: none;
+    @media (min-width: 650px) { 
+        margin: 0.7em; 
+        padding: 1em;
+    }
+    @media (min-width: 1000px) {
+        margin: 1em;
+        padding: 1.2em;
+    }
+    header {
+        font-size: 1.2em;
+        padding: 2em 0em 2em 0em;
+        text-align: center;
+        color: #04d092;
+
+        strong {
+            color: #9b9b9b;
+        }
+
+    }
+    div {
+        text-align: center;
+    }
+    p {
+        padding: 1em 2.5em 0em 2.5em;
+        text-align: center;
+        line-height: 2em;
+        font-size: 0.9em;
+    }
+`;
+
+export const ProgressSection = styled.div`
+    display: flex;
+    flex-flow: column wrap;
+    justify-items: center;
+`;
+
+export const ProgressWrapper = styled.div`
+    width: 100%;
+    background-color: #f0b14a;
+    border-radius: 8px
+    
+    
+`;
+export const ProgressBar = styled.div`
+    height: 8px;
+    background-color: #04d092;
+    border-radius: 8px
+    ;
 `;
 /* End of the upper part of the Profile styling */
 /* Start of General Section styling */

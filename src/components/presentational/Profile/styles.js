@@ -127,8 +127,8 @@ export const Avatar = styled.div`
     z-index:4;
 
     @media(min-width:1000px){
-        margin-top:-150px;
-
+        margin-top: -140px;
+        margin-bottom: -70px;
     }
 `;
 export const PicUploader = styled.div`
@@ -141,7 +141,7 @@ export const PicUploader = styled.div`
 
     div {
 
-        padding: 1em 0.2em 1em 0.2em;
+        padding: 1.4em 0.2em 1.4em 0.2em;
         line-height: 1.7em;
         margin: auto;
         display: flex;

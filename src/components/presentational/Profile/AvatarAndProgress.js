@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { UpperSectionWrapper, Avatar, PicUploader, ProgressSection, ProgressWrapper, ProgressBar } from './styles';
+import { UpperSectionWrapper, PicWrapper, Avatar, PicUploader, ProgressSection, ProgressWrapper, ProgressBar } from './styles';
 
 /* In this section I learnt how to dynamically change styles
  and pass them to the target component with the use of props utilising template:
@@ -44,8 +44,9 @@ export class AvatarAndProgress extends Component {
   render() {
     return (
       <UpperSectionWrapper>
-        <Avatar>Avatar will be here</Avatar>
-
+        <PicWrapper>
+          <Avatar src="/img/avatar.png" />
+        </PicWrapper>
         <div>
           <PicUploader >
             <div>

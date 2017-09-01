@@ -110,11 +110,26 @@ export const UpperSectionWrapper = styled.div`
         
     }
 `;
+export const PicWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+    justify-content: center;
+
+`;
 export const Avatar = styled.div`
     border-radius:50%;
-    border: solid 3px black;
-    height: 100px;
-    width: 100px;
+    background-color: white;
+    border: dashed 2px black;
+    width: 160px;
+    height: 160px;
+    padding: 20px;
+    z-index:4;
+
+    @media(min-width:1000px){
+        margin-top:-150px;
+
+    }
 `;
 export const PicUploader = styled.div`
     -webkit-box-sizing: border-box;
@@ -132,6 +147,7 @@ export const PicUploader = styled.div`
         display: flex;
         font-size: 0.85em;
         position: relative;
+
 
         
         input {        
@@ -151,7 +167,9 @@ export const PicUploader = styled.div`
 
 
         @media(min-width:800px){
-            width: 65%
+            z-index:0;
+            max-width: 65%;
+           
         }
         
     }
@@ -182,7 +200,7 @@ export const SectionWrapper = styled.div`
     background-color: ${props => (props.edited ? '#FAFAFA' : ' white')};
     border: ${props => (props.edited ? 'solid 1px #DDEDF5' : 'none')};
     border-bottom: solid 1px ${props => (!props.edited ? '#DDEDF5' : 'none')};
-    maring: auto;
+    marging: auto;
     form {
         padding: 1em;
         

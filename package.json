@@ -1,29 +1,29 @@
 {
-  "name": "react-jobs",
-  "version": "0.1.0",
+  "name": "test",
+  "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "normalize.css": "^7.0.0",
-    "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.2",
-    "react-scripts": "1.0.10",
-    "styled-components": "^2.1.1"
+  "main": "index.js",
+  "engines": {
+    "node": "8.4.x"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "mongoose": "^4.11.7",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
-    "enzyme": "^2.9.1",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
-    "react-test-renderer": "^15.6.1"
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
   }
 }

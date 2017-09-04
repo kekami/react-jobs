@@ -4,8 +4,32 @@ export const SitemapWrapper = styled.div`
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    padding: 90px;
+    flex-flow: row wrap;
+    pading: 1em;
+
+    @media(min-width:1000px) {
+        padding: 90px;
+    }  
+`;
+
+export const Column = styled.div`
+    width: 50%;
+    padding: 15px;
+    flex-wrap: wrap;
+    flex: 1 1 250px (minimum width);
+
+    @media(min-width: 1000px) {
+        width: 25%;
+    }
+
+`;
+export const Header = styled.header`
+    border-bottom: #dddddd solid 1px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+    font-size: 0.8em;
+
 `;
 export const FlexCol = styled.div`
     height: auto;
@@ -28,27 +52,7 @@ export const FlexCol = styled.div`
         align-items: center;
         margin-top: -7px;
     }
-    }
-`;
-
-export const Column = styled.div`
-    width: 25%;
-    padding: 15px;
-    flex-wrap: wrap;
-    flex: 1 1 250px (minimum width);
-    
-`;
-export const Header = styled.header`
-    border-bottom: #dddddd solid 1px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 15px;
-    font-size: 0.8em;
-
 `;
 
 export const I = styled.i`
- 
-     
 `;
-

@@ -199,7 +199,7 @@ export class WorkExperience extends Component {
           <button className="btn btn-primary" type="submit">Save</button>
         </form>
         <Experiences style={{ display: this.state.show ? 'none' : 'block' }} >
-          {this.addingXP()}
+          {this.addingXP}
         </Experiences>
       </SectionWrapper>
     );

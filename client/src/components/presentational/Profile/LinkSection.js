@@ -1,6 +1,23 @@
 import React, { Component } from 'react';
 import { SectionWrapper, LinkHead, Edit, I, SocMediaInput, LinkTag, Websites } from './styles';
 
+/* 
+Using knowledge from Skill and Lang sections I endeavoured to generate more predictable LinkSection.
+My goal here was to allow user to populate this section with his social media links.
+1. User have to be able to add/edit his links - 5 input fields.
+2. Unused input fields should not generate empty outputs - only added links should be displayed.
+
+Since this section allowed only for 5 inputs I decided to make an array of 5 objects.
+Each object consists of index, logo and url. URL adress is a value of referenced input. 
+This makes sure all inputs always find their own place and logo.
+Lastly, submitData() makes sure to filter out from this array objects without url.
+
+Just like in previous sections addingLinks method maps over the Links[] and outputs user links.
+
+I learnt here how to use refs and that that I can store whole divs inside an object.
+
+*/
+
 export class LinkSection extends Component {
   constructor(props) {
     super(props);

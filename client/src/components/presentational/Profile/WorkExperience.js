@@ -4,6 +4,32 @@ import { SectionWrapper, ExperienceHead, Click2AddWork, Edit, I, ExperienceInput
 // Convert length of > 12 months to ' X year and Y months'
 // create an 'if' to stop people from setting illogical dates (start date is later than finish date)
 
+/* This section of Jobbatical was the most difficult to mimic.
+I learnt here about Object.assign, simple booleans to hide/show whole sections, handling dates and importance of keys/indexes.
+
+The goal was to dynamically generate a set of input fields on each user click and based on those groups of input fields
+create outputs and allow for every single output to be editable, chronological and in proper format.
+All this with only one submit button. 
+In other words: React controlled forms and I had a very combustive relationship.
+
+Input group is generated based on the number of elements in input[] array. This array is being concat'd by every click
+of 'Add work experience' button. Then anonymous function is mapping over this array and outputs desired number of input groups.
+Every input group has a key and this is crucial part of keeping everything in order.
+
+When user enters data an array of positions[] is populated with pairs in a designed format: 'index number of input group': 'Object of input names and values'. I used Object.assign here to create and merge new objects into the positions array.
+Every time user fills in the input field a new key:value pair is created. Several of those pairs constitute the aforementioned 'object of input nmes and values'. This all constitutes a value of a particular key (index number of input group).
+This makes sure that elements in the positions array held in state looks like this-> 
+'0:{object with properties of particular work experience}'.
+
+When user finally submits data, submit handler works on dates to calculate periods of work and figure out chronology (Length property) and order (isREcent property) of each entry. This is where I add to existing properties additional one 'isRecent'- a simple product of the end month and year of work experience indicating recency of the entry.
+
+Function adding particular tags, first sorts all entries in the positions array according to 'isRecent' property, then maps over the array and outputs properly formatted tags.
+
+This is when I finally realised how complicated handling states may get and that it's time to learn Redux.
+
+
+*/
+
 export class WorkExperience extends Component {
   constructor(props) {
     super(props);

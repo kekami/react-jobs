@@ -13,10 +13,14 @@ export const SitemapWrapper = styled.div`
 `;
 
 export const Column = styled.div`
-    width: 50%;
+    width: 100%;
     padding: 15px;
     flex-wrap: wrap;
     flex: 1 1 250px (minimum width);
+
+    @media(min-width:500px){
+        width:50%;
+    }
 
     @media(min-width: 1000px) {
         width: 25%;

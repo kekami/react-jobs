@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 import { SectionWrapper, First2, Edit, Btn, Inputform, I, TagsForm, LangTag, LangHead } from './styles';
 
+/* In section of Languages my goal was to create similar tags to those found in Skill Section.
+Here is recap of the goals from SkillSection.js:
+I wanted to make sure user can easily and intuitively add and remove any tag.
+1. Every tag had to be generated based on user input and visibile right after submission (no delay).
+2. The input field should stay hidden until user decides to add new tags.
+
+I learnt how to use state (inputValue) of this component which updates on change of the input field.
+Upon submission (enter) a function handling submit creates a new tag with submitted input value.
+This tag is later added to the array [tags] stored in state and at the end inputValue is cleared.
+
+Tags are added by mapping over tags array. Each tag is equipped with deleteTag() onClick handler.
+This enables user to click on the tag (with visible 'x' button on it) and delete unwanted elements.
+The deleteTag() function removes designated tag from the array after click and distinguishes between
+them thanks to index number of every tag - it leaves tags which were not clicked untouched.
+*/
 
 export class LangSection extends Component {
   constructor(props) {
@@ -8,7 +23,6 @@ export class LangSection extends Component {
 
     this.state = {
       show: false,
-      addSkill: '',
       tags: [],
     };
 
@@ -69,7 +83,7 @@ export class LangSection extends Component {
             />
           </Inputform>
           <TagsForm>
-            {this.addingTags(this.state.addSkill)}
+            {this.addingTags()}
           </TagsForm>
         </First2 >
       </SectionWrapper>

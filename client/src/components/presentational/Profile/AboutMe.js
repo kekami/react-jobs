@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { SectionWrapper, AboutMeHead, AboutMeBody, Edit, I, AboutMeInput, Company } from './styles';
 
+/* In this section I had to create a few input fields and their corresponding output elements.
+User should be able to add his name, surname, location and short introduction.
+
+I used pattern from LinkSection and used refs and their corresponding fields to present user inputs.
+All input fields deliver submitted change to state from which presentational component draws data.
+*/
+
 export class AboutMe extends Component {
   constructor(props) {
     super(props);

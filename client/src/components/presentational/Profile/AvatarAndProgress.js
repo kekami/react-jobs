@@ -7,7 +7,11 @@ import { UpperSectionWrapper, PicWrapper, Avatar, PicUploader, ProgressSection, 
 
 /* To make sure that HTML input/ browse button will fill parent's space:
 - parent has to have position: relative;
-- input tag has to have position absolute with top:0, left:0 (X,Y axis) and width&height of parent or 100% */
+- <input/> needs: position:absolute with top:0, left:0 (X,Y axis) and width&height of parent or 100%
+
+
+Although small, this component taught me a lot not only functionality-wise but also about styling
+*/
 export class AvatarAndProgress extends Component {
   constructor(props) {
     super(props);

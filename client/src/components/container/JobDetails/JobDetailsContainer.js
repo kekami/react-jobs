@@ -81,6 +81,8 @@ class JobDetailsContainer extends React.Component {
   }
 
   componentWillMount() {
+    window.scrollTo(0, 0);
+
     let id = this.props.hash;
     if (id !== undefined) {
       if (id[0] === '#') { id = id.slice(1, id.length); }

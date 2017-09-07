@@ -5,7 +5,6 @@ export const SitemapWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    pading: 1em;
 
     @media(min-width:1000px) {
         padding: 90px;

@@ -133,6 +133,7 @@ class JobDetailsContainer extends React.Component {
 
   handleScroll() {
     const scrollHeight = window.scrollY;
+    if (this.state.jobData === null) { return; }
 
     function updateRoleSummaryFooter() {
       if (scrollHeight > this.state.minFooterFixedHeight
@@ -198,6 +199,8 @@ class JobDetailsContainer extends React.Component {
   }
 
   handleResize() {
+    if (this.state.jobData === null) { return; }
+
     this.setState({
       jobNavFixed: false,
     }, this.setRefDataIntoState);

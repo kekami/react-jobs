@@ -1,14 +1,13 @@
 import React from 'react';
-import { Wrapper, ApplyNowTag } from './styles';
+import { ApplyNowTag } from './styles';
 import { RoleSummary } from '../JobDetails/JobDetails';
-import { JobNavSubcomponentLayout } from '../../container/JobDetails/styles.js'
-import { Details } from '../../container/JobDetails/styles.js';
+import { JobNavSubcomponentLayout, Details } from '../../container/JobDetails/styles';
 
-export const ApplyNow = (props) => (
+export const ApplyNow = props => (
   <ApplyNowTag>
     <Details>
-      <RoleSummary {...props} applyNow={true}  />
+      <RoleSummary {...props} applyNow />
       <JobNavSubcomponentLayout />
     </Details>
   </ApplyNowTag>
-)
+);

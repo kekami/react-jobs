@@ -81,6 +81,8 @@ class JobDetailsContainer extends React.Component {
   }
 
   componentWillMount() {
+    window.scrollTo(0, 0);
+
     let id = this.props.hash;
     if (id !== undefined) {
       if (id[0] === '#') { id = id.slice(1, id.length); }
@@ -133,6 +135,7 @@ class JobDetailsContainer extends React.Component {
 
   handleScroll() {
     const scrollHeight = window.scrollY;
+    if (this.state.jobData === null) { return; }
 
     function updateRoleSummaryFooter() {
       if (scrollHeight > this.state.minFooterFixedHeight
@@ -198,6 +201,8 @@ class JobDetailsContainer extends React.Component {
   }
 
   handleResize() {
+    if (this.state.jobData === null) { return; }
+
     this.setState({
       jobNavFixed: false,
     }, this.setRefDataIntoState);

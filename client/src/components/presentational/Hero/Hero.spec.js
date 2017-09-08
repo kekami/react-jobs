@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import { Hero } from './Hero';
 
-test('Hero renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Hero />, div);
-});
+describe('Hero Component', () => {
+  let wrapper;
 
-test('Hero component matches standard output', () => {
-  const component = shallow(<Hero />);
-  expect(component).toMatchSnapshot();
+  beforeEach(() => {
+    wrapper = shallow(<Hero />);
+  });
+
+  it('Renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Hero />, div);
+  });
+
+  it('Matches standard output', () => {
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('Contains one article tag for the body', () => {
+    console.log();
+    expect(wrapper.find('div').length).toBe(1);
+  });
 });

@@ -20,8 +20,11 @@ describe('Hero Component', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('Contains one article tag for the body', () => {
-    console.log();
-    expect(wrapper.find('div').length).toBe(1);
+  it('Contains one Centered styled tag for the body', () => {
+    expect(wrapper.find('Centered').length).toBe(1);
+  });
+
+  it('Contains one Footer styled tag for the body', () => {
+    expect(wrapper.find('Footer').length).toBe(1);
   });
 });

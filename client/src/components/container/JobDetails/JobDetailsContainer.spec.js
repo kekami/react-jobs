@@ -1,22 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import JobDetailsContainer, { getData, validNavItemList } from './JobDetailsContainer';
-import { shallow } from 'enzyme';
+import JobDetailsContainer, { validNavItemList } from './JobDetailsContainer';
 
 describe('Job Details Container renders', () => {
+  let hash;
+
+  beforeEach(() => {
+    hash = '#3241521515';
+  });
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<JobDetailsContainer />, div);
+    ReactDOM.render(<JobDetailsContainer hash={hash} />, div);
   });
 
+  it('returns nav list only containing recognised items - T1', () => {
+    const navItems = [['responsibilities', 0], ['requirements', 0], ['compensation', 0], ['jobDescription', 0]];
+    expect(validNavItemList()).toEqual(expect.arrayContaining(navItems));
+  });
+});
 
-  // it('renders with set components', () => {
-  //   const component = shallow(<JobDetailsContainer />)
-  //   console.log(component);
-  // });
+// it('renders with set components', () => {
+//   const component = shallow(<JobDetailsContainer />)
+//   console.log(component);
+// });
 
- /* it('filters data for correct entry', () => {
+/* it('filters data for correct entry', () => {
     const id = 3241521515;
     const data =  {"jobs": [
         {
@@ -36,18 +45,3 @@ describe('Job Details Container renders', () => {
     
     getData(id, data).then((res) => console.log(res));
   }) */
-
-
-  it('returns nav list only containing recognised items - T1', () => {
-    // Items are ["Responsibilities"];
-    let job = {
-      Responsibilities: ""
-    }
-
-    job.push('Local Information')
-
-    //expect(validNavItemList).toMatchArray(['Responisiblities', 'Local Information'])
-  })
-
-});
-

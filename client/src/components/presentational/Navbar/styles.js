@@ -6,11 +6,6 @@ export const NavbarContainer = styled.div`
   align-items: baseline;
   padding: 0 1em;
   color: #1c75bc;
-
-  a {
-    text-decoration: none;
-    color: #1c75bc;
-  }
 `;
 
 export const Logo = styled.div`
@@ -20,6 +15,7 @@ export const Logo = styled.div`
 
   i {
     margin-right: 0.3em;
+    align-self: center;    
   }
 
   h2 {

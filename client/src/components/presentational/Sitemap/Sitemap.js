@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FlexCol, SitemapWrapper, Header, Column, I } from './styles';
+import { FlexCol, SitemapWrapper, Header, Column, Fb, Ln, Twitter, GPlus, InstagramBackground, Instagram } from './styles';
 
 export function Sitemap() {
   return (
@@ -47,24 +47,28 @@ export function Sitemap() {
         </Header>
         <FlexCol>
           <Link to="/fb">
-            <div>FACEBOOK<I className="fa fa-facebook-square fa-2x" aria-hidden="true"></I></div>
+            <div>FACEBOOK<Fb className="fa fa-facebook-square fa-2x" aria-hidden="true" /></div>
           </Link>
           <Link to="/twitter">
-            <div>TWITTER<I className="fa fa-twitter-square fa-2x" aria-hidden="true"></I></div>
+            <div>TWITTER<Twitter className="fa fa-twitter-square fa-2x" aria-hidden="true" />
+            </div>
           </Link>
           <Link to="/linked">
-            <div>LINKEDIN<I className="fa fa-linkedin-square fa-2x" aria-hidden="true"></I></div>
+            <div>LINKEDIN<Ln className="fa fa-linkedin-square fa-2x" aria-hidden="true" /></div>
           </Link>
           <Link to="/gplus">
-            <div>GOOGLE+<I className="fa fa-google-plus-square fa-2x" aria-hidden="true"></I></div>
+            <div>GOOGLE+<GPlus className="fa fa-google-plus-square fa-2x" aria-hidden="true" />
+            </div>
           </Link>
           <Link to="/insta">
-            <div>INSTAGRAM<I className="fa fa-instagram fa-2x" aria-hidden="true"></I></div>
+            <div>INSTAGRAM
+              <InstagramBackground>
+                <Instagram className="fa fa-instagram fa-2x" aria-hidden="true" />
+              </InstagramBackground>
+            </div>
           </Link>
         </FlexCol>
       </Column>
-
-
     </SitemapWrapper>
   );
 }

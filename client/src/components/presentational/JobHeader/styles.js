@@ -12,5 +12,10 @@ export const Wrapper = styled.div`
     width: 100%;
     object-fit: cover;
     object-position: 0 0;
+
+    @media (max-width: 775px) {
+      
+    }
+
   }
 `;

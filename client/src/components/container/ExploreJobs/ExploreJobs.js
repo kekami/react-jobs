@@ -76,6 +76,11 @@ class ExploreJobs extends Component {
         <JobCardContainer>
           {jobs}
         </JobCardContainer>
+        {(jobs.length && this.state.searchterm) ?
+          this.renderNumberOfResults(jobs.length, this.state.searchterm) :
+          null
+        }
+        {(jobs.length === 0) && this.renderNoResults()}
       </ExploreJobsContainer>
     );
   }

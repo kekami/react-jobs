@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../../presentational/Navbar';
 import { Profile } from '../../presentational/Profile/Profile';
 import { Sitemap } from '../../presentational/Sitemap/Sitemap';
+import Footer from '../../presentational/Footer';
 
 
 const ProfilePage= () => (
@@ -9,6 +10,7 @@ const ProfilePage= () => (
     <Navbar />
     <Profile />
     <Sitemap />
+    <Footer />
   </div>
 );
 

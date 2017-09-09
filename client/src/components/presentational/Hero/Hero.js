@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Wrapper, H1, H2, P, Article, Foot } from './styles';
+import { Wrapper, H1, H2, P, Article, Footer } from './styles';
 import { Button, I, FlexRow } from '../Button/Button';
 import { BracesLeft, BracesRight } from './assets/CurlyBraces';
 
@@ -16,10 +17,12 @@ export function Hero() {
         <H2>Travel. Work.</H2>
         <H1><em>See the world</em></H1>
         <FlexRow>
-          <Button>
-            <I className="fa fa-search fa-2x" aria-hidden="true" />
-            EXPLORE ALL JOBS
-          </Button>
+          <Link to="/jobs">
+            <Button>
+              <I className="fa fa-search fa-2x" aria-hidden="true" />
+              EXPLORE ALL JOBS
+            </Button>
+          </Link>
           <Button>
             <I className="fa fa-users fa-2x" aria-hidden="true" />
             HIRING? START HERE

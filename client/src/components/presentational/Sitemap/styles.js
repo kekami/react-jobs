@@ -57,5 +57,32 @@ export const FlexCol = styled.div`
     }
 `;
 
-export const I = styled.i`
+export const Fb = styled.i`
+    color: #3b5998;
 `;
+
+export const Ln = styled.i`
+    color: #08669c;
+`;
+
+export const Twitter = styled.i`
+    color: #10a9e2;
+`;
+
+export const GPlus = styled.i`
+    color: #dd5044;
+`;
+
+export const InstagramBackground = styled.span`
+    width: calc(2em - 3px);
+    height: calc(2em - 3px);
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    border-radius: 25%;
+    position: relative;
+`;
+
+export const Instagram = styled.i`
+    color: white;
+    transform: scale(0.8) translateY(-2px);
+`;
+

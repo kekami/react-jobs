@@ -6,11 +6,6 @@ export const NavbarContainer = styled.div`
   align-items: baseline;
   padding: 0 1em;
   color: #1c75bc;
-
-  a {
-    text-decoration: none;
-    color: #1c75bc;
-  }
 `;
 
 export const Logo = styled.div`

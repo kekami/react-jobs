@@ -76,7 +76,6 @@ export const H2 = styled.h2`
   @media (min-width: 500px) {
       font-size: 2rem;
   }
-
 `;
 
 export const P = styled.p`

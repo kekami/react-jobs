@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FooterContainer } from './styles';
 
 const Footer = () => (
@@ -14,8 +13,8 @@ const Footer = () => (
 );
 
 
-{/* <Link to="/terms">Terms of service</Link>
-<Link to="/terms/privacy">Privacy Policy</Link> */}
+/* <Link to="/terms">Terms of service</Link>
+<Link to="/terms/privacy">Privacy Policy</Link> */
 
 export default Footer;
 

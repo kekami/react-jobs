@@ -71,7 +71,7 @@ export class RoleSummaryHeader extends React.Component {
                         aria-hidden="true"
                       />
                     </SaveForLater>
-                    <Link to="/apply">
+                    <Link to={`${window.location.pathname}${window.location.hash}`}>
                       <ApplyNowButton>
                         Apply Now
                       </ApplyNowButton>
@@ -131,7 +131,7 @@ export class RoleSummaryFooter extends React.Component {
                 <FooterActions>
                   <SaveForLater>Save for later<i className="fa fa-bookmark" aria-hidden="true" />
                   </SaveForLater>
-                  <Link to="/apply">
+                  <Link to={`${window.location.pathname}${window.location.hash}`}>
                     <ApplyNowButton>
                         Apply Now
                     </ApplyNowButton>

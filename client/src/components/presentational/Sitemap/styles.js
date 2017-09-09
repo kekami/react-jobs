@@ -14,6 +14,7 @@ export const SitemapWrapper = styled.div`
 export const Column = styled.div`
     width: 100%;
     padding: 15px;
+    margin-bottom: 35px;
     flex-wrap: wrap;
     flex: 1 1 250px (minimum width);
 

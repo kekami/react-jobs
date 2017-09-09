@@ -19,12 +19,15 @@ const Navbar = () => (
         <Link to="/join">Join</Link>
         <Conditional>
           <HighLight>
-            <Link to="/hiring">For the employers →</Link>
+            <Link to="">For the employers →</Link>
           </HighLight>
         </Conditional>
       </SubNav>
     </Nav>
   </NavbarContainer>
 );
+
+{ /* <Link to="/hiring">For the employers →</Link> */ }
+
 
 export default Navbar;

@@ -7,7 +7,7 @@ import JobNav from '../../presentational/JobNav/JobNav';
 import { RoleSummaryFooter } from '../../presentational/RoleSummary/RoleSummary';
 import { Wrapper, Details } from './styles';
 
-function debounce(func, wait) {
+export function debounce(func, wait) {
   let timeout;
   return function debouceInvoked(...args) {
     const context = this;

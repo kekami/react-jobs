@@ -15,8 +15,6 @@ import './components/assets/fontAwesome/css/font-awesome.min.css';
 
 const App = () => (
   <Router>
-    
-
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/jobs" component={JobsView} />
@@ -27,3 +25,9 @@ const App = () => (
 );
 
 export default App;
+
+/* Tests
+- Smoke
+- Router component
+- Snapshot of routes
+*/

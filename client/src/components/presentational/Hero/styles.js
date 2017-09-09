@@ -83,7 +83,7 @@ export const P = styled.p`
   text-align: center;
 `;
 
-export const Footer = styled.div`
+export const Foot = styled.div`
   font-size: 1.5rem;
 
 `;

@@ -13,7 +13,6 @@ export const FooterContainer = styled.div`
   }
 
   nav {
-    margin-top: 1em;
   }
 
   @media (min-width: 60em) {

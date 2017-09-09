@@ -7,10 +7,10 @@ const PressComments = ({ comments }) => {
     <CommentBox key={index}>
       <i className="fa fa-quote-right fa-2x" />
       <CommentText>
-        They are great!
+        { comment[0] }
       </CommentText>
       <QuoteAuth>
-        Wicked Websites
+        { comment[1] }
       </QuoteAuth>
     </CommentBox>
   ));
@@ -38,7 +38,7 @@ const Logos = ({ logos }) => {
   const logosJSX = logos.map((logo, index) =>
     (
       <CustomLogoBox key={index}>
-        {logo}
+        <img style={ {width: '100%'} } src={logo} alt="" />
       </CustomLogoBox>
     )
   );
@@ -53,18 +53,22 @@ const Logos = ({ logos }) => {
 export function Press() {
   const comments = [
     [
-      'They are great!', 'Wicked Websites',
+      'Need A Break From Home, But Want To Keep Working? Take A Jobbatical.', 'Wicked Websites',
     ],
     [
-      'They are great!', 'Wicked Websites',
+      'Jobbatical provides an international “help-wanted” platform.', 'Wicked Websites',
     ],
     [
-      'They are great!', 'Wicked Websites',
+      'Would you be interested in taking a Jobbatical?', 'Wicked Websites',
     ],
   ];
 
   const logos = [
-    'Logo 1', 'Logo 2', 'Logo 3', 'Logo 4', 'Logo 5',
+    'https://i.forbesimg.com/media/amp/images/forbes-logo-dark.png',
+    'https://static1.squarespace.com/static/54749c39e4b0712a5b6a8d96/t/54aff0cde4b0ce916d661055/1420816594157/wallstreetjournal.png',
+    'http://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/1.2.0/bbc_news_logo.png?cb=1',
+    'http://www.adweek.com/wp-content/uploads/sites/9/2015/07/MAshable_Logo.jpg',
+    'http://talkingbiznews.com/wp-content/uploads/2014/11/business-insider-logo_full_600.jpg',
   ];
   return (
     <Wrapper>

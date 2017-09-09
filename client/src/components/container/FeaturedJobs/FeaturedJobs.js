@@ -34,10 +34,15 @@ class FeaturedJobs extends Component {
   }
 
   render() {
-    const jobCards = this.state.jobs.map((job, i) => (
-      (i < 12) ? <JobCard key={i} {...job} /> : null
-    ));
+    let jobCards = this.state.jobs.map((job, i) => {
+      const d = new Date(job.deadline);
+      const n = d.getTime();
+      return (Date.now() < n) ? <JobCard key={i} {...job} /> : null;
+    });
 
+    if (jobCards.length > 12) {
+      jobCards = jobCards.slice(0, 12);
+    }
     return (
       <FeaturedJobsContainer>
         <FeaturedJobsHeader>Featured Jobs</FeaturedJobsHeader>

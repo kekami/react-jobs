@@ -47,11 +47,11 @@ class ExploreJobs extends Component {
     let jobs = [];
     if (this.state.searchterm) {
       jobs = this.state.jobs
-        .filter(job => job.title.toUpperCase().includes(this.state.searchterm.toUpperCase()))
-        .map((job, i) => <JobCard key={i} {...job} />);
-    } else {
-      jobs = this.state.jobs.map((job, i) => <JobCard key={i} {...job} />);
+        .filter(job => job.title.toUpperCase().includes(this.state.searchterm.toUpperCase()));
     }
+
+    jobs = this.state.jobs
+      .map((job, i) => <JobCard key={i} {...job} />)
 
     return (
       <ExploreJobsContainer>

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { globalStyles } from '../globalStyles';
 
-export const Wrapper = styled.div`
-    min-height: 100vh;    
+export const Wrapper = styled.div`  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,6 +57,7 @@ export const QuoteAuth = styled.div`
 
 export const LogoWrap = styled.div`
     width: 100%;
+    margin: 5em 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

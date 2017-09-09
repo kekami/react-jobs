@@ -59,6 +59,7 @@ export function diffMonths(dt2, dt1) {
   let diff = (dt2.getTime() - dt1.getTime());
   if (diff < 0) return 'Expired';
   diff /= (1000 * 60 * 60 * 24 * 7 * 4);
+  console.log('mdiff', diff)
   return Math.abs(Math.round(diff));
 }
 
@@ -66,13 +67,12 @@ export function diffDays(dt2, dt1) {
   let diff = (dt2.getTime() - dt1.getTime());
   if (diff < 0) return 'Expired';
   diff /= (1000 * 60 * 60 * 24);
-  return Math.abs(Math.round(diff));
+  return Math.round(diff);
 }
 
 export function timeLeft(deadline) {
   let expiration = {};
   const monthDiff = diffMonths(new Date(deadline), new Date(Date.now()));
-
   if (monthDiff > 0) {
     const expiresIn = diffMonths(new Date(deadline), new Date(Date.now()));
     expiration = {
@@ -82,7 +82,7 @@ export function timeLeft(deadline) {
   } else if (monthDiff === 0) {
     const expiresIn = diffDays(new Date(deadline), new Date(Date.now()));
     expiration = {
-      expiresIn: expiresIn === 0 ? 'Expired' : expiresIn,
+      expiresIn: expiresIn < 0 ? 'Expired' : expiresIn < 1 ? 1 : expiresIn,
       unit: (expiresIn > 1) ? 'days' : 'day',
     };
   } else {

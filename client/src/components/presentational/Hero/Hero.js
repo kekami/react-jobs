@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Wrapper, H1, H2, P, Article, Foot } from './styles';
+import { Wrapper, H1, H2, P, P2, Article, Foot } from './styles';
 import { Button, I, FlexRow } from '../Button/Button';
 import { BracesLeft, BracesRight } from './assets/CurlyBraces';
 
@@ -31,7 +31,7 @@ export function Hero() {
         <P>Use Jobbatical to find a tech, business, <br />or creative job abroad.</P>
       </Centered>
       <Footer>
-        <P>Currently heaps of teams in loads of <br />countries could use your help! </P>
+        <P2>Currently heaps of teams in loads of <br />countries could use your help! </P2>
       </Footer>
     </Wrapper>
   );

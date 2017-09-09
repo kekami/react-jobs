@@ -41,7 +41,7 @@ export const SubNav = styled.div`
 export const Conditional = styled.div`
   display: none;
 
-  @media (min-width: 30em) {
+  @media (min-width: 45em) {
     display: block;
   }
 `;

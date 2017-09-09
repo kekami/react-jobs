@@ -20,8 +20,8 @@ export const Button = styled.button`
   display: inline-block;
   background-color: ${globalStyles.LIGHTBLUE};
   border: 0px;
-  border-radius: 2px;
-  box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.1);
   color: white;
   font-size: 0.8rem;
 `;

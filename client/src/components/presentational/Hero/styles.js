@@ -61,31 +61,39 @@ export const H1 = styled.h1`
   margin: 0;
   padding-top: 1rem;
 
-  font-family: 'Days One', sans-serif;
+  font-family: 'Khula', sans-serif;
   line-height: 3rem;
 
   font-size: 10vw;
   color: white;
 
   @media (min-width: 500px) {
-      font-size: 3rem;
+      font-size: 4rem;
   }
 `;
 
 export const H2 = styled.h2`
-  margin: 0;
+  margin: 10px;
   color: white;
-  font-family: 'Khula', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   font-size: 7vw;
 
   @media (min-width: 500px) {
-      font-size: 2rem;
+      font-size: 3rem;
   }
 `;
 
 export const P = styled.p`
   color: white;
   text-align: center;
+  font-size: 1.5rem;
+`;
+
+export const P2 = styled.p`
+color: white;
+text-align: center;
+font-size: 1.8rem;
 `;
 
 export const Foot = styled.div`

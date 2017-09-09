@@ -21,4 +21,10 @@ export const FooterContainer = styled.div`
     justify-content: space-between;
     align-content: center;
   }
+
+  p {
+    display: inline-block;
+    color: #666;
+    margin-left: 15px;
+  }
 `;

@@ -24,10 +24,11 @@ export const Button = styled.button`
   box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
   color: white;
   font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
+
+// display: flex;
+// align-items: center;
+// justify-content: center;
 
 const hoverPop = keyframes`
   50% {

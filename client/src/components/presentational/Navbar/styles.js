@@ -20,6 +20,7 @@ export const Logo = styled.div`
 
   i {
     margin-right: 0.3em;
+    align-self: center;    
   }
 
   h2 {

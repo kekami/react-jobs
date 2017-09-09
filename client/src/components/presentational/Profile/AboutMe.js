@@ -23,6 +23,10 @@ export class AboutMe extends Component {
     this.onClick = this.onClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+  
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
 
   onClick() {
     this.setState({ show: !this.state.show });

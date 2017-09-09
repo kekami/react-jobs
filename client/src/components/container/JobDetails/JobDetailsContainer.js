@@ -7,12 +7,6 @@ import JobNav from '../../presentational/JobNav/JobNav';
 import { RoleSummaryFooter } from '../../presentational/RoleSummary/RoleSummary';
 import { Wrapper, Details } from './styles';
 
-// animate appearance of Role Summary Footer
-// adjust to original sizing
-// add social media links
-// add explore jobs functionality linking back to feature jobs
-// tests
-
 function debounce(func, wait) {
   let timeout;
   return function debouceInvoked(...args) {

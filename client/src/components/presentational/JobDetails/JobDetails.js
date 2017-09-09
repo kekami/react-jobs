@@ -55,7 +55,7 @@ const AboutSummary = props => (
       {...props}
     />
     <p>{props.description}</p>
-    <a href="" alt="">Read more about {props.companyName}</a>
+    <a href="#about" alt="Scroll to about section">Read more about {props.companyName}</a>
   </CardGeneralTag>
 );
 
@@ -91,7 +91,7 @@ const About = (props) => {
 
   return (
     <div ref={ref => props.storeRef(ref, 'about')}>
-      <CardGeneralTag>
+      <CardGeneralTag id="about">
         <AboutTitle
           {...props}
         />

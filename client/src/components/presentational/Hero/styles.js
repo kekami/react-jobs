@@ -27,7 +27,9 @@ export const SVGLeft = styled.svg`
 
   @media (min-width: 900px) {
     position: absolute;
-    transform: scale(1.5) translate(-250px, 15px);
+    left: -180px;
+    top: 15px;
+    transform: scale(1.5);
   }
 `;
 
@@ -37,7 +39,9 @@ export const SVGRight = styled.svg`
   @media (min-width: 900px) {
     display: inline;
     position: absolute;
-    transform: rotate(180deg) scale(1.5) translate(-250px, -15px);
+    right: -180px;
+    top: 15px;
+    transform: rotate(180deg) scale(1.5);
   }
 `;
 
@@ -49,6 +53,7 @@ export const Article = styled.article`
   margin-top: auto;
   margin-bottom: auto;
   z-index: 5;
+  position: relative;
 `;
 
 export const H1 = styled.h1`

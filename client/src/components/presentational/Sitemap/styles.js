@@ -74,8 +74,8 @@ export const GPlus = styled.i`
 `;
 
 export const InstagramBackground = styled.span`
-    width: calc(2em - 3px);
-    height: calc(2em - 3px);
+    width: calc(2em - 4px);
+    height: calc(2em - 4px);
     background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
     border-radius: 25%;
     position: relative;

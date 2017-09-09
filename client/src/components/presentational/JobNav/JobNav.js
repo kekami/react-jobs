@@ -55,3 +55,13 @@ JobNav.defaultProps = {
   top: 0,
   left: 0,
 };
+
+/* Tests
+- Props
+- Render output
+- Examine whole component for testability
+- Move throught render components 
+- Events
+- Component intergration tests
+*/
+

@@ -1,12 +1,16 @@
 import React from 'react';
-import { Wrapper, H1, H2, P, Article, Footer } from './styles';
+import PropTypes from 'prop-types';
+import { Wrapper, H1, H2, P, Article, Foot } from './styles';
 import { Button, I, FlexRow } from '../Button/Button';
 import { BracesLeft, BracesRight } from './assets/CurlyBraces';
+
+const Centered = props => <Article>{props.children}</Article>;
+const Footer = props => <Foot>{props.children}</Foot>;
 
 export function Hero() {
   return (
     <Wrapper>
-      <Article>
+      <Centered>
         <BracesLeft />
         <BracesRight />
         <H2>Travel. Work.</H2>
@@ -22,10 +26,24 @@ export function Hero() {
           </Button>
         </FlexRow>
         <P>Use Jobbatical to find a tech, business, <br />or creative job abroad.</P>
-      </Article>
+      </Centered>
       <Footer>
         <P>Currently heaps of teams in loads of <br />countries could use your help! </P>
       </Footer>
     </Wrapper>
   );
 }
+
+Centered.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
+
+Footer.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};

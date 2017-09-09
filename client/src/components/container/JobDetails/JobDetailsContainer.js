@@ -13,7 +13,7 @@ import { Wrapper, Details } from './styles';
 // add explore jobs functionality linking back to feature jobs
 // tests
 
-function debounce(func, wait) {
+export function debounce(func, wait) {
   let timeout;
   return function debouceInvoked(...args) {
     const context = this;

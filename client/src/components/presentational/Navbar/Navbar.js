@@ -15,8 +15,8 @@ const Navbar = () => (
       </Conditional>
 
       <SubNav>
-        <Link to="/login">Log In</Link>
-        <Link to="/join">Join</Link>
+        <Link to="/profile">Log In</Link>
+        <Link to="/profile">Join</Link>
         <Conditional>
           <HighLight>
             <Link to="">For the employers →</Link>

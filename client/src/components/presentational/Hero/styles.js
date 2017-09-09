@@ -87,13 +87,21 @@ export const H2 = styled.h2`
 export const P = styled.p`
   color: white;
   text-align: center;
-  font-size: 1.5rem;
+
+  @media (min-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const P2 = styled.p`
+padding: 0 0.3em;
 color: white;
 text-align: center;
-font-size: 1.8rem;
+font-size: 1.2rem;
+
+  @media (min-width: 500px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const Foot = styled.div`

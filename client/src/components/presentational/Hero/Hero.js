@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Wrapper, H1, H2, P, Article, Footer } from './styles';
+import { Wrapper, H1, H2, P, Article, Foot } from './styles';
 import { Button, I, FlexRow } from '../Button/Button';
 import { BracesLeft, BracesRight } from './assets/CurlyBraces';
 

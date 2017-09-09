@@ -27,12 +27,12 @@ export class ProfileNav extends Component {
         <nav>
           <ul>
             <li>
-              <Link to="/" onClick={this.onClick} >
+              <Link to="/profile" onClick={this.onClick} >
                 <strong>MY PROFILE</strong>
               </Link>
             </li>
             <li>
-              <Link to="/" onClick={this.onClick} >
+              <Link to="/profile" onClick={this.onClick} >
                 <strong>MY PREFERENCES</strong>
               </Link>
             </li>

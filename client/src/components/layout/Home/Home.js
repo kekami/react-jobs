@@ -8,16 +8,24 @@ import { Press } from '../../presentational/Press/Press';
 import { Sitemap } from '../../presentational/Sitemap/Sitemap';
 
 
-const Home = () => (
-  <div>
-    <Navbar />
-    <Hero />
-    <FeaturedJobs />
-    <Press />
-    <Mission />
-    <Sitemap />
-    <Footer />
-  </div>
-);
+class Home extends React.Component {
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Hero />
+        <FeaturedJobs />
+        <Press />
+        <Mission />
+        <Sitemap />
+        <Footer />
+      </div>
+    );
+  }
+}
 
 export default Home;

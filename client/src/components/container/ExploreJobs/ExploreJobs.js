@@ -17,6 +17,8 @@ class ExploreJobs extends Component {
   }
 
   componentWillMount() {
+    window.scrollTo(0, 0);
+
     axios('/api/jobs')
       .then(response => response.data)
       .then((data) => {

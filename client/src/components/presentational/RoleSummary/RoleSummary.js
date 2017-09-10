@@ -84,9 +84,11 @@ export class RoleSummaryHeader extends React.Component {
         </CardHeader>
         <CardShare>
           <p>Know someone who would be perfect for this job? Share the link:</p>
-          <Ln className="fa fa-linkedin-square fa-3x" aria-hidden="true" />
-          <Fb className="fa fa-facebook-square fa-3x" aria-hidden="true" />
-          <Twitter className="fa fa-twitter-square fa-3x" aria-hidden="true" />
+          <div>
+            <Ln className="fa fa-linkedin-square fa-3x" aria-hidden="true" />
+            <Fb className="fa fa-facebook-square fa-3x" aria-hidden="true" />
+            <Twitter className="fa fa-twitter-square fa-3x" aria-hidden="true" />
+          </div>
         </CardShare>
       </div>
     );

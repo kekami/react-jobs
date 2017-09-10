@@ -140,7 +140,7 @@ export const CardShare = styled(c1Card)`
 `;
 
 export const Fb = styled.i`
-  color: #3b5998;
+  color: #3b5998;s
 `;
 
 export const Ln = styled.i`
@@ -190,4 +190,8 @@ export const FooterActions = styled.div`
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
 `;

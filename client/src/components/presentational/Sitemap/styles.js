@@ -14,6 +14,7 @@ export const SitemapWrapper = styled.div`
 export const Column = styled.div`
     width: 100%;
     padding: 15px;
+    margin-bottom: 35px;
     flex-wrap: wrap;
     flex: 1 1 250px (minimum width);
 
@@ -40,12 +41,13 @@ export const FlexCol = styled.div`
     flex-direction: column;
 
     a {
+        display: block;
+        height: 1em;
+        margin-top: 40px;        
         flex-direction: row;
         text-decoration: none;
         color: #839496;
         font-size: 0.8em;
-        padding-top: 25px;
-        padding-bottom: 25px;
         &:hover {
             color: #000;
         }
@@ -55,6 +57,14 @@ export const FlexCol = styled.div`
         align-items: center;
         margin-top: -7px;
     }
+`;
+
+export const P = styled.p`
+    margin: 0px;
+    height: 1em;
+    margin-top: 40px;        
+    font-size: 0.8em;   
+    color: #839496;    
 `;
 
 export const Fb = styled.i`

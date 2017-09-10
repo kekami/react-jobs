@@ -48,19 +48,29 @@ export const c1Btn = styled.button`
 `;
 
 export const CardGeneralTag = styled(c1Card)`
-  
+
+  @media (max-width: 400px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+  }
+
+  ul:last-child {
+    margin-bottom: 0px;
+  }
+
   li {
     color: ${globalStyles.GREEN};
     line-height: 2rem;  
     
     span {
       color: ${globalStyles.DARKGREY};
-      padding-left: 10px;
+      padding-left: 0px;
     }
-  }
-
-  ul:last-child {
-    margin-bottom: 0px;
   }
 
   p {

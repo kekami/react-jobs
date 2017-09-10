@@ -51,6 +51,8 @@ class ExploreJobs extends Component {
     }
 
     jobs = this.state.jobs
+      .sort((a, b) => a.deadline > b.deadline)
+      .reverse()
       .map((job, i) => <JobCard key={i} {...job} />)
 
     return (

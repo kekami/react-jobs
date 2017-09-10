@@ -34,11 +34,14 @@ class FeaturedJobs extends Component {
   }
 
   render() {
-    let jobCards = this.state.jobs.map((job, i) => {
-      const d = new Date(job.deadline);
-      const n = d.getTime();
-      return (Date.now() < n) ? <JobCard key={i} {...job} /> : null;
-    });
+    let jobCards = this.state.jobs
+      .map((job, i) => {
+        const d = new Date(job.deadline);
+        const n = d.getTime();
+        return (Date.now() < n) ? <JobCard key={i} {...job} /> : null;
+      })
+      .filter(job => job !== null)
+      .sort((a, b) => a.props.deadline > b.props.deadline);
 
     if (jobCards.length > 12) {
       jobCards = jobCards.slice(0, 12);

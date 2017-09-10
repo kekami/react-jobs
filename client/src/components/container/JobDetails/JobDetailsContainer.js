@@ -22,7 +22,7 @@ export function getData(requiredId) {
       .then(response => response.data)
       .then((data) => {
         const jobs = data.jobs;
-        const jobData = jobs.filter(job => job.id === requiredId);
+        const jobData = jobs.filter(job => job._id === requiredId);
         resolve(jobData[0]);
       });
   })
@@ -80,6 +80,7 @@ class JobDetailsContainer extends React.Component {
     let id = this.props.hash;
     if (id !== undefined) {
       if (id[0] === '#') { id = id.slice(1, id.length); }
+      console.log('id', id);
       getData(id).then((jobData) => {
         this.setState({
           jobData,

@@ -13,13 +13,13 @@ import {
   TimeLeft,
 } from './styles';
 
-const JobCard = ({ image, title, location, companyName, description, deadline, id }) => {
+const JobCard = ({ image, title, location, companyName, description, deadline, _id }) => {
   const expiration = timeLeft(deadline);
   const isExpired = expiration.expiresIn === 'Expired';
 
   return (
     <JobCardContainer expired={isExpired}>
-      <Link to={{ pathname: '/job', hash: `#${id}` }}>
+      <Link to={{ pathname: '/job', hash: `#${_id}` }}>
         <img src={image} alt="" />
         <Content>
           <JobHeader expired={isExpired}>{title}</JobHeader>
@@ -44,7 +44,7 @@ const JobCard = ({ image, title, location, companyName, description, deadline, i
 };
 
 JobCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
@@ -59,7 +59,6 @@ export function diffMonths(dt2, dt1) {
   let diff = (dt2.getTime() - dt1.getTime());
   if (diff < 0) return 'Expired';
   diff /= (1000 * 60 * 60 * 24 * 7 * 4);
-  console.log('mdiff', diff)
   return Math.abs(Math.round(diff));
 }
 

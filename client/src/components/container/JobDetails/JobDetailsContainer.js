@@ -52,9 +52,7 @@ class JobDetailsContainer extends React.Component {
       jobData: null,
       navItems: [],
       currentItem: 'role summary',
-      scrollHeight: 0,
       fixedRoleSummary: false,
-      roleSummaryFooterOffsetTop: null,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       jobNavFixed: false,
@@ -80,7 +78,6 @@ class JobDetailsContainer extends React.Component {
     let id = this.props.hash;
     if (id !== undefined) {
       if (id[0] === '#') { id = id.slice(1, id.length); }
-      console.log('id', id);
       getData(id).then((jobData) => {
         this.setState({
           jobData,
@@ -104,7 +101,7 @@ class JobDetailsContainer extends React.Component {
     const scroll = window.scrollY;
 
     this.setState({
-      roleSummaryFooterTop: boundingRectRoleSummaryFooter.top + scroll,
+      roleSummaryFooterBottom: boundingRectRoleSummaryFooter.bottom + scroll,
       roleSummaryFooterHeight: boundingRectRoleSummaryFooter.height,
       jobNavHeight: boundingRectJobNav.height,
       jobNavTop: boundingRectJobNav.top + scroll,
@@ -118,11 +115,11 @@ class JobDetailsContainer extends React.Component {
     this.setState({
       minFooterFixedHeight: this.state.windowHeight,
       maxFooterFixedHeight:
-        (this.state.roleSummaryFooterTop + this.state.roleSummaryFooterHeight)
-        - this.state.windowHeight,
+        this.state.roleSummaryFooterBottom - this.state.windowHeight,
       minJobNavFixedHeight: this.state.jobNavTop - jobNavFixedHeightOffsetTop,
       maxJobNavFixedHeight:
-        this.state.roleSummaryFooterTop
+        this.state.roleSummaryFooterBottom
+        - this.state.roleSummaryFooterHeight
         - this.state.jobNavHeight
         - jobNavFixedHeightOffsetTop,
     }, this.handleScroll);
@@ -200,6 +197,7 @@ class JobDetailsContainer extends React.Component {
 
     this.setState({
       jobNavFixed: false,
+      fixedRoleSummary: false,
     }, this.setRefDataIntoState);
   }
 

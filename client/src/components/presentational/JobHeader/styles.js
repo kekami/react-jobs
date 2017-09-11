@@ -3,7 +3,7 @@ import { globalStyles } from '../globalStyles';
 
 export const Wrapper = styled.div`
   height: 600px;
-  width: 100vw;
+  width: 100%;
   border: none;
   background-color: none;
 

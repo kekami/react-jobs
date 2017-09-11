@@ -94,6 +94,7 @@ class JobDetailsContainer extends React.Component {
     window.removeEventListener('resize', this.handleResizeDebounced);
   }
 
+
   setRefDataIntoState() {
     const boundingRectJobNav = this.jobNavRef.getBoundingClientRect();
     const boundingRectRoleSummaryFooter = this.roleSummaryFooterRef.getBoundingClientRect();
@@ -207,7 +208,16 @@ class JobDetailsContainer extends React.Component {
     if (selected === this.state.currentItem) { return; }
     this.setState({
       currentItem: selected,
-    });
+    }, this.updateScrollPosition);
+  }
+
+  updateScrollPosition() {
+    const currentItemInView = this.state.navItems.filter(item =>
+      item[0] === this.state.currentItem);
+    const itemScrollPosition = currentItemInView[0][1] - 95;
+    if (window.scrollY !== itemScrollPosition) {
+      window.scrollTo(0, itemScrollPosition);
+    }
   }
 
   updateRefState() {

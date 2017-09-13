@@ -15,12 +15,20 @@ describe('Sitemap Component', () => {
       </MemoryRouter>, div);
   });
 
-  it('Sitemap renders correclty/ shallow test render', () => {
+  it('Sitemap passes correctly shallow test', () => {
     const wrapper = shallow(<Sitemap />);
   });
 
   it('Sitemap matches its shallow snapshot', () => {
     const wrapper = shallow(<Sitemap />);
-    expect(toJson(wrapper)).toMatchSnapshot()
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
+  it('Sitemap matches its Full DOM snapshot', () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <Sitemap />
+      </MemoryRouter>);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
 });

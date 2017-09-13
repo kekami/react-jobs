@@ -29,4 +29,10 @@ describe('Sitemap Component', () => {
     const wrapper = shallow(<AboutMe />);
     expect(wrapper.find('input').exists()).toBe(true);
   });
+
+  it('Shows form to the user when "edit" is clicked', () => {
+    const wrapper = mount(<AboutMe />);
+    wrapper.setState({ show: true });
+    expect(wrapper.find('form')).toHaveStyleRule('display', 'block');
+  });
 });

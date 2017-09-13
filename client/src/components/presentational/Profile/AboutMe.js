@@ -23,7 +23,7 @@ export class AboutMe extends Component {
     this.onClick = this.onClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
+
   componentWillMount() {
     window.scrollTo(0, 0);
   }
@@ -46,7 +46,7 @@ export class AboutMe extends Component {
 
   render() {
     return (
-      <SectionWrapper edited={this.state.show} style={{ 'backgroundColor': '#FAFAFA' }} >
+      <SectionWrapper edited={this.state.show} style={{ backgroundColor: '#FAFAFA' }} >
         <AboutMeHead edited={this.state.show}>
           <p><strong>About me</strong></p>
           <Edit onClick={this.onClick} edited={this.state.show}>

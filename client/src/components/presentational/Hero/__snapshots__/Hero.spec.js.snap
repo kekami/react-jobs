@@ -14,13 +14,18 @@ exports[`Hero Component Matches standard output 1`] = `
       </em>
     </styled.h1>
     <styled.div>
-      <styled.button>
-        <styled.i
-          aria-hidden="true"
-          className="fa fa-search fa-2x"
-        />
-        EXPLORE ALL JOBS
-      </styled.button>
+      <Link
+        replace={false}
+        to="/jobs"
+      >
+        <styled.button>
+          <styled.i
+            aria-hidden="true"
+            className="fa fa-search fa-2x"
+          />
+          EXPLORE ALL JOBS
+        </styled.button>
+      </Link>
       <styled.button>
         <styled.i
           aria-hidden="true"

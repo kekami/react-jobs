@@ -21,15 +21,15 @@ ShallowWrapper {
         comments={
             Array [
                 Array [
-                  "They are great!",
+                  "Need A Break From Home, But Want To Keep Working? Take A Jobbatical.",
                   "Wicked Websites",
                 ],
                 Array [
-                  "They are great!",
+                  "Jobbatical provides an international “help-wanted” platform.",
                   "Wicked Websites",
                 ],
                 Array [
-                  "They are great!",
+                  "Would you be interested in taking a Jobbatical?",
                   "Wicked Websites",
                 ],
               ]
@@ -38,11 +38,11 @@ ShallowWrapper {
     <Logos
         logos={
             Array [
-                "Logo 1",
-                "Logo 2",
-                "Logo 3",
-                "Logo 4",
-                "Logo 5",
+                "https://i.forbesimg.com/media/amp/images/forbes-logo-dark.png",
+                "https://static1.squarespace.com/static/54749c39e4b0712a5b6a8d96/t/54aff0cde4b0ce916d661055/1420816594157/wallstreetjournal.png",
+                "http://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/1.2.0/bbc_news_logo.png?cb=1",
+                "http://www.adweek.com/wp-content/uploads/sites/9/2015/07/MAshable_Logo.jpg",
+                "http://talkingbiznews.com/wp-content/uploads/2014/11/business-insider-logo_full_600.jpg",
               ]
         }
     />
@@ -61,15 +61,15 @@ ShallowWrapper {
             comments={
                   Array [
                         Array [
-                          "They are great!",
+                          "Need A Break From Home, But Want To Keep Working? Take A Jobbatical.",
                           "Wicked Websites",
                         ],
                         Array [
-                          "They are great!",
+                          "Jobbatical provides an international “help-wanted” platform.",
                           "Wicked Websites",
                         ],
                         Array [
-                          "They are great!",
+                          "Would you be interested in taking a Jobbatical?",
                           "Wicked Websites",
                         ],
                       ]
@@ -78,11 +78,11 @@ ShallowWrapper {
       <Logos
             logos={
                   Array [
-                        "Logo 1",
-                        "Logo 2",
-                        "Logo 3",
-                        "Logo 4",
-                        "Logo 5",
+                        "https://i.forbesimg.com/media/amp/images/forbes-logo-dark.png",
+                        "https://static1.squarespace.com/static/54749c39e4b0712a5b6a8d96/t/54aff0cde4b0ce916d661055/1420816594157/wallstreetjournal.png",
+                        "http://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/1.2.0/bbc_news_logo.png?cb=1",
+                        "http://www.adweek.com/wp-content/uploads/sites/9/2015/07/MAshable_Logo.jpg",
+                        "http://talkingbiznews.com/wp-content/uploads/2014/11/business-insider-logo_full_600.jpg",
                       ]
             }
       />
@@ -95,7 +95,7 @@ ShallowWrapper {
       "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Press />,
-      "_debugID": 47,
+      "_debugID": 52,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": StatelessComponent {
@@ -135,15 +135,15 @@ ShallowWrapper {
                     comments={
                               Array [
                                         Array [
-                                          "They are great!",
+                                          "Need A Break From Home, But Want To Keep Working? Take A Jobbatical.",
                                           "Wicked Websites",
                                         ],
                                         Array [
-                                          "They are great!",
+                                          "Jobbatical provides an international “help-wanted” platform.",
                                           "Wicked Websites",
                                         ],
                                         Array [
-                                          "They are great!",
+                                          "Would you be interested in taking a Jobbatical?",
                                           "Wicked Websites",
                                         ],
                                       ]
@@ -152,16 +152,16 @@ ShallowWrapper {
           <Logos
                     logos={
                               Array [
-                                        "Logo 1",
-                                        "Logo 2",
-                                        "Logo 3",
-                                        "Logo 4",
-                                        "Logo 5",
+                                        "https://i.forbesimg.com/media/amp/images/forbes-logo-dark.png",
+                                        "https://static1.squarespace.com/static/54749c39e4b0712a5b6a8d96/t/54aff0cde4b0ce916d661055/1420816594157/wallstreetjournal.png",
+                                        "http://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/1.2.0/bbc_news_logo.png?cb=1",
+                                        "http://www.adweek.com/wp-content/uploads/sites/9/2015/07/MAshable_Logo.jpg",
+                                        "http://talkingbiznews.com/wp-content/uploads/2014/11/business-insider-logo_full_600.jpg",
                                       ]
                     }
           />
 </styled.div>,
-        "_debugID": 48,
+        "_debugID": 53,
         "_renderedOutput": <styled.div>
           <styled.h3>
                     THE PRESS
@@ -175,15 +175,15 @@ ShallowWrapper {
                     comments={
                               Array [
                                         Array [
-                                          "They are great!",
+                                          "Need A Break From Home, But Want To Keep Working? Take A Jobbatical.",
                                           "Wicked Websites",
                                         ],
                                         Array [
-                                          "They are great!",
+                                          "Jobbatical provides an international “help-wanted” platform.",
                                           "Wicked Websites",
                                         ],
                                         Array [
-                                          "They are great!",
+                                          "Would you be interested in taking a Jobbatical?",
                                           "Wicked Websites",
                                         ],
                                       ]
@@ -192,11 +192,11 @@ ShallowWrapper {
           <Logos
                     logos={
                               Array [
-                                        "Logo 1",
-                                        "Logo 2",
-                                        "Logo 3",
-                                        "Logo 4",
-                                        "Logo 5",
+                                        "https://i.forbesimg.com/media/amp/images/forbes-logo-dark.png",
+                                        "https://static1.squarespace.com/static/54749c39e4b0712a5b6a8d96/t/54aff0cde4b0ce916d661055/1420816594157/wallstreetjournal.png",
+                                        "http://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/1.2.0/bbc_news_logo.png?cb=1",
+                                        "http://www.adweek.com/wp-content/uploads/sites/9/2015/07/MAshable_Logo.jpg",
+                                        "http://talkingbiznews.com/wp-content/uploads/2014/11/business-insider-logo_full_600.jpg",
                                       ]
                     }
           />

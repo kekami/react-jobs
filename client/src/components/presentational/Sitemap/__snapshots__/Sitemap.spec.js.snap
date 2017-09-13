@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sitemap Component Sitemap matches its shallow snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.header>
+      <strong>
+        FOR TALENT
+      </strong>
+    </styled.header>
+    <styled.div>
+      <Link
+        replace={false}
+        to="/"
+      >
+        HOME
+      </Link>
+      <Link
+        replace={false}
+        to="/jobs"
+      >
+        EXPLORE JOBS
+      </Link>
+      <Link
+        replace={false}
+        to="/profile"
+      >
+        MY PROFILE
+      </Link>
+      <styled.p>
+        SAVED JOBS
+      </styled.p>
+      <styled.p>
+        MY APPLICATIONS
+      </styled.p>
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.header>
+      <strong>
+        FOR BUSINESS
+      </strong>
+    </styled.header>
+    <styled.div>
+      <styled.p>
+        WHAT WE OFFER
+      </styled.p>
+      <styled.p>
+        PRICING
+      </styled.p>
+      <styled.p>
+        CUSTOMERS
+      </styled.p>
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.header>
+      <strong>
+        ABOUT US
+      </strong>
+    </styled.header>
+    <styled.div>
+      <styled.p>
+        OUR STORY
+      </styled.p>
+      <styled.p>
+        SUPPORT
+      </styled.p>
+      <styled.p>
+        JOIN THE TEAM
+      </styled.p>
+      <styled.p>
+        BLOG
+      </styled.p>
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.header>
+      <strong>
+        FOLLOW US
+      </strong>
+    </styled.header>
+    <styled.div>
+      <Link
+        replace={false}
+        to="/"
+      >
+        <div>
+          FACEBOOK
+          <styled.i
+            aria-hidden="true"
+            className="fa fa-facebook-square fa-2x"
+          />
+        </div>
+      </Link>
+      <Link
+        replace={false}
+        to="/"
+      >
+        <div>
+          TWITTER
+          <styled.i
+            aria-hidden="true"
+            className="fa fa-twitter-square fa-2x"
+          />
+        </div>
+      </Link>
+      <Link
+        replace={false}
+        to="/"
+      >
+        <div>
+          LINKEDIN
+          <styled.i
+            aria-hidden="true"
+            className="fa fa-linkedin-square fa-2x"
+          />
+        </div>
+      </Link>
+      <Link
+        replace={false}
+        to="/"
+      >
+        <div>
+          GOOGLE+
+          <styled.i
+            aria-hidden="true"
+            className="fa fa-google-plus-square fa-2x"
+          />
+        </div>
+      </Link>
+      <Link
+        replace={false}
+        to="/"
+      >
+        <div>
+          INSTAGRAM
+          <styled.span>
+            <styled.i
+              aria-hidden="true"
+              className="fa fa-instagram fa-2x"
+            />
+          </styled.span>
+        </div>
+      </Link>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

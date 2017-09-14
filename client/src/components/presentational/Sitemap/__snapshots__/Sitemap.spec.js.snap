@@ -12,7 +12,7 @@ exports[`Sitemap Component Sitemap matches its Full DOM snapshot 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "ar22lf",
+            "key": "e0g5oz",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Sitemap Component Sitemap matches its Full DOM snapshot 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "ar22lf",
+          "key": "e0g5oz",
           "pathname": "/",
           "search": "",
           "state": undefined,

@@ -103,14 +103,19 @@ RoleSummaryHeader.propTypes = {
 
 export class RoleSummaryFooter extends React.Component {
   render() {
-    const { getRef, title, companyName, deadline, fixed } = this.props;
+    const { getRef, title, companyName, deadline, fixed, display, animate } = this.props;
 
     const expiration = timeLeft(deadline);
     const isExpired = expiration.expiresIn === 'Expired';
 
     return (
       <div ref={getRef}>
-        <FooterWrapper isExpired={isExpired} fixed={fixed} >
+        <FooterWrapper
+          isExpired={isExpired}
+          fixed={fixed}
+          display={display}
+          animate={animate}
+        >
           <Details>
             <JobDetailsWrapper>
               <CardFooter>
@@ -155,4 +160,6 @@ RoleSummaryFooter.propTypes = {
   getRef: PropTypes.func.isRequired,
   companyName: PropTypes.string.isRequired,
   fixed: PropTypes.bool.isRequired,
+  animateIn: PropTypes.bool.isRequired,
+  animateOut: PropTypes.bool.isRequired,
 };

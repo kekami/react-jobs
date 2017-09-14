@@ -231,7 +231,9 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
         </strong>
          
       </div>
-      <p>
+      <p
+        id="names"
+      >
          
       </p>
       <div>
@@ -239,7 +241,9 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
           Living in
         </strong>
       </div>
-      <p />
+      <p
+        id="location"
+      />
       <div>
         <strong>
           Introduction 
@@ -250,7 +254,9 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
         </span>
          
       </div>
-      <p />
+      <p
+        id="introduction"
+      />
     </div>
   </styled.div>
   <form

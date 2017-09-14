@@ -1,9 +1,10 @@
-import React from 'react';  
-import ReactDOM from 'react-dom';  
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import 'jest-styled-components';
 import { AboutMe } from './AboutMe';
+import { AboutMeBody } from './styles';
 
 
 describe('Sitemap Component', () => {
@@ -26,19 +27,25 @@ describe('Sitemap Component', () => {
     expect(toJson(wrapper.find('form'))).toMatchSnapshot();
   });
 
-  it('AboutMe renders 4 input fields', () => {
-    const wrapper = shallow(<AboutMe />);
-    expect(wrapper.find('input').exists()).toBe(true);
-  });
-
-  it('Shows the form to the user when "edit" is clicked', () => {
+  it('Shows the input form to the user when "edit" is clicked', () => {
     const wrapper = mount(<AboutMe />);
     wrapper.setState({ show: true });
     expect(wrapper.find('form').props().style.display).toBe('block');
   });
 
-  it('Should have a button', () => {
+  it('Input form renders 4 input fields', () => {
     const wrapper = shallow(<AboutMe />);
-    expect(wrapper.find('button').exists()).toBe(true);
+    expect(wrapper.find('.form-group').length).toBe(4);
+  });
+
+  it('Should have a submit button', () => {
+    const wrapper = shallow(<AboutMe />);
+    expect(wrapper.find('.btn').exists()).toBe(true);
+  });
+
+  it('Extracts data from the state', () => {
+    const wrapper = mount(<AboutMe />);
+    wrapper.setState({ Location: 'Warsaw' });
+    expect(wrapper.containsMatchingElement(<p id="location">Warsaw</p>)).toBe(true);
   });
 });

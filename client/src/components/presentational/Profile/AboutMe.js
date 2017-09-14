@@ -58,11 +58,11 @@ export class AboutMe extends Component {
         <AboutMeBody style={{ display: this.state.show ? 'none' : 'block' }}>
           <div>
             <div><strong>Name</strong> </div>
-            <p>{this.state.FirstName} {this.state.LastName}</p>
+            <p id="names">{this.state.FirstName} {this.state.LastName}</p>
             <div><strong>Living in</strong></div>
-            <p>{this.state.Location}</p>
+            <p id="location">{this.state.Location}</p>
             <div><strong>Introduction </strong> <span>Just a few words about me</span> </div>
-            <p>{this.state.Intro}</p>
+            <p id="introduction">{this.state.Intro}</p>
           </div>
         </AboutMeBody>
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>

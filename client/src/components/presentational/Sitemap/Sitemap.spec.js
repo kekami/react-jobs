@@ -23,12 +23,4 @@ describe('Sitemap Component', () => {
     const wrapper = shallow(<Sitemap />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
-  it('Sitemap matches its Full DOM snapshot', () => {
-    const wrapper = mount(
-      <MemoryRouter>
-        <Sitemap />
-      </MemoryRouter>);
-    expect(toJson(wrapper)).toMatchSnapshot();
-  });
-
 });

@@ -1,213 +1,190 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sitemap Component AboutMe matches its Full DOM snapshot 1`] = `
-<AboutMe>
-  <styled.div
-    edited={false}
-    style={
-      Object {
-        "backgroundColor": "#FAFAFA",
-      }
+exports[`Sitemap Component AboutMe form matches its Full DOM snapshot 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-bottom: 1em;
+  border-bottom: solid 1px #04d092;
+}
+
+.c1 div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 0.1em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  width: 100%;
+}
+
+.c1 div label {
+  min-width: 25%;
+  padding: 0.2em;
+}
+
+.c1 div input {
+  margin-right: 5em;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.c2 div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+  width: 100%;
+}
+
+.c2 div input {
+  width: 100%;
+}
+
+.c0 {
+  border-bottom: none;
+}
+
+@media (min-width:800px) {
+  .c1 div input {
+    width: 100%;
+  }
+}
+
+@media (min-width:800px) {
+  .c2 div input {
+    width: 100%;
+  }
+}
+
+@media (min-width:800px) {
+  .c2 div {
+    width: 50%;
+  }
+}
+
+<form
+  action=""
+  onSubmit={[Function]}
+  style={
+    Object {
+      "display": "none",
     }
-  >
-    <div
-      className="sc-iwsKbI ketVtS"
-      style={
-        Object {
-          "backgroundColor": "#FAFAFA",
-        }
-      }
+  }
+>
+  <Styled(styled.div)>
+    <styled.div
+      className="c0"
     >
-      <Styled(Styled(Styled(styled.div)))
-        edited={false}
+      <div
+        className="c0 c1"
       >
-        <Styled(Styled(styled.div))
-          className="sc-fAjcbJ byigni"
-          edited={false}
-        >
-          <Styled(styled.div)
-            className="sc-fAjcbJ byigni sc-kEYyzF gfWKdx"
-            edited={false}
-          >
-            <styled.div
-              className="sc-fAjcbJ byigni sc-kEYyzF gfWKdx sc-kAzzGY jHprQs"
-              edited={false}
-            >
-              <div
-                className="sc-fAjcbJ byigni sc-kEYyzF gfWKdx sc-kAzzGY jHprQs sc-jzJRlG cjXrMI"
-              >
-                <p>
-                  <strong>
-                    About me
-                  </strong>
-                </p>
-                <styled.button
-                  edited={false}
-                  onClick={[Function]}
-                >
-                  <button
-                    className="sc-VigVT euCtwD"
-                    onClick={[Function]}
-                  >
-                    <div>
-                      Edit 
-                      <styled.i
-                        aria-hidden="true"
-                        className="fa fa-pencil"
-                      >
-                        <i
-                          aria-hidden="true"
-                          className="fa fa-pencil sc-jTzLTM kHPWWn"
-                        />
-                      </styled.i>
-                    </div>
-                  </button>
-                </styled.button>
-              </div>
-            </styled.div>
-          </Styled(styled.div)>
-        </Styled(Styled(styled.div))>
-      </Styled(Styled(Styled(styled.div)))>
-      <styled.div
-        style={
-          Object {
-            "display": "block",
-          }
-        }
-      >
-        <div
-          className="sc-caSCKo cLYiQA"
-          style={
-            Object {
-              "display": "block",
-            }
-          }
-        >
-          <div>
-            <div>
-              <strong>
-                Name
-              </strong>
-               
-            </div>
-            <p>
-               
-            </p>
-            <div>
-              <strong>
-                Living in
-              </strong>
-            </div>
-            <p />
-            <div>
-              <strong>
-                Introduction 
-              </strong>
-               
-              <span>
-                Just a few words about me
-              </span>
-               
-            </div>
-            <p />
-          </div>
-        </div>
-      </styled.div>
-      <form
-        action=""
-        onSubmit={[Function]}
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-      >
-        <Styled(styled.div)>
-          <styled.div
-            className="sc-gisBJw ixCwkS"
+        <styled.div>
+          <div
+            className="c2"
           >
             <div
-              className="sc-gisBJw ixCwkS sc-iAyFgw cKYLTb"
+              className="form-group"
             >
-              <styled.div>
-                <div
-                  className="sc-hSdWYo gQlOnZ"
-                >
-                  <div
-                    className="form-group"
-                  >
-                    <label>
-                      <strong>
-                        First Name
-                      </strong>
-                    </label>
-                    <input
-                      name="FirstName"
-                      placeholder="e.g. John"
-                      type="text"
-                    />
-                  </div>
-                  <div
-                    className="form-group"
-                  >
-                    <label>
-                      <strong>
-                        Last name
-                      </strong>
-                    </label>
-                    <input
-                      name="LastName"
-                      placeholder="e.g. Galt"
-                      type="text"
-                    />
-                  </div>
-                </div>
-              </styled.div>
-              <div
-                className="form-group"
-              >
-                <label>
-                  <strong>
-                    Living in
-                  </strong>
-                </label>
-                <input
-                  name="location"
-                  placeholder="e.g. Warsaw, Poland"
-                  type="text"
-                />
-              </div>
-              <div
-                className="form-group"
-              >
-                <label>
-                  <strong>
-                    Introduction just a few words about me
-                  </strong>
-                </label>
-                <input
-                  name="intro"
-                  style={
-                    Object {
-                      "height": "100px",
-                    }
-                  }
-                  type="text"
-                />
-              </div>
+              <label>
+                <strong>
+                  First Name
+                </strong>
+              </label>
+              <input
+                name="FirstName"
+                placeholder="e.g. John"
+                type="text"
+              />
             </div>
-          </styled.div>
-        </Styled(styled.div)>
-        <button
-          className="btn btn-primary"
-          type="submit"
+            <div
+              className="form-group"
+            >
+              <label>
+                <strong>
+                  Last name
+                </strong>
+              </label>
+              <input
+                name="LastName"
+                placeholder="e.g. Galt"
+                type="text"
+              />
+            </div>
+          </div>
+        </styled.div>
+        <div
+          className="form-group"
         >
-          Save
-        </button>
-      </form>
-    </div>
-  </styled.div>
-</AboutMe>
+          <label>
+            <strong>
+              Living in
+            </strong>
+          </label>
+          <input
+            name="location"
+            placeholder="e.g. Warsaw, Poland"
+            type="text"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label>
+            <strong>
+              Introduction just a few words about me
+            </strong>
+          </label>
+          <input
+            name="intro"
+            style={
+              Object {
+                "height": "100px",
+              }
+            }
+            type="text"
+          />
+        </div>
+      </div>
+    </styled.div>
+  </Styled(styled.div)>
+  <button
+    className="btn btn-primary"
+    type="submit"
+  >
+    Save
+  </button>
+</form>
 `;
 
 exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `

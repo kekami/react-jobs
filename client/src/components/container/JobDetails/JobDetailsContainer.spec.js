@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import JobDetailsContainer, { validNavItemList } from './JobDetailsContainer';
 
+jest.mock('axios');
+const axios = require('axios');
+
+axios.mockImplementation(() => new Promise(() => {}));
+
 describe('Job Details Container renders', () => {
   let hash;
 

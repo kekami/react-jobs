@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hero Component Matches standard output 1`] = `
+exports[`Hero Component tests. Detailed snapshot. Matches standard output. 1`] = `
 <styled.div>
   <Centered>
     <SVG />

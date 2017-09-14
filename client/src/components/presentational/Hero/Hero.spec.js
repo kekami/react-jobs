@@ -5,10 +5,10 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { Hero } from './Hero';
 
-describe('Hero Component', () => {
+describe('Hero Component tests.', () => {
   let wrapper;
 
-  it('Renders without crashing', () => {
+  it('Renders without crashing.', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MemoryRouter>
@@ -16,20 +16,20 @@ describe('Hero Component', () => {
       </MemoryRouter>, div);
   });
 
-  describe('Internal details of Hero component', () => {
+  describe('Detailed snapshot.', () => {
     beforeEach(() => {
       wrapper = shallow(<Hero />);
     });
 
-    it('Matches standard output', () => {
+    it('Matches standard output.', () => {
       expect(toJson(wrapper)).toMatchSnapshot();
     });
 
-    it('Contains one Centered styled tag for the body', () => {
+    it('Contains one Centered styled tag for the body.', () => {
       expect(wrapper.find('Centered').length).toBe(1);
     });
 
-    it('Contains one Footer styled tag for the body', () => {
+    it('Contains one Footer styled tag for the body.', () => {
       expect(wrapper.find('Footer').length).toBe(1);
     });
   });

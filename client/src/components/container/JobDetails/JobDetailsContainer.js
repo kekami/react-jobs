@@ -17,7 +17,7 @@ export function debounce(func, wait) {
 }
 
 export function getData(requiredId) {
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     axios('/api/jobs')
       .then(response => response.data)
       .then((data) => {
@@ -25,7 +25,7 @@ export function getData(requiredId) {
         const jobData = jobs.filter(job => job._id === requiredId);
         resolve(jobData[0]);
       });
-  })
+  });
 }
 
 export function validNavItemList(job) {
@@ -52,9 +52,7 @@ class JobDetailsContainer extends React.Component {
       jobData: null,
       navItems: [],
       currentItem: 'role summary',
-      scrollHeight: 0,
-      fixedRoleSummary: false,
-      roleSummaryFooterOffsetTop: null,
+      RoleSummary_Fixed: false,
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth,
       jobNavFixed: false,
@@ -80,8 +78,7 @@ class JobDetailsContainer extends React.Component {
     let id = this.props.hash;
     if (id !== undefined) {
       if (id[0] === '#') { id = id.slice(1, id.length); }
-      console.log('id', id);
-      getData(id).then((jobData) => {
+      getData(id, axios).then((jobData) => {
         this.setState({
           jobData,
           navItems: validNavItemList(jobData),
@@ -104,7 +101,7 @@ class JobDetailsContainer extends React.Component {
     const scroll = window.scrollY;
 
     this.setState({
-      roleSummaryFooterTop: boundingRectRoleSummaryFooter.top + scroll,
+      roleSummaryFooterBottom: boundingRectRoleSummaryFooter.bottom + scroll,
       roleSummaryFooterHeight: boundingRectRoleSummaryFooter.height,
       jobNavHeight: boundingRectJobNav.height,
       jobNavTop: boundingRectJobNav.top + scroll,
@@ -116,13 +113,13 @@ class JobDetailsContainer extends React.Component {
     const jobNavFixedHeightOffsetTop = (this.state.windowHeight - this.state.jobNavHeight) / 2;
 
     this.setState({
-      minFooterFixedHeight: this.state.windowHeight,
-      maxFooterFixedHeight:
-        (this.state.roleSummaryFooterTop + this.state.roleSummaryFooterHeight)
-        - this.state.windowHeight,
+      RoleSummary_FixedHeight_Min: this.state.windowHeight,
+      RoleSummary_FixedHeight_Max:
+        this.state.roleSummaryFooterBottom - this.state.windowHeight,
       minJobNavFixedHeight: this.state.jobNavTop - jobNavFixedHeightOffsetTop,
       maxJobNavFixedHeight:
-        this.state.roleSummaryFooterTop
+        this.state.roleSummaryFooterBottom
+        - this.state.roleSummaryFooterHeight
         - this.state.jobNavHeight
         - jobNavFixedHeightOffsetTop,
     }, this.handleScroll);
@@ -133,17 +130,29 @@ class JobDetailsContainer extends React.Component {
     if (this.state.jobData === null) { return; }
 
     function updateRoleSummaryFooter() {
-      if (scrollHeight > this.state.minFooterFixedHeight
-        && scrollHeight < this.state.maxFooterFixedHeight) {
-        if (this.state.fixedRoleSummary === false) {
+      if (scrollHeight < this.state.RoleSummary_FixedHeight_Min) {
+        this.setState({
+          RoleSummary_Display: false,
+          RoleSummary_Fixed: true,
+          Rolesummary_Animate: true,
+        });
+      }
+
+      if (scrollHeight > this.state.RoleSummary_FixedHeight_Min
+        && scrollHeight < this.state.RoleSummary_FixedHeight_Max) {
+        this.setState({
+          RoleSummary_Display: true,
+          RoleSummary_Fixed: true,
+        });
+      }
+
+      if (scrollHeight > this.state.RoleSummary_FixedHeight_Max) {
+        if (this.state.RoleSummary_Fixed === true) {
           this.setState({
-            fixedRoleSummary: true,
+            RoleSummary_Display: true,
+            RoleSummary_Fixed: false,
           });
         }
-      } else if (this.state.fixedRoleSummary === true) {
-        this.setState({
-          fixedRoleSummary: false,
-        });
       }
     }
 
@@ -200,6 +209,7 @@ class JobDetailsContainer extends React.Component {
 
     this.setState({
       jobNavFixed: false,
+      RoleSummary_Fixed: false,
     }, this.setRefDataIntoState);
   }
 
@@ -209,7 +219,16 @@ class JobDetailsContainer extends React.Component {
     if (selected === this.state.currentItem) { return; }
     this.setState({
       currentItem: selected,
-    });
+    }, this.updateScrollPosition);
+  }
+
+  updateScrollPosition() {
+    const currentItemInView = this.state.navItems.filter(item =>
+      item[0] === this.state.currentItem);
+    const itemScrollPosition = currentItemInView[0][1] - 95;
+    if (window.scrollY !== itemScrollPosition) {
+      window.scrollTo(0, itemScrollPosition);
+    }
   }
 
   updateRefState() {
@@ -274,10 +293,13 @@ class JobDetailsContainer extends React.Component {
             </Details>
             <RoleSummaryFooter
               getRef={(el) => { this.roleSummaryFooterRef = el; }}
-              fixed={this.state.fixedRoleSummary}
+              fixed={this.state.RoleSummary_Fixed}
               title={job.title}
               companyName={job.companyName}
               deadline={job.deadline}
+              display={this.state.RoleSummary_Display}
+              hide={this.state.RoleSummary_FixedHide}
+              animate={this.state.Rolesummary_Animate}
             />
           </div>
 

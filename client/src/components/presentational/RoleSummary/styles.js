@@ -184,13 +184,18 @@ export const FooterWrapper = styled.div`
   background-color: white;
   display: ${props => (props.isExpired ? 'none' : 'block')};
   position: ${props => (props.fixed ? 'fixed' : 'static')};
+  box-shadow: ${props => (props.fixed ? '0px -5px 10px -4px rgba(163,158,163,1)' : '')};  
+  transition: ${props => (props.animate ? 'transform 0.5s ease-out' : 'unset')}; 
   bottom: 0px;
-  margin-bottom: ${props => (props.fixed ? '0px' : '-100px')};
+  
+  ${props => (props.display ? `
+    transform: translateY(0px);
+  ` : 'transform: translateY(100px)')};  
 `;
 
 export const CardFooter = styled.article`
     margin: 10px 10px;
-    padding: 0px 35px 35px 35px;
+    padding: 0px 35px;
     position: relative;
     display: flex;
     justify-content: space-between;

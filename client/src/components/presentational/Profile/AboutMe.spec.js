@@ -69,7 +69,7 @@ describe('Checking fun fun function', () => {
   it('should call onSubmit when button is clicked', () => {
     // handleSubmit = jest.fn();
     component = mount(<AboutMe {...props} />);
-    expect(component.find('form').props().onSubmit).toBeDefined();
+    expect(component.find('form').props().onSubmit).toBeDefined();// this is true, there is props onSubmit found in form element.
     // expect(mockFunction).not.toHaveBeenCalled();
     // 1: mock submitting a form
     // wrapper.find('form').simulate('submit');

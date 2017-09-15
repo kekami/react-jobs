@@ -95,6 +95,7 @@ exports[`Sitemap Component AboutMe form matches its Full DOM snapshot 1`] = `
 
 <form
   action=""
+  className="userDetailsForm"
   onSubmit={[Function]}
   style={
     Object {
@@ -187,6 +188,7 @@ exports[`Sitemap Component AboutMe form matches its Full DOM snapshot 1`] = `
   </Styled(styled.div)>
   <button
     className="btn btn-primary"
+    onClick={[Function]}
     type="submit"
   >
     Save
@@ -249,7 +251,7 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
         </strong>
       </div>
       <p
-        id="location"
+        id="place"
       />
       <div>
         <strong>
@@ -268,6 +270,7 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
   </styled.div>
   <form
     action=""
+    className="userDetailsForm"
     onSubmit={[Function]}
     style={
       Object {
@@ -348,6 +351,7 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
     </Styled(styled.div)>
     <button
       className="btn btn-primary"
+      onClick={[Function]}
       type="submit"
     >
       Save

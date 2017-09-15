@@ -60,12 +60,12 @@ export class AboutMe extends Component {
             <div><strong>Name</strong> </div>
             <p id="names">{this.state.FirstName} {this.state.LastName}</p>
             <div><strong>Living in</strong></div>
-            <p id="location">{this.state.Location}</p>
+            <p id="place">{this.state.Location}</p>
             <div><strong>Introduction </strong> <span>Just a few words about me</span> </div>
             <p id="introduction">{this.state.Intro}</p>
           </div>
         </AboutMeBody>
-        <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
+        <form className="userDetailsForm" action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
           <AboutMeInput >
             <Company>
               <div className="form-group">
@@ -113,7 +113,7 @@ export class AboutMe extends Component {
               </label>
             </div>
           </AboutMeInput>
-          <button className="btn btn-primary" type="submit">Save</button>
+          <button className="btn btn-primary" type="submit" onClick={this.handleSubmit}>Save</button>
         </form>
       </SectionWrapper>
     );

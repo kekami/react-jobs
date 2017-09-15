@@ -32,6 +32,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "jest-styled-components": "^4.6.0",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^3.2.1"
   }
 }

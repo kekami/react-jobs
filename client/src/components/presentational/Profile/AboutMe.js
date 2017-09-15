@@ -69,40 +69,48 @@ export class AboutMe extends Component {
           <AboutMeInput >
             <Company>
               <div className="form-group">
-                <label><strong>First Name</strong></label>
-                <input
-                  type="text"
-                  name="FirstName"
-                  placeholder="e.g. John"
-                  ref={(input) => { this.FirstName = input; }}
-                />
+                <label htmlFor="firstName"><strong>First Name</strong>
+                  <input
+                    id="firstName"
+                    type="text"
+                    name="FirstName"
+                    placeholder="e.g. John"
+                    ref={(input) => { this.FirstName = input; }}
+                  />
+                </label>
               </div>
               <div className="form-group">
-                <label><strong>Last name</strong></label>
-                <input
-                  type="text"
-                  name="LastName"
-                  placeholder="e.g. Galt"
-                  ref={(input) => { this.LastName = input; }}
-                />
+                <label htmlFor="lastName"><strong>Last name</strong>
+                  <input
+                    id="lastName"
+                    type="text"
+                    name="LastName"
+                    placeholder="e.g. Galt"
+                    ref={(input) => { this.LastName = input; }}
+                  />
+                </label>
               </div>
             </Company>
             <div className="form-group">
-              <label><strong>Living in</strong></label>
-              <input
-                type="text"
-                name="location"
-                placeholder="e.g. Warsaw, Poland"
-                ref={(input) => { this.Location = input; }}
-              />
+              <label htmlFor="location"><strong>Living in</strong>
+                <input
+                  id="location"
+                  type="text"
+                  name="location"
+                  placeholder="e.g. Warsaw, Poland"
+                  ref={(input) => { this.Location = input; }}
+                />
+              </label>
             </div>
             <div className="form-group">
-              <label><strong>Introduction just a few words about me</strong></label>
-              <input
-                type="text"
-                name="intro"
-                ref={(input) => { this.Intro = input; }}
-              />
+              <label htmlFor="introduction"><strong>Introduction just a few words about me</strong>
+                <input
+                  id="introduction"
+                  type="text"
+                  name="intro"
+                  ref={(input) => { this.Intro = input; }}
+                />
+              </label>
             </div>
           </AboutMeInput>
           <button className="btn btn-primary" type="submit">Save</button>

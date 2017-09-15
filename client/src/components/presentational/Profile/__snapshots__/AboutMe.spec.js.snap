@@ -116,59 +116,71 @@ exports[`Sitemap Component AboutMe form matches its Full DOM snapshot 1`] = `
             <div
               className="form-group"
             >
-              <label>
+              <label
+                htmlFor="firstName"
+              >
                 <strong>
                   First Name
                 </strong>
+                <input
+                  id="firstName"
+                  name="FirstName"
+                  placeholder="e.g. John"
+                  type="text"
+                />
               </label>
-              <input
-                name="FirstName"
-                placeholder="e.g. John"
-                type="text"
-              />
             </div>
             <div
               className="form-group"
             >
-              <label>
+              <label
+                htmlFor="lastName"
+              >
                 <strong>
                   Last name
                 </strong>
+                <input
+                  id="lastName"
+                  name="LastName"
+                  placeholder="e.g. Galt"
+                  type="text"
+                />
               </label>
-              <input
-                name="LastName"
-                placeholder="e.g. Galt"
-                type="text"
-              />
             </div>
           </div>
         </styled.div>
         <div
           className="form-group"
         >
-          <label>
+          <label
+            htmlFor="location"
+          >
             <strong>
               Living in
             </strong>
+            <input
+              id="location"
+              name="location"
+              placeholder="e.g. Warsaw, Poland"
+              type="text"
+            />
           </label>
-          <input
-            name="location"
-            placeholder="e.g. Warsaw, Poland"
-            type="text"
-          />
         </div>
         <div
           className="form-group"
         >
-          <label>
+          <label
+            htmlFor="introduction"
+          >
             <strong>
               Introduction just a few words about me
             </strong>
+            <input
+              id="introduction"
+              name="intro"
+              type="text"
+            />
           </label>
-          <input
-            name="intro"
-            type="text"
-          />
         </div>
       </div>
     </styled.div>
@@ -268,58 +280,70 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
         <div
           className="form-group"
         >
-          <label>
+          <label
+            htmlFor="firstName"
+          >
             <strong>
               First Name
             </strong>
+            <input
+              id="firstName"
+              name="FirstName"
+              placeholder="e.g. John"
+              type="text"
+            />
           </label>
-          <input
-            name="FirstName"
-            placeholder="e.g. John"
-            type="text"
-          />
         </div>
         <div
           className="form-group"
         >
-          <label>
+          <label
+            htmlFor="lastName"
+          >
             <strong>
               Last name
             </strong>
+            <input
+              id="lastName"
+              name="LastName"
+              placeholder="e.g. Galt"
+              type="text"
+            />
           </label>
-          <input
-            name="LastName"
-            placeholder="e.g. Galt"
-            type="text"
-          />
         </div>
       </styled.div>
       <div
         className="form-group"
       >
-        <label>
+        <label
+          htmlFor="location"
+        >
           <strong>
             Living in
           </strong>
+          <input
+            id="location"
+            name="location"
+            placeholder="e.g. Warsaw, Poland"
+            type="text"
+          />
         </label>
-        <input
-          name="location"
-          placeholder="e.g. Warsaw, Poland"
-          type="text"
-        />
       </div>
       <div
         className="form-group"
       >
-        <label>
+        <label
+          htmlFor="introduction"
+        >
           <strong>
             Introduction just a few words about me
           </strong>
+          <input
+            id="introduction"
+            name="intro"
+            type="text"
+          />
         </label>
-        <input
-          name="intro"
-          type="text"
-        />
       </div>
     </Styled(styled.div)>
     <button

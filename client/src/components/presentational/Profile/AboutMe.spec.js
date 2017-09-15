@@ -76,6 +76,6 @@ describe('Checking fun fun function', () => {
     // 
     // 2: check if handleSubmit was called
     component.find('form').simulate('submit', { preventDefault: () => {} });
-    // expect(clickSpy).toHaveBeenCalled();
+    expect(clickSpy).toHaveBeenCalled();
   });
 });

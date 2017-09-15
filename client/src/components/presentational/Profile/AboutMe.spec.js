@@ -4,11 +4,10 @@ import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import 'jest-styled-components';
 import { AboutMe } from './AboutMe';
-import { AboutMeBody } from './styles';
 
 
 describe('Sitemap Component', () => {
-  it('renders without crashing', () => {  
+  it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<AboutMe />, div);
   });
@@ -43,7 +42,7 @@ describe('Sitemap Component', () => {
     expect(wrapper.find('.btn').exists()).toBe(true);
   });
 
-  it('Extracts data from the state', () => {
+  it('Extracts data from the state - here: Location', () => {
     const wrapper = mount(<AboutMe />);
     wrapper.setState({ Location: 'Warsaw' });
     expect(wrapper.containsMatchingElement(<p id="location">Warsaw</p>)).toBe(true);

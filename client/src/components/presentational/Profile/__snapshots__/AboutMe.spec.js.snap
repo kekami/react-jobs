@@ -167,11 +167,6 @@ exports[`Sitemap Component AboutMe form matches its Full DOM snapshot 1`] = `
           </label>
           <input
             name="intro"
-            style={
-              Object {
-                "height": "100px",
-              }
-            }
             type="text"
           />
         </div>
@@ -323,11 +318,6 @@ exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
         </label>
         <input
           name="intro"
-          style={
-            Object {
-              "height": "100px",
-            }
-          }
           type="text"
         />
       </div>

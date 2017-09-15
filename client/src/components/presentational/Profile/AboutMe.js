@@ -102,7 +102,6 @@ export class AboutMe extends Component {
                 type="text"
                 name="intro"
                 ref={(input) => { this.Intro = input; }}
-                style={{ height: '100px' }}
               />
             </div>
           </AboutMeInput>

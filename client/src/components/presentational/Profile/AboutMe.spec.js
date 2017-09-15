@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import { mount, shallow, render } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import 'jest-styled-components';
+import renderer from 'react-test-renderer';
 import { spy } from 'sinon';
 import { AboutMe } from './AboutMe';
+import { Edit } from './styles';
 
 
 describe('Sitemap Component', () => {
@@ -59,4 +61,8 @@ describe('Sitemap Component', () => {
     expect(wrapper.handleSubmit).toHaveBeenCalled();
   });
 
+  it('should render with the correct styles', () => {
+    const tree = renderer.create(<Edit />).toJSON();
+    expect(tree).toHaveStyleRule('color', '#04d092');
+  });
 });

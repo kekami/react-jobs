@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component - basic test Profile component matches its shallow snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <ProfileNav />
+    <AvatarAndProgress />
+    <AboutMe />
+    <SkillSection />
+    <LangSection />
+    <LinkSection />
+    <WorkExperience />
+    <Education />
+  </styled.div>
+</styled.div>
+`;

@@ -54,7 +54,7 @@ export class SkillSection extends Component {
 
   addingTags() {
     return this.state.tags.map((tag, i) => (
-      <SkillTag key={i} onClick={() => this.deleteTag(i)} showing={tag.isShowing}>
+      <SkillTag key={tag.title} onClick={() => this.deleteTag(i)} showing={tag.isShowing}>
         <Btn>{tag.title} <I className="fa fa-times" aria-hidden="true" /></Btn>
       </SkillTag>
     ),

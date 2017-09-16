@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Education - Basic tests Education matches its shallow snapshot 1`] = `
+<styled.div
+  edited={false}
+>
+  <Styled(Styled(Styled(styled.div)))
+    edited={false}
+  >
+    <p>
+      <strong>
+        Education 
+      </strong>
+      <span />
+       Schools and courses
+    </p>
+    <styled.button
+      edited={false}
+      onClick={[Function]}
+    >
+      <div>
+        Edit 
+        <styled.i
+          aria-hidden="true"
+          className="fa fa-pencil"
+        />
+      </div>
+    </styled.button>
+  </Styled(Styled(Styled(styled.div)))>
+  <Styled(styled.div)
+    onClick={[Function]}
+  >
+    <styled.i
+      aria-hidden="true"
+      className="fa fa-plus-circle"
+    />
+     Add education
+  </Styled(styled.div)>
+  <form
+    action=""
+    onSubmit={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Save
+    </button>
+  </form>
+  <Styled(Styled(styled.div))
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  />
+</styled.div>
+`;

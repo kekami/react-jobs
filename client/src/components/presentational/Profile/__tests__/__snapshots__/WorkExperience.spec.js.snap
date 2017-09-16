@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WorkExperience - Basic tests WorkExperience matches its shallow snapshot 1`] = `
+<styled.div
+  edited={false}
+>
+  <Styled(Styled(styled.div))
+    edited={false}
+  >
+    <p>
+      <strong>
+        Work Experience
+      </strong>
+      <span />
+       Previous and current positions
+    </p>
+    <styled.button
+      edited={false}
+      onClick={[Function]}
+    >
+      <div>
+        Edit 
+        <styled.i
+          aria-hidden="true"
+          className="fa fa-pencil"
+        />
+      </div>
+    </styled.button>
+  </Styled(Styled(styled.div))>
+  <styled.div
+    onClick={[Function]}
+  >
+    <styled.i
+      aria-hidden="true"
+      className="fa fa-plus-circle"
+    />
+     Add a position
+  </styled.div>
+  <form
+    action=""
+    onSubmit={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Save
+    </button>
+  </form>
+  <Styled(styled.div)
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  />
+</styled.div>
+`;

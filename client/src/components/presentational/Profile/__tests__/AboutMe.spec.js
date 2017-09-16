@@ -8,7 +8,7 @@ import { AboutMe } from '../AboutMe';
 import { Edit } from '../styles';
 
 // Tests for AboutMe Section
-// here I will use 3 suites testing: functionality, styles and general rendering
+// here you can find 3 suites testing: functionality, styles and general rendering
 
 describe('AboutMe - Basic tests', () => {
   it('renders without crashing', () => {
@@ -47,11 +47,11 @@ describe('AboutMe - Basic tests', () => {
   });
 });
 
-describe('AboutMe - Test suite for styles', () => {
+describe('AboutMe - test suite for styles', () => {
   // Edit button has to conform to general style of the component
   it('Edit button redners with the correct color', () => {
-    const tree = renderer.create(<Edit />).toJSON();
-    expect(tree).toHaveStyleRule('color', '#04d092');
+    const editButton = renderer.create(<Edit />).toJSON();
+    expect(editButton).toHaveStyleRule('color', '#04d092');
   });
 });
 

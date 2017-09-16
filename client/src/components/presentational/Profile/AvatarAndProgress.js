@@ -32,7 +32,7 @@ export class AvatarAndProgress extends Component {
       });
     } else {
       this.setState({
-        width100h: 10,
+        width100: 10,
       });
     }
   }
@@ -49,24 +49,29 @@ export class AvatarAndProgress extends Component {
     return (
       <UpperSectionWrapper>
         <PicWrapper>
-          <Avatar src="/img/avatar.png" />
+          <Avatar className="avatar" src="/img/avatar.png" />
         </PicWrapper>
         <div>
           <PicUploader >
             <div>
               <input type="file" accept="image/png,image/jpeg" />
-              Click here to upload a png or jpeg file here (max 10 MB). This picture will be visible to employers, so choose one that is a good representation of you!
+              Click here to upload a png or jpeg file here (max 10 MB).
+              This picture will be visible to employers, so choose one
+              that is a good representation of you!
             </div>
           </PicUploader>
         </div>
         <ProgressSection>
           <header>Your profile is <strong>{this.state.width100}%</strong> complete</header>
           <ProgressWrapper>
-            <ProgressBar onClick={this.onClick} style={this.move()} />
+            <ProgressBar className="progressBar" onClick={this.onClick} style={this.move()} />
           </ProgressWrapper>
         </ProgressSection>
         <div>
-          <p>This is your profile that will represent you when you apply for jobs on Jobbatical. By submitting an application, you will make your profile visible to the company you’re applying to. Note that changes made here will also affect previously submitted applications.</p>
+          <p>This is your profile that will represent you when you apply for jobs on Jobbatical.
+            By submitting an application, you will make your profile visible
+            to the company you’re applying to.
+            Note that changes made here will also affect previously submitted applications.</p>
         </div>
       </UpperSectionWrapper>
     );

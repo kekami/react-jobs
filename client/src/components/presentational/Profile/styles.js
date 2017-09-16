@@ -184,9 +184,7 @@ export const ProgressSection = styled.div`
 export const ProgressWrapper = styled.div`
     width: 100%;
     background-color: #f0b14a;
-    border-radius: 8px
-    
-    
+    border-radius: 8px  
 `;
 export const ProgressBar = styled.div`
     height: 8px;

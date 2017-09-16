@@ -1,8 +1,8 @@
 import React from 'react';  
 import ReactDOM from 'react-dom';  
-import { LangSection } from './LangSection';
+import { LinkSection } from '../LinkSection';
 
 it('renders without crashing', () => {  
   const div = document.createElement('div');
-  ReactDOM.render(<LangSection />, div);
+  ReactDOM.render(<LinkSection />, div);
 });

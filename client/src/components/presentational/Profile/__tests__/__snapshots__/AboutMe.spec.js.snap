@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sitemap Component AboutMe form matches its Full DOM snapshot 1`] = `
+exports[`AboutMe - Basic tests AboutMe form matches its Full DOM snapshot 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -196,7 +196,7 @@ exports[`Sitemap Component AboutMe form matches its Full DOM snapshot 1`] = `
 </form>
 `;
 
-exports[`Sitemap Component AboutMe matches its shallow snapshot 1`] = `
+exports[`AboutMe - Basic tests AboutMe matches its shallow snapshot 1`] = `
 <styled.div
   edited={false}
   style={

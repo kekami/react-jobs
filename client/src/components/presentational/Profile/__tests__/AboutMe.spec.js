@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { mount, shallow, render } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import sinon from 'sinon';
-import { AboutMe } from './AboutMe';
-import { Edit } from './styles';
+import { AboutMe } from '../AboutMe';
+import { Edit } from '../styles';
 
+// Tests for AboutMe Section
+// here I will use 3 suites testing: functionality, styles and general rendering
 
-describe('Sitemap Component', () => {
+describe('AboutMe - Basic tests', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<AboutMe />, div);
@@ -28,58 +29,35 @@ describe('Sitemap Component', () => {
     const wrapper = mount(<AboutMe />);
     expect(toJson(wrapper.find('form'))).toMatchSnapshot();
   });
-
+  // display of input form reacts depends on the component's state
   it('Shows the input form to the user when "edit" is clicked', () => {
     const wrapper = mount(<AboutMe />);
     wrapper.setState({ show: true });
     expect(wrapper.find('form').props().style.display).toBe('block');
   });
-
+  // User is able to give his details in 4 input fields
   it('Input form renders 4 input fields', () => {
     const wrapper = shallow(<AboutMe />);
     expect(wrapper.find('.form-group').length).toBe(4);
   });
-
+  // User sees the button to submit his details
   it('Should have a submit button', () => {
     const wrapper = shallow(<AboutMe />);
     expect(wrapper.find('.btn').exists()).toBe(true);
   });
+});
 
-  it('Extracts data from the state - here: Location', () => {
-    const wrapper = mount(<AboutMe />);
-    wrapper.setState({ Location: 'Warsaw' });
-    expect(wrapper.containsMatchingElement(<p id="place">Warsaw</p>)).toBe(true);
-  });
-
-  it('should render with the correct styles', () => {
+describe('AboutMe - Test suite for styles', () => {
+  // Edit button has to conform to general style of the component
+  it('Edit button redners with the correct color', () => {
     const tree = renderer.create(<Edit />).toJSON();
     expect(tree).toHaveStyleRule('color', '#04d092');
   });
 });
 
-describe('Checking fun fun function', () => {
-  let component;
-  const clickSpy = jest.fn();
-  const props = {
-    onSubmit: clickSpy,
-  };
-  // test checking if handlechange() is called when submitted the form
-  // there is a prop existent but I can't make it to trigger anything
-  // also passed jest.fn() in expect(clickSpy).toHaveBeenCalled(); is not being read
-  it('should call onSubmit when button is clicked', () => {
-    // handleSubmit = jest.fn();
-    component = mount(<AboutMe {...props} />);
-    expect(component.find('form').props().onSubmit).toBeDefined();// this is true, there is props onSubmit found in form element.
-    // expect(mockFunction).not.toHaveBeenCalled();
-    // 1: mock submitting a form
-    // wrapper.find('form').simulate('submit');
-    // 
-    // 2: check if handleSubmit was called
-    component.find('form').simulate('submit', { preventDefault: () => {} });
-    expect(clickSpy).toBeCalled();
-  });
-
-  it('should call onSubmit when button is clicked', () => {
+describe('AboutMe - test suite for functionality', () => {
+  // Function responsible for transfer of information into the state is called upon submission
+  it('handleSubmit() is called when form is submitted', () => {
     // create instance of mock
     const spyHandler = jest.fn();
     // overwrite the handleSubmit function with reference to spyHandler (mock instance)
@@ -91,5 +69,11 @@ describe('Checking fun fun function', () => {
     form.simulate('submit');
     // check if handleSubmit was called
     expect(spyHandler).toBeCalled();
+  });
+  // Elements of the AboutMe section display information based on state
+  it('Element extracts content from the state, here: Location', () => {
+    const wrapper = mount(<AboutMe />);
+    wrapper.setState({ Location: 'Warsaw' });
+    expect(wrapper.containsMatchingElement(<p id="place">Warsaw</p>)).toBe(true);
   });
 });

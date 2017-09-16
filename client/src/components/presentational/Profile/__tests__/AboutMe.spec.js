@@ -7,8 +7,20 @@ import renderer from 'react-test-renderer';
 import { AboutMe } from '../AboutMe';
 import { Edit } from '../styles';
 
-// Tests for AboutMe Section
-// here you can find 3 suites testing: functionality, styles and general rendering
+/* Tests for AboutMe Section
+here you can find 3 suites testing: functionality, styles and general rendering
+
+1. basic render
+2. shallow render - redundat
+3. snapshot of shallow render
+4. snapshot of FullDOM render
+5. input form is shown based on state
+6. four input fields are rendered
+7. submit button is rendered
+8. edit button has proper color
+9. handleSubmit() is triggered after submit
+10. element(s) of AboutMeBody extract content form state
+*/
 
 describe('AboutMe - Basic tests', () => {
   it('renders without crashing', () => {
@@ -30,7 +42,7 @@ describe('AboutMe - Basic tests', () => {
     expect(toJson(wrapper.find('form'))).toMatchSnapshot();
   });
   // display of input form reacts depends on the component's state
-  it('Shows the input form to the user when "edit" is clicked', () => {
+  it('Shows the input form based on the state.show', () => {
     const wrapper = mount(<AboutMe />);
     wrapper.setState({ show: true });
     expect(wrapper.find('form').props().style.display).toBe('block');
@@ -49,7 +61,7 @@ describe('AboutMe - Basic tests', () => {
 
 describe('AboutMe - test suite for styles', () => {
   // Edit button has to conform to general style of the component
-  it('Edit button redners with the correct color', () => {
+  it('Edit button renders with the correct color', () => {
     const editButton = renderer.create(<Edit />).toJSON();
     expect(editButton).toHaveStyleRule('color', '#04d092');
   });

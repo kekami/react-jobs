@@ -8,7 +8,7 @@ My goal here was to allow user to populate this section with his social media li
 2. Unused input fields should not generate empty outputs - only added links should be displayed.
 
 Since this section allowed only for 5 inputs I decided to make an array of 5 objects.
-Each object consists of index, logo and url. URL adress is a value of referenced input. 
+Each object consists of index, logo and URL. URL is a value of referenced input. 
 This makes sure all inputs always find their own place and logo.
 Lastly, submitData() makes sure to filter out from this array objects without url.
 
@@ -139,7 +139,7 @@ export class LinkSection extends Component {
           </SocMediaInput>
           <button className="btn btn-primary" type="submit">Save</button>
         </form>
-        <Websites style={{ display: !this.state.show ? 'block' : 'none' }}>
+        <Websites className="addedLinks" style={{ display: !this.state.show ? 'block' : 'none' }}>
           {this.addingLinks()}
         </Websites>
       </SectionWrapper>

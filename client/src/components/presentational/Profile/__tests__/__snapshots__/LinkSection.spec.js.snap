@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkSection - Basic tests LinkSection matches its shallow snapshot 1`] = `
+<styled.div
+  edited={false}
+>
+  <Styled(styled.div)
+    edited={false}
+  >
+    <p>
+      <strong>
+        Links
+      </strong>
+       My social media and homepage links
+    </p>
+    <styled.button
+      edited={false}
+      onClick={[Function]}
+    >
+      <div>
+        Edit 
+        <styled.i
+          aria-hidden="true"
+          className="fa fa-pencil"
+        />
+      </div>
+    </styled.button>
+  </Styled(styled.div)>
+  <form
+    action=""
+    onSubmit={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Add some extra firepower to your profile by providing links to professional and social media profiles.
+    </p>
+    <styled.div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="website"
+        >
+          Your website 
+        </label>
+        <input
+          id="website"
+          name="website"
+          placeholder="paste your link here and hit Enter"
+          type="url"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="linkedIn"
+        >
+          Linkedin profile 
+        </label>
+        <input
+          id="linkedIn"
+          name="linkedIn"
+          placeholder="paste your link here and hit Enter"
+          type="url"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="facebook"
+        >
+          Facebook profile 
+        </label>
+        <input
+          id="facebook"
+          name="Facebook"
+          placeholder="paste your link here and hit Enter"
+          type="url"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="twitter"
+        >
+          Twitter profile 
+        </label>
+        <input
+          id="twitter"
+          name="Twitter"
+          placeholder="paste your link here and hit Enter"
+          type="url"
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          htmlFor="googlePlus"
+        >
+          Google+ profile 
+        </label>
+        <input
+          id="googlePlus"
+          name="google+"
+          placeholder="paste your link here and hit Enter"
+          type="url"
+        />
+      </div>
+    </styled.div>
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Save
+    </button>
+  </form>
+  <styled.div
+    className="addedLinks"
+    style={
+      Object {
+        "display": "block",
+      }
+    }
+  />
+</styled.div>
+`;

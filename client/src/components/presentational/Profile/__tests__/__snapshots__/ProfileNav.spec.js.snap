@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileNav - basic tests ProfileNav matches its shallow snapshot 1`] = `
+<styled.div>
+  <nav>
+    <ul>
+      <li>
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/profile"
+        >
+          <strong>
+            MY PROFILE
+          </strong>
+        </Link>
+      </li>
+      <li>
+        <Link
+          onClick={[Function]}
+          replace={false}
+          to="/profile"
+        >
+          <strong>
+            MY PREFERENCES
+          </strong>
+        </Link>
+      </li>
+    </ul>
+  </nav>
+</styled.div>
+`;

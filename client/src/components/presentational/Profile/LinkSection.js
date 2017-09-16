@@ -42,11 +42,21 @@ export class LinkSection extends Component {
   submitData() {
     let Links = this.state.Links;
     Links = [
-      { index: 1, logo: <div><i className="fa fa-home" aria-hidden="true" /></div>, url: this.website.value },
-      { index: 2, logo: <div><i className="fa fa-linkedin-square" aria-hidden="true" /></div>, url: this.linkedIn.value },
-      { index: 3, logo: <div><i className="fa fa-facebook-square" aria-hidden="true" /></div>, url: this.facebook.value },
-      { index: 4, logo: <div><i className="fa fa-twitter-square" aria-hidden="true" /></div>, url: this.twitter.value },
-      { index: 5, logo: <div><i logo="g+" className="fa fa-google-plus-square" aria-hidden="true" /></div>, url: this.googlepl.value },
+      { index: 1,
+        logo: <div><i className="fa fa-home" aria-hidden="true" /></div>,
+        url: this.website.value },
+      { index: 2,
+        logo: <div><i className="fa fa-linkedin-square" aria-hidden="true" /></div>,
+        url: this.linkedIn.value },
+      { index: 3,
+        logo: <div><i className="fa fa-facebook-square" aria-hidden="true" /></div>,
+        url: this.facebook.value },
+      { index: 4,
+        logo: <div><i className="fa fa-twitter-square" aria-hidden="true" /></div>,
+        url: this.twitter.value },
+      { index: 5,
+        logo: <div><i logo="g+" className="fa fa-google-plus-square" aria-hidden="true" /></div>,
+        url: this.googlepl.value },
     ];
     Links = Links.filter(link => (link.logo && link.url.length));
     this.setState({ Links });
@@ -71,11 +81,15 @@ export class LinkSection extends Component {
           </Edit>
         </LinkHead>
         <form action="" style={{ display: this.state.show ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
-          <p>Add some extra firepower to your profile by providing links to professional and social media profiles.</p>
+          <p>
+            Add some extra firepower to your profile by providing
+            links to professional and social media profiles.
+          </p>
           <SocMediaInput>
             <div className="form-group">
-              <label>Your website </label>
+              <label htmlFor="website">Your website </label>
               <input
+                id="website"
                 name="website"
                 ref={(input) => { this.website = input; }}
                 type="url"
@@ -83,8 +97,9 @@ export class LinkSection extends Component {
               />
             </div>
             <div className="form-group">
-              <label>Linkedin profile </label>
+              <label htmlFor="linkedIn">Linkedin profile </label>
               <input
+                id="linkedIn"
                 name="linkedIn"
                 ref={(input) => { this.linkedIn = input; }}
                 type="url"
@@ -92,8 +107,9 @@ export class LinkSection extends Component {
               />
             </div>
             <div className="form-group">
-              <label>Facebook profile </label>
+              <label htmlFor="facebook">Facebook profile </label>
               <input
+                id="facebook"
                 name="Facebook"
                 ref={(input) => { this.facebook = input; }}
                 type="url"
@@ -101,8 +117,9 @@ export class LinkSection extends Component {
               />
             </div>
             <div className="form-group">
-              <label>Twitter profile </label>
+              <label htmlFor="twitter">Twitter profile </label>
               <input
+                id="twitter"
                 name="Twitter"
                 ref={(input) => { this.twitter = input; }}
                 type="url"
@@ -110,8 +127,9 @@ export class LinkSection extends Component {
               />
             </div>
             <div className="form-group">
-              <label>Google+ profile </label>
+              <label htmlFor="googlePlus">Google+ profile </label>
               <input
+                id="googlePlus"
                 name="google+"
                 ref={(input) => { this.googlepl = input; }}
                 type="url"

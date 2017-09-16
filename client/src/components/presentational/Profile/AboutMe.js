@@ -113,7 +113,13 @@ export class AboutMe extends Component {
               </label>
             </div>
           </AboutMeInput>
-          <button className="btn btn-primary" type="submit" onClick={this.handleSubmit}>Save</button>
+          <button
+            className="btn btn-primary"
+            type="submit"
+            onClick={this.handleSubmit}
+          >
+            Save
+          </button>
         </form>
       </SectionWrapper>
     );

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LangSection - basic tests AboutMe matches its shallow snapshot 1`] = `
+<styled.div
+  edited={false}
+>
+  <styled.div>
+    <Styled(styled.div)
+      edited={false}
+    >
+      <p>
+        <strong>
+          Languages
+        </strong>
+         My languages
+      </p>
+      <styled.button
+        edited={false}
+        onClick={[Function]}
+      >
+        <div>
+          Edit 
+          <styled.i
+            aria-hidden="true"
+            className="fa fa-pencil"
+          />
+        </div>
+      </styled.button>
+    </Styled(styled.div)>
+    <styled.form
+      onSubmit={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Type in a skill and hit Enter"
+        type="text"
+      />
+    </styled.form>
+    <styled.div />
+  </styled.div>
+</styled.div>
+`;

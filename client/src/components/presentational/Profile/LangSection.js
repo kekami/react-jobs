@@ -54,7 +54,7 @@ export class LangSection extends Component {
 
   addingTags() {
     return this.state.tags.map((tag, i) => (
-      <LangTag key={i} onClick={() => this.deleteTag(i)} showing={tag.isShowing}>
+      <LangTag key={tag.title} onClick={() => this.deleteTag(i)} showing={tag.isShowing}>
         <Btn>{tag.title} <I className="fa fa-times" aria-hidden="true" /></Btn>
       </LangTag>
     ),

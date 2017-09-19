@@ -17,6 +17,7 @@ of 'Add work experience' button. Then anonymous function is mapping over this ar
 Every input group has a key and this is crucial part of keeping everything in order.
 
 When user enters data an array of positions[] is populated with pairs in a designed format: 'index number of input group': 'Object of input names and values'. I used Object.assign here to create and merge new objects into the positions array.
+Following Kyle Simpson's take on Object.assign: "Object.assign(..) takes a target object as its first parameter, and one or more source objects as its subsequent parameters. It iterates over all the enumerable (see below), owned keys (immediately present) on the source object(s) and copies them (via = assignment only) to target. It also, helpfully, returns target"
 Every time user fills in the input field a new key:value pair is created. Several of those pairs constitute the aforementioned 'object of input nmes and values'. This all constitutes a value of a particular key (index number of input group).
 This makes sure that elements in the positions array held in state looks like this-> 
 '0:{object with properties of particular work experience}'.
